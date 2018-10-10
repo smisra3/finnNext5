@@ -1,0 +1,2313 @@
+{
+  "totalAccount": 11,
+  "totalSonataAccount": 10,
+  "customerBlocks": null,
+  "totalValuation": 682004.82,
+  "totalUnrealizedReturn": 0,
+  "totalRealizedReturn": 0,
+  "totalInvestmentPlusCash": 702794.65,
+  "totalAnnualizedReturnPercentage": null,
+  "feedTimeStamp": "2018-08-29T09:35:23.000+01:00",
+  "cashDetails": {
+    "totalCash": 20789.83,
+    "cashToInvest": 19286.57
+  },
+  "clientDetails": {
+    "title": "Miss",
+    "firstName": "Mary millicent",
+    "surname": "Acomq",
+    "dateOfBirth": "1936-01-05",
+    "clientType": "INVESTOR",
+    "amlVerified": true,
+    "stopAndBlockExist": false,
+    "advisedClient": false,
+    "minor": false,
+    "overseasClient": false,
+    "corporateClient": false,
+    "contactInformation": {
+      "email": "test817@test.com",
+      "primaryPhone": "07123456787",
+      "otherPhone": "09624822226715"
+    }
+  },
+  "accountSummaryFilter": {
+    "offPlatform": false,
+    "profitAndLoss": true,
+    "allocationView": false,
+    "holdingsView": true,
+    "clientDetails": false,
+    "cashDetails": true,
+    "relationshipView": null,
+    "linkedAccounts": true,
+    "companyPension": true,
+    "nilHoldings": false
+  },
+  "directAccountGroup": {
+    "totalAccount": 10,
+    "totalSonataAccount": 10,
+    "totalValuation": 681892.01,
+    "totalUnrealizedReturn": 0,
+    "totalRealizedReturn": 0,
+    "totalInvestmentPlusCash": 702681.84,
+    "totalAnnualizedReturnPercentage": null,
+    "cashDetails": {
+      "totalCash": 20789.83,
+      "cashToInvest": 19286.57
+    },
+    "pensionPlans": null,
+    "accountProductGroup": {
+      "ISA": {
+        "totalValuation": null,
+        "accountList": [
+          {
+            "accountNumber": "A000000000",
+            "accountType": "CUSTOMER",
+            "productType": "ISA",
+            "audienceId": "1202",
+            "totalValuation": 631682.33,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": 0,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": [
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B8HT7153",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WGSA",
+                "tradableUnit": 104.0300,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 105.4000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 3847.10,
+                "latestUnitPrice": 3650.0,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 3847.10,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": true,
+                  "cleanFund": true,
+                  "assetName": "XXXGlobal Special Situations Fund W-Accumulation",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": true,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WGSA",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B7T77214",
+                "sedol": "B7T7721",
+                "uan": "0",
+                "assetCode": null,
+                "tradableUnit": 16.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 16.0000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0,
+                "totalValuation": 39.36,
+                "latestUnitPrice": 246.00,
+                "mutualFund": false,
+                "assetStatus": null,
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 39.36,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": false,
+                  "assetName": "ROYAL BANK OF SCOTLAND GROUP PLC,ORD GBP1(RBS)",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": "XLON",
+                  "providerName": null,
+                  "assetCode": null,
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": false,
+                      "sellEligible": false
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": false,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": false,
+                      "sellEligible": false
+                    },
+                    "DFM": {
+                      "buyEligible": false,
+                      "sellEligible": false
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B7MT2J68",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "ROEMI",
+                "tradableUnit": 17.7000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 17.7000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 21.38,
+                "latestUnitPrice": 120.800,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 21.38,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "Royal London Ethical Bond Fund M Inc",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "Royal London",
+                  "assetCode": "ROEMI",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "LU0457959939",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YCFA",
+                "tradableUnit": 289779.9700,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 289779.9700,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 620129.14,
+                "latestUnitPrice": 214.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 620129.14,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXFunds - China Focus Fund Y-GBP",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YCFA",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B6840Q15",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YRMGI",
+                "tradableUnit": 3605.8800,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 3644.1800,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 2854.12,
+                "latestUnitPrice": 78.3200,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 2854.12,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXMoneyBuilder Growth Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YRMGI",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B469J896",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YSD",
+                "tradableUnit": 213.8000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 213.8000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 265.75,
+                "latestUnitPrice": 124.300,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 265.75,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXStrategic Bond Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YSD",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB0000066554",
+                "sedol": "0006655",
+                "uan": "0",
+                "assetCode": null,
+                "tradableUnit": 11.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 11.0000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0,
+                "totalValuation": 149.60,
+                "latestUnitPrice": 1360.0,
+                "mutualFund": false,
+                "assetStatus": null,
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 149.60,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": false,
+                  "assetName": "ABERFORTH SMALLER COMPANIES TRUST,ORD GBP0.01(ASL)",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": "XLON",
+                  "providerName": null,
+                  "assetCode": null,
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "LU1550162645",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WGDSH",
+                "tradableUnit": 0.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 1.6700,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 1.81,
+                "latestUnitPrice": 108.400,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 1.81,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXFunds - Global Dividend Fund W-QINCOME(G)-GBP (hedged)",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WGDSH",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00BYSYZP12",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WEIIM",
+                "tradableUnit": 0.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 1.8800,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 1.81,
+                "latestUnitPrice": 96.0500,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 1.81,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXEnhanced Income Fund W-MINC-GBP",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WEIIM",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B88V3X40",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WSSA",
+                "tradableUnit": 109.3000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 109.3000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 4045.19,
+                "latestUnitPrice": 3701.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 4045.19,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": true,
+                  "cleanFund": true,
+                  "assetName": "XXXSpecial Situations Fund W-Accumulation",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": true,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WSSA",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B3Z9PT62",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YCB",
+                "tradableUnit": 20.9700,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 74.2000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 92.01,
+                "latestUnitPrice": 124.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 92.01,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXMoneyBuilder Income Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YCB",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00B5V8SG93",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "ABEMI",
+                "tradableUnit": 109.0200,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 136.2700,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 125.00,
+                "latestUnitPrice": 91.7300,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 125.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "Aberdeen Emerging Markets Bond Fund I Inc",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "Aberdeen",
+                  "assetCode": "ABEMI",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB0032211103",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "CAOPI",
+                "tradableUnit": 0.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 3.8300,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 50.06,
+                "latestUnitPrice": 1307.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 50.06,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "TM Cavendish Opportunities Fund B Inc",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "Cavendish",
+                  "assetCode": "CAOPI",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000000",
+                "productType": "ISA",
+                "isin": "GB00BYSYZL73",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WGDIM",
+                "tradableUnit": 50.0400,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 50.0400,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 60.00,
+                "latestUnitPrice": 119.900,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 60.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXGlobal Dividend Fund W-MINC-GBP",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WGDIM",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              }
+            ],
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": null,
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 632907.34,
+            "cashDetails": {
+              "totalCash": 1225.01,
+              "cashToInvest": 46.75
+            },
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          }
+        ]
+      },
+      "XXX_SIPP": {
+        "totalValuation": null,
+        "accountList": [
+          {
+            "accountNumber": "A000000001",
+            "accountType": "UNCRYSTALLISED",
+            "productType": "XXX_SIPP",
+            "audienceId": "1202",
+            "totalValuation": 26.00,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": 0,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": [
+              {
+                "accountNumber": "A000000001",
+                "productType": "XXX_SIPP",
+                "isin": "GB00B7XJFX07",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YRMBI",
+                "tradableUnit": 0.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 44.1000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 26.00,
+                "latestUnitPrice": 58.9600,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 26.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXMoneyBuilder Balanced Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YRMBI",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              }
+            ],
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": null,
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 26.00,
+            "cashDetails": null,
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          }
+        ]
+      },
+      "JOINT_GIA": {
+        "totalValuation": null,
+        "accountList": [
+          {
+            "accountNumber": "A000000002",
+            "accountType": "CUSTOMER",
+            "productType": "JOINT_GIA",
+            "audienceId": "1202",
+            "totalValuation": null,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": null,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": null,
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "Joint",
+            "primaryHolder": true,
+            "jointAccount": true,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 0,
+            "cashDetails": null,
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": [
+              {
+                "title": "Miss",
+                "name": "MARK RONALD B",
+                "cdb": "7777777777"
+              }
+            ]
+          }
+        ]
+      },
+      "GIA": {
+        "totalValuation": null,
+        "accountList": [
+          {
+            "accountNumber": "A000000003",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": null,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": null,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": null,
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "HOME",
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 1075.59,
+            "cashDetails": {
+              "totalCash": 1075.59,
+              "cashToInvest": 1075.59
+            },
+            "incomeDistribution": "PAYOUT_VIA_PCA",
+            "secondaryHolderList": null
+          },
+          {
+            "accountNumber": "A000000004",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": null,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": null,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": null,
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "asdasdasdasdasdasd",
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 0,
+            "cashDetails": null,
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          },
+          {
+            "accountNumber": "ACO1000001",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": 49779.09,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": 0,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": [
+              {
+                "accountNumber": "ACO1000001",
+                "productType": "GIA",
+                "isin": "GB00BTJRPZ43",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "CRSII",
+                "tradableUnit": 21730.2500,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 21730.2500,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 49647.10,
+                "latestUnitPrice": 228.4700,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "REINVEST",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 49647.10,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "FP CRUX Euro Special Situations I Inc",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "FP Crux",
+                  "assetCode": "CRSII",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "ACO1000001",
+                "productType": "GIA",
+                "isin": "LU0457959939",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YCFA",
+                "tradableUnit": 11.6800,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 11.6800,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 25.00,
+                "latestUnitPrice": 214.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "REINVEST",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 25.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXFunds - China Focus Fund Y-GBP",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YCFA",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "ACO1000001",
+                "productType": "GIA",
+                "isin": "GB00B469J896",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YSD",
+                "tradableUnit": 20.1100,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 20.1100,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 25.00,
+                "latestUnitPrice": 124.300,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "REINVEST",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 25.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXStrategic Bond Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YSD",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "ACO1000001",
+                "productType": "GIA",
+                "isin": "LU1550162645",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WGDSH",
+                "tradableUnit": 27.6700,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 27.6700,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 29.99,
+                "latestUnitPrice": 108.400,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "REINVEST",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 29.99,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXFunds - Global Dividend Fund W-QINCOME(G)-GBP (hedged)",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WGDSH",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "ACO1000001",
+                "productType": "GIA",
+                "isin": "GB00B3Z9PT62",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YCB",
+                "tradableUnit": 20.1600,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 20.1600,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 25.00,
+                "latestUnitPrice": 124.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "REINVEST",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 25.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXMoneyBuilder Income Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YCB",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "ACO1000001",
+                "productType": "GIA",
+                "isin": "GB00BYSYZL73",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WGDIM",
+                "tradableUnit": 22.5200,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 22.5200,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 27.00,
+                "latestUnitPrice": 119.900,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "REINVEST",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 27.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXGlobal Dividend Fund W-MINC-GBP",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WGDIM",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              }
+            ],
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": null,
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 52571.14,
+            "cashDetails": {
+              "totalCash": 2792.05,
+              "cashToInvest": 2692.05
+            },
+            "incomeDistribution": "REINVEST",
+            "secondaryHolderList": null
+          },
+          {
+            "accountNumber": "A000000005",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": 174.60,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": 0,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": [
+              {
+                "accountNumber": "A000000005",
+                "productType": "GIA",
+                "isin": "GB00B7T77214",
+                "sedol": "B7T7721",
+                "uan": "0",
+                "assetCode": null,
+                "tradableUnit": 1.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 10.0000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0,
+                "totalValuation": 24.60,
+                "latestUnitPrice": 246.00,
+                "mutualFund": false,
+                "assetStatus": null,
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 24.60,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": false,
+                  "assetName": "ROYAL BANK OF SCOTLAND GROUP PLC,ORD GBP1(RBS)",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": "XLON",
+                  "providerName": null,
+                  "assetCode": null,
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": false,
+                      "sellEligible": false
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": false,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": false,
+                      "sellEligible": false
+                    },
+                    "DFM": {
+                      "buyEligible": false,
+                      "sellEligible": false
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000005",
+                "productType": "GIA",
+                "isin": "GB00B469J896",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YSD",
+                "tradableUnit": 80.4500,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 80.4500,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 100.00,
+                "latestUnitPrice": 124.300,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 100.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXStrategic Bond Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YSD",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000005",
+                "productType": "GIA",
+                "isin": "GB00B3Z9PT62",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YCB",
+                "tradableUnit": 0.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 40.3200,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 50.00,
+                "latestUnitPrice": 124.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 50.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXMoneyBuilder Income Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YCB",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              }
+            ],
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "fggggffg",
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 2880.78,
+            "cashDetails": {
+              "totalCash": 2706.18,
+              "cashToInvest": 2506.18
+            },
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          },
+          {
+            "accountNumber": "A000000006",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": null,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": null,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": null,
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "safgervjfg",
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 1000.00,
+            "cashDetails": {
+              "totalCash": 1000.00,
+              "cashToInvest": 975
+            },
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          },
+          {
+            "accountNumber": "A000000007",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": 229.99,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": 0,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": [
+              {
+                "accountNumber": "A000000007",
+                "productType": "GIA",
+                "isin": "GB00B469J896",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YSD",
+                "tradableUnit": 40.2200,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 40.2200,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 49.99,
+                "latestUnitPrice": 124.300,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 49.99,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXStrategic Bond Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YSD",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000007",
+                "productType": "GIA",
+                "isin": "GB00B3Z9PT62",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "YCB",
+                "tradableUnit": 40.3200,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 40.3200,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 50.00,
+                "latestUnitPrice": 124.00,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 50.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXMoneyBuilder Income Fund Y-Income",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "YCB",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000007",
+                "productType": "GIA",
+                "isin": "GB00B5V8SG93",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "ABEMI",
+                "tradableUnit": 0.0000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 32.7000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 30.00,
+                "latestUnitPrice": 91.7300,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 30.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "Aberdeen Emerging Markets Bond Fund I Inc",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "Aberdeen",
+                  "assetCode": "ABEMI",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              },
+              {
+                "accountNumber": "A000000007",
+                "productType": "GIA",
+                "isin": "GB00BYSYZL73",
+                "sedol": null,
+                "uan": "0",
+                "assetCode": "WGDIM",
+                "tradableUnit": 83.4000,
+                "unrealizedReturnPercentage": 0,
+                "unrealizedReturn": 0,
+                "totalUnits": 83.4000,
+                "purchasePrice": 0,
+                "dayPriceChangePercentage": 0.00,
+                "totalValuation": 100.00,
+                "latestUnitPrice": 119.900,
+                "mutualFund": true,
+                "assetStatus": "OPEN",
+                "dualCurrency": false,
+                "defaultPrice": null,
+                "defaultCurrency": null,
+                "incomeDistribution": "PRODUCT_CASH",
+                "totalWithdrawn": null,
+                "totalAmountInvested": null,
+                "totalIncomeReceived": null,
+                "totalReturnSinceInception": 100.00,
+                "costFundTotal": null,
+                "transferrableUnits": null,
+                "totalAnnualizedReturnPercentage": null,
+                "lotDetails": null,
+                "additionalDetails": {
+                  "selectList": false,
+                  "cleanFund": true,
+                  "assetName": "XXXGlobal Dividend Fund W-MINC-GBP",
+                  "dualPriced": false,
+                  "offShoreFund": false,
+                  "accummulationAsset": false,
+                  "financialInstrumentType": null,
+                  "marketIdentifierCode": null,
+                  "providerName": "XXX",
+                  "assetCode": "WGDIM",
+                  "buySellEligible": {
+                    "ADVISER": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "ADVISED_CLIENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "WEALTH_MANAGEMENT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DFM": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    },
+                    "DIRECT": {
+                      "buyEligible": true,
+                      "sellEligible": true
+                    }
+                  }
+                }
+              }
+            ],
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "fsdfsad",
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 12220.99,
+            "cashDetails": {
+              "totalCash": 11991.00,
+              "cashToInvest": 11991
+            },
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          },
+          {
+            "accountNumber": "A000000008",
+            "accountType": "CUSTOMER",
+            "productType": "GIA",
+            "audienceId": "1202",
+            "totalValuation": null,
+            "taxEfficientDesignation": null,
+            "totalUnrealizedReturn": null,
+            "totalRealizedReturn": null,
+            "totalAnnualizedReturnPercentage": null,
+            "holdings": null,
+            "directLinkedJointGIA": false,
+            "accountPlatform": "SONATA",
+            "stopAndBlocks": null,
+            "uan": null,
+            "adviserName": null,
+            "primaryHolderCDB": "7777777777",
+            "primaryHolderTitle": "Miss",
+            "primaryHolderName": "Mary millicent Acomq",
+            "accountDesignation": "adasdasdasdasda",
+            "primaryHolder": true,
+            "jointAccount": false,
+            "modelAssociated": false,
+            "totalInvestmentPlusCash": 0,
+            "cashDetails": null,
+            "incomeDistribution": "PRODUCT_CASH",
+            "secondaryHolderList": null
+          }
+        ]
+      }
+    },
+    "productAllocationView": null
+  },
+  "advisedAccountGroup": {
+    "Tilney Invt Mgmt Serv Ltd_170224": {
+      "totalAccount": 1,
+      "totalSonataAccount": 0,
+      "totalValuation": 112.81,
+      "totalUnrealizedReturn": 0,
+      "totalRealizedReturn": 0,
+      "totalInvestmentPlusCash": 112.81,
+      "totalAnnualizedReturnPercentage": null,
+      "cashDetails": {
+        "totalCash": 0,
+        "cashToInvest": 0
+      },
+      "pensionPlans": null,
+      "accountProductGroup": {
+        "GIA": {
+          "totalValuation": null,
+          "accountList": [
+            {
+              "accountNumber": "A000000009",
+              "accountType": "CUSTOMER",
+              "productType": "GIA",
+              "audienceId": "1205",
+              "totalValuation": 112.81,
+              "taxEfficientDesignation": null,
+              "totalUnrealizedReturn": 0,
+              "totalRealizedReturn": null,
+              "totalAnnualizedReturnPercentage": null,
+              "holdings": [
+                {
+                  "accountNumber": "A000000009",
+                  "productType": "GIA",
+                  "isin": "GB00BJ04HQ93",
+                  "sedol": null,
+                  "uan": "170224",
+                  "assetCode": "IHIYI",
+                  "tradableUnit": 50.0000,
+                  "unrealizedReturnPercentage": 0,
+                  "unrealizedReturn": 0,
+                  "totalUnits": 50.0000,
+                  "purchasePrice": 0,
+                  "dayPriceChangePercentage": 0.00,
+                  "totalValuation": 112.81,
+                  "latestUnitPrice": 225.6100,
+                  "mutualFund": true,
+                  "assetStatus": "OPEN",
+                  "dualCurrency": false,
+                  "defaultPrice": null,
+                  "defaultCurrency": null,
+                  "incomeDistribution": "REINVEST",
+                  "totalWithdrawn": null,
+                  "totalAmountInvested": null,
+                  "totalIncomeReceived": null,
+                  "totalReturnSinceInception": 112.81,
+                  "costFundTotal": null,
+                  "transferrableUnits": null,
+                  "totalAnnualizedReturnPercentage": null,
+                  "lotDetails": null,
+                  "additionalDetails": {
+                    "selectList": false,
+                    "cleanFund": true,
+                    "assetName": "Invesco Perpetual High Income Y Inc",
+                    "dualPriced": false,
+                    "offShoreFund": false,
+                    "accummulationAsset": false,
+                    "financialInstrumentType": null,
+                    "marketIdentifierCode": null,
+                    "providerName": "Invesco Perpetual",
+                    "assetCode": "IHIYI",
+                    "buySellEligible": {
+                      "ADVISER": {
+                        "buyEligible": true,
+                        "sellEligible": true
+                      },
+                      "ADVISED_CLIENT": {
+                        "buyEligible": true,
+                        "sellEligible": true
+                      },
+                      "WEALTH_MANAGEMENT": {
+                        "buyEligible": true,
+                        "sellEligible": true
+                      },
+                      "DFM": {
+                        "buyEligible": true,
+                        "sellEligible": true
+                      },
+                      "DIRECT": {
+                        "buyEligible": true,
+                        "sellEligible": true
+                      }
+                    }
+                  }
+                }
+              ],
+              "directLinkedJointGIA": false,
+              "accountPlatform": "GFAS",
+              "stopAndBlocks": null,
+              "uan": "170224",
+              "adviserName": "Tilney Invt Mgmt Serv Ltd",
+              "primaryHolderCDB": "7777777777",
+              "primaryHolderTitle": "Miss",
+              "primaryHolderName": "Mary millicent Acomq",
+              "accountDesignation": "ABC",
+              "primaryHolder": true,
+              "jointAccount": false,
+              "modelAssociated": false,
+              "totalInvestmentPlusCash": 112.81,
+              "cashDetails": null,
+              "incomeDistribution": "REINVEST",
+              "secondaryHolderList": null
+            }
+          ]
+        }
+      },
+      "productAllocationView": null,
+      "adviserFirmName": "Tilney Invt Mgmt Serv Ltd",
+      "uan": "170224"
+    }
+  },
+  "linkedAccountGroup": null,
+  "companyPensions": null,
+  "offPlatformAccountGroup": null,
+  "allocationView": {
+    "XXXTotalValuation": null,
+    "offPlatformTotalValuation": null,
+    "XXXProductAllocationView": null,
+    "offPlatformProductAllocationView": null,
+    "overallProductAllocationView": null,
+    "overallTotalValuation": null
+  }
+}

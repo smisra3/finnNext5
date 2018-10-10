@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioBox Component  should mount 1`] = `
+<RadioBox
+  disabled={false}
+  hideLabel={true}
+  imageUrl=""
+  inheritedStyles=""
+  isChecked={false}
+  label={null}
+  labelOnly={false}
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <label
+    className="undefined is-checked"
+    hideLabel={true}
+    inheritedStyles=""
+    label={null}
+  >
+    <input
+      checked={false}
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="radio"
+    />
+    <span
+      className="radio radio-tick radio-checked"
+    />
+  </label>
+</RadioBox>
+`;
+
+exports[`RadioBox Component  should mount 2`] = `
+<label
+  className="undefined is-checked"
+  hideLabel={true}
+  inheritedStyles=""
+  label={null}
+>
+  <input
+    checked={false}
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="radio"
+  />
+  <span
+    className="radio radio-tick radio-checked"
+  />
+</label>
+`;
+
+exports[`RadioBox Component  should render checkbox checked 1`] = `
+<label
+  className="undefined is-checked"
+  hideLabel={false}
+  inheritedStyles=""
+  label={null}
+>
+  <input
+    checked={true}
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="radio"
+  />
+  <span
+    className="radio radio-tick radio-checked"
+  />
+</label>
+`;
+
+exports[`RadioBox Component  should render checkbox without label 1`] = `
+<label
+  className="undefined"
+  hideLabel={true}
+  inheritedStyles=""
+  label={null}
+>
+  <input
+    checked={false}
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="radio"
+  />
+  <span
+    className="radio radio-tick  radio-unchecked"
+  />
+</label>
+`;
+
+exports[`RadioBox Component  should render correctly 1`] = `
+<label
+  className="undefined"
+  hideLabel={false}
+  inheritedStyles=""
+  label={null}
+>
+  <input
+    checked={false}
+    disabled={false}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="radio"
+  />
+  <span
+    className="radio radio-tick  radio-unchecked"
+  />
+</label>
+`;
+
+exports[`RadioBox Component with style  should render correctly with styles 1`] = `
+<RadioBox
+  className="sc-bdVaJa fbJpqK"
+  disabled={false}
+  hideLabel={false}
+  imageUrl=""
+  inheritedStyles=""
+  isChecked={false}
+  label={null}
+  labelOnly={false}
+  onBlur={[Function]}
+  onFocus={[Function]}
+/>
+`;

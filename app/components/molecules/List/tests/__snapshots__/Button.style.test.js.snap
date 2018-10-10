@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly 1`] = `
+.c0 {
+  border: none;
+  border-radius: 0;
+  background: none;
+  position: relative;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c0:focus {
+  outline: 1px dashed #000000;
+}
+
+.c0:focus:not(.focus-visible) {
+  outline: none;
+}
+
+.c0 .spinner {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c0 .spinner.center-spinner {
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c0 .spinner div {
+  height: 25px;
+  width: 25px;
+  top: 0;
+}
+
+<Button
+  ariaLabel=""
+  className="c0"
+  disabled={false}
+  inheritedStyles=""
+  loader={false}
+  loaderPositionCenter={false}
+  primary={false}
+  secondary={false}
+  theme={
+    Object {
+      "accordionDisabledBorderColor": "#666",
+      "backgroundColor1": "grey",
+      "backgroundColor2": "whitesmoke",
+      "backgroundColor3": "#4e565f",
+      "backgroundColor4": "#eeeeee",
+      "backgroundGrey": "#efefef",
+      "baseFontSize": "13px",
+      "baseLineHeight": "1.5",
+      "borderColor": "#000000",
+      "borderLightGrey": "#bfbfbf",
+      "brandColor": "red",
+      "darkGrey1": "#c2c2c2",
+      "darkGrey2": "#d6d6d6",
+      "darkGrey3": "#484848",
+      "darkGrey4": "#888888",
+      "darkGrey5": "#bebebe",
+      "darkGrey6": "#404040",
+      "deviceType": "desktop",
+      "disableColor": "#cfcfcf",
+      "errorColor": "#c60e0e",
+      "errorMessage": "#c60e0e",
+      "errorRed": "#c60e0e",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "headerFont": Object {
+        "common": Object {
+          "utilNavigationFlyoutSize": "14px",
+          "utilNavigationSize": "11px",
+          "utilNavigationSpacing": "1px",
+        },
+        "mobile": Object {
+          "megaMenuLinkSize": "16px",
+          "navigationBarLinkSize": "20px",
+        },
+      },
+      "headerShadowColor": "rgba(145,145,145,0.4)",
+      "iconCheckedColor": "#00aa99",
+      "inputPlaceholder": "#aaaaaa",
+      "inputPlaceholder2": "#767676",
+      "letterSpacing": "1px",
+      "lightGrey1": "#717171",
+      "lightGrey10": "#cdcdcd",
+      "lightGrey11": "#f4f4f4",
+      "lightGrey2": "#f5f5f5",
+      "lightGrey3": "#d8d8d8",
+      "lightGrey4": "#aeaeae",
+      "lightGrey5": "#eeeeee",
+      "lightGrey8": "#cccccc",
+      "lightGrey9": "#f3f3f3",
+      "marketingMsgColor": "#bd10e0",
+      "messageDefaultBorderColor": "#ccc",
+      "minicartTextColor": "#100000",
+      "navFontSize": "20px",
+      "plpLeftNavBorder": "#979797",
+      "primaryBgColor": "#ffffff",
+      "primaryColor": "#000000",
+      "primaryFontFamily": "sofia-pro",
+      "primary_textColor": "#ffffff",
+      "promoRed": "#c44f4f",
+      "secondaryBgColor": "#000000",
+      "secondaryColor": "#ffffff",
+      "secondaryFontFamily": "HelveticaNeueW01-55roma, Helvetica, sans-serif",
+      "secondaryLightFontFamily": "HelveticaNeueW01-45Ligh, Helvetica, sans-serif",
+      "secondaryMediumFontFamily": "HelveticaNeueW01-75bold, Helvetica, sans-serif",
+      "secondary_textColor": "#000000",
+      "successColor": "#2e993a",
+      "successColorBalance": "#009600",
+      "successColorBalance2": "#00ad99",
+      "successText": "#009000",
+      "textFieldBorder": "#717171",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+  type="button"
+/>
+`;
+
+exports[`Button should render correctly for mobile 1`] = `
+.c0 {
+  border: none;
+  border-radius: 0;
+  background: none;
+  position: relative;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.c0:focus {
+  outline: 1px dashed #000000;
+}
+
+.c0:focus:not(.focus-visible) {
+  outline: none;
+}
+
+.c0 .spinner {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c0 .spinner.center-spinner {
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.c0 .spinner div {
+  height: 25px;
+  width: 25px;
+  top: 0;
+}
+
+<Button
+  ariaLabel=""
+  className="c0"
+  disabled={false}
+  inheritedStyles=""
+  loader={false}
+  loaderPositionCenter={false}
+  primary={false}
+  secondary={false}
+  theme={
+    Object {
+      "accordionDisabledBorderColor": "#666",
+      "backgroundColor1": "grey",
+      "backgroundColor2": "whitesmoke",
+      "backgroundColor3": "#4e565f",
+      "backgroundColor4": "#eeeeee",
+      "backgroundGrey": "#efefef",
+      "baseFontSize": "13px",
+      "baseLineHeight": "1.5",
+      "borderColor": "#000000",
+      "borderLightGrey": "#bfbfbf",
+      "brandColor": "red",
+      "darkGrey1": "#c2c2c2",
+      "darkGrey2": "#d6d6d6",
+      "darkGrey3": "#484848",
+      "darkGrey4": "#888888",
+      "darkGrey5": "#bebebe",
+      "darkGrey6": "#404040",
+      "deviceType": "mobile",
+      "disableColor": "#cfcfcf",
+      "errorColor": "#c60e0e",
+      "errorMessage": "#c60e0e",
+      "errorRed": "#c60e0e",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "headerFont": Object {
+        "common": Object {
+          "utilNavigationFlyoutSize": "14px",
+          "utilNavigationSize": "11px",
+          "utilNavigationSpacing": "1px",
+        },
+        "mobile": Object {
+          "megaMenuLinkSize": "16px",
+          "navigationBarLinkSize": "20px",
+        },
+      },
+      "headerShadowColor": "rgba(145,145,145,0.4)",
+      "iconCheckedColor": "#00aa99",
+      "inputPlaceholder": "#aaaaaa",
+      "inputPlaceholder2": "#767676",
+      "letterSpacing": "1px",
+      "lightGrey1": "#717171",
+      "lightGrey10": "#cdcdcd",
+      "lightGrey11": "#f4f4f4",
+      "lightGrey2": "#f5f5f5",
+      "lightGrey3": "#d8d8d8",
+      "lightGrey4": "#aeaeae",
+      "lightGrey5": "#eeeeee",
+      "lightGrey8": "#cccccc",
+      "lightGrey9": "#f3f3f3",
+      "marketingMsgColor": "#bd10e0",
+      "messageDefaultBorderColor": "#ccc",
+      "minicartTextColor": "#100000",
+      "navFontSize": "20px",
+      "plpLeftNavBorder": "#979797",
+      "primaryBgColor": "#ffffff",
+      "primaryColor": "#000000",
+      "primaryFontFamily": "sofia-pro",
+      "primary_textColor": "#ffffff",
+      "promoRed": "#c44f4f",
+      "secondaryBgColor": "#000000",
+      "secondaryColor": "#ffffff",
+      "secondaryFontFamily": "HelveticaNeueW01-55roma, Helvetica, sans-serif",
+      "secondaryLightFontFamily": "HelveticaNeueW01-45Ligh, Helvetica, sans-serif",
+      "secondaryMediumFontFamily": "HelveticaNeueW01-75bold, Helvetica, sans-serif",
+      "secondary_textColor": "#000000",
+      "successColor": "#2e993a",
+      "successColorBalance": "#009600",
+      "successColorBalance2": "#00ad99",
+      "successText": "#009000",
+      "textFieldBorder": "#717171",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+  type="button"
+/>
+`;

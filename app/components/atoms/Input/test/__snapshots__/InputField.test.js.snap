@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component should render correctly 1`] = `
+<div>
+  <div
+    className="label-wrapper"
+  >
+    <label />
+  </div>
+  <div
+    className="input-wrapper"
+  >
+    <input
+      aria-invalid={true}
+      aria-required={null}
+      data-slnm-id="test"
+      dynamicPlaceholderLabel={true}
+      hideLabel={true}
+      iconClass="iconClass"
+      isError={true}
+      maxLength={1}
+      onChange={[Function]}
+      onKeyUp={[Function]}
+      placeholder="test"
+      type="text"
+      valid={true}
+      value=""
+    />
+  </div>
+  <Styled(FieldError)
+    dataSlnmId="InputField"
+    errorMessage="errorMessage"
+  />
+</div>
+`;
+
+exports[`Input Component should render correctly 2`] = `
+<div>
+  <div
+    className="label-wrapper"
+  >
+    <label />
+  </div>
+  <div
+    className="input-wrapper"
+  >
+    <input
+      aria-invalid={true}
+      aria-required={null}
+      data-slnm-id="test"
+      dynamicPlaceholderLabel={true}
+      hideLabel={false}
+      iconClass="iconClass"
+      isError={true}
+      maxLength={1}
+      onChange={[Function]}
+      onKeyUp={[Function]}
+      placeholder="test"
+      type="text"
+      valid={true}
+      value=""
+    />
+  </div>
+  <Styled(FieldError)
+    dataSlnmId="InputField"
+    errorMessage="errorMessage"
+  />
+</div>
+`;
+
+exports[`Input Component should render correctly 3`] = `
+<div>
+  <div
+    className="label-wrapper"
+  >
+    <label />
+  </div>
+  <div
+    className="input-wrapper"
+  >
+    <input
+      aria-invalid={true}
+      aria-required={null}
+      data-slnm-id="test"
+      dynamicPlaceholderLabel={true}
+      hideLabel={false}
+      isError={false}
+      maxLength={1}
+      onChange={[Function]}
+      onKeyUp={[Function]}
+      placeholder="test"
+      type="text"
+      valid={true}
+      value=""
+    />
+  </div>
+  <Styled(FieldError)
+    dataSlnmId="InputField"
+    errorMessage="errorMessage"
+  />
+</div>
+`;

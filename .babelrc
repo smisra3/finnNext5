@@ -1,0 +1,53 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./app"],
+        "alias": {
+          "~": "./node_modules"
+        },
+        "cwd": "babelrc"
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": ["next/babel", "flow"],
+      "plugins": [
+        ["@quickbaseoss/babel-plugin-styled-components-css-namespace", { "cssNamespace": "app" }],
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": true,
+            "displayName": false
+          }
+        ]
+      ]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        ["@quickbaseoss/babel-plugin-styled-components-css-namespace", { "cssNamespace": "app" }],
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": true
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "preset-env": {
+              "modules": "commonjs"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

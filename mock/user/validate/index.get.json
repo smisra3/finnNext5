@@ -1,0 +1,9 @@
+{
+  "status": "success",
+  "message": "Invalid user.",
+  "data": [
+    {
+      "isUserExists": true
+    }
+  ]
+}

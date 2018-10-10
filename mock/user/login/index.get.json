@@ -1,0 +1,8 @@
+{
+    "status": "success",
+    "message": "Invalid User",
+    "data": {
+      "userName": "ABC",
+      "userId": "12345"
+    }
+  }

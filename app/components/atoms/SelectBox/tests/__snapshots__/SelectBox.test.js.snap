@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Box Component should match the snapshot 1`] = `
+<SelectBox
+  alternateSelectedLabel={false}
+  alwaysRefresh={false}
+  className="custom-class"
+  configLabel={null}
+  customViewOnly={false}
+  deviceType="mobile"
+  disabled={false}
+  dynamicPlaceholderLabel={false}
+  errorMessage=""
+  inheritedStyles=""
+  isClearLabel={true}
+  isError={false}
+  isValid={false}
+  labelContent=""
+  onBlur={[Function]}
+  onChange={[Function]}
+  onSelect={[Function]}
+  options={
+    Array [
+      Object {
+        "label": "label",
+        "value": "1",
+      },
+    ]
+  }
+  placeholder=""
+  selected={false}
+  showLabel={false}
+  stopBlur={false}
+  theme={
+    Object {
+      "backgroundColorDisabled": "grey",
+      "backgroundColorPrimary": "#fff",
+      "backgroundColorSecondary": "#eaf2f6",
+      "backgroundColorSuccess": "#2e993a",
+      "brandPrimaryColor": "#006193",
+      "buttonBackgroundColorPrimary": "#e57725",
+      "buttonBackgroundColorSecondary": "#016fad",
+      "buttonColorPrimary": "#ffffff",
+      "buttonColorSecondary": "#ffffff",
+      "cautionBackgroundColor": "#fffdf3",
+      "colorOutline": "#999",
+      "containerShadowPrimary": "rgba(0,0,0,.2)",
+      "fieldBorderColor": "#bfbfbf",
+      "fieldBorderDisabledColor": "#bfdfdf",
+      "fieldBorderErrorColor": "#c00",
+      "fieldBorderFocusColor": "#006193",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontFamilyDefault": "Arial, Helvetica, sans-serif",
+      "fontFamilyIcon": "",
+      "fontFamilyPrimary": "Arial, Helvetica, sans-serif",
+      "fontFamilySecondary": "Arial, Helvetica, sans-serif",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "fontSizeBase": "16px",
+      "fontSizeButtonPrimary": "24px",
+      "fontSizeButtonSecondary": "16px",
+      "fontSizeDefault": "12px",
+      "letterSpacing": "1px",
+      "lineHeightBase": "1.5",
+      "linkColorPrimary": "#008CBA",
+      "textColorError": "#c00",
+      "textColorPlaceholder": "#dfdfdf",
+      "textColorPrimary": "#222",
+      "textColorSecondary": "#262626",
+      "textColorSuccess": "#2e993a",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+  valid={false}
+>
+  <div
+    alternateSelectedLabel={false}
+    alwaysRefresh={false}
+    className="form-group select-box custom-select-box custom-class  "
+    configLabel={null}
+    isClearLabel={true}
+    isValid={false}
+    onSelect={[Function]}
+    selected={false}
+    stopBlur={false}
+    theme={
+      Object {
+        "backgroundColorDisabled": "grey",
+        "backgroundColorPrimary": "#fff",
+        "backgroundColorSecondary": "#eaf2f6",
+        "backgroundColorSuccess": "#2e993a",
+        "brandPrimaryColor": "#006193",
+        "buttonBackgroundColorPrimary": "#e57725",
+        "buttonBackgroundColorSecondary": "#016fad",
+        "buttonColorPrimary": "#ffffff",
+        "buttonColorSecondary": "#ffffff",
+        "cautionBackgroundColor": "#fffdf3",
+        "colorOutline": "#999",
+        "containerShadowPrimary": "rgba(0,0,0,.2)",
+        "fieldBorderColor": "#bfbfbf",
+        "fieldBorderDisabledColor": "#bfdfdf",
+        "fieldBorderErrorColor": "#c00",
+        "fieldBorderFocusColor": "#006193",
+        "fontBold": "700",
+        "fontBook": "400",
+        "fontFamilyDefault": "Arial, Helvetica, sans-serif",
+        "fontFamilyIcon": "",
+        "fontFamilyPrimary": "Arial, Helvetica, sans-serif",
+        "fontFamilySecondary": "Arial, Helvetica, sans-serif",
+        "fontMedium": "500",
+        "fontNormal": "normal",
+        "fontSemiBold": "600",
+        "fontSizeBase": "16px",
+        "fontSizeButtonPrimary": "24px",
+        "fontSizeButtonSecondary": "16px",
+        "fontSizeDefault": "12px",
+        "letterSpacing": "1px",
+        "lineHeightBase": "1.5",
+        "linkColorPrimary": "#008CBA",
+        "textColorError": "#c00",
+        "textColorPlaceholder": "#dfdfdf",
+        "textColorPrimary": "#222",
+        "textColorSecondary": "#262626",
+        "textColorSuccess": "#2e993a",
+        "zIndex": Object {
+          "zFilter": 100,
+          "zFilterActions": 400,
+          "zFilterList": 150,
+          "zFlyout": 200,
+          "zLoader": 1000,
+          "zMenu": 800,
+          "zNativeTickSelectIcon": 50,
+          "zOverlay": 900,
+          "zPlacesAutocomplete": 1100,
+          "zSticky": 700,
+        },
+      }
+    }
+  >
+    <label>
+      <select
+        aria-hidden="true"
+        className="form-control select-element "
+        data-error={false}
+        data-slnm-id="undefinedNativeSelectBox"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        tabIndex="-1"
+        value=""
+      >
+        <option
+          key="1"
+          value="1"
+        >
+          label
+        </option>
+      </select>
+    </label>
+    <span
+      aria-controls={null}
+      aria-expanded={false}
+      className="custom-selected "
+      data-error={false}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="menu"
+      tabIndex="0"
+    >
+      <i
+        className="icon-arrow arrow-down4"
+        role="menuitem"
+      />
+    </span>
+  </div>
+</SelectBox>
+`;
+
+exports[`Select Box Component styled select box test 1`] = `
+<SelectBox
+  alternateSelectedLabel={false}
+  alwaysRefresh={false}
+  className="sc-bdVaJa fhjKzq"
+  configLabel={null}
+  customViewOnly={false}
+  disabled={false}
+  dynamicPlaceholderLabel={false}
+  errorMessage=""
+  inheritedStyles=""
+  isClearLabel={false}
+  isError={false}
+  isValid={false}
+  labelContent=""
+  onBlur={[Function]}
+  onChange={[Function]}
+  onSelect={[Function]}
+  placeholder=""
+  selected=""
+  showLabel={false}
+  stopBlur={false}
+  theme={
+    Object {
+      "backgroundColorDisabled": "grey",
+      "backgroundColorPrimary": "#fff",
+      "backgroundColorSecondary": "#eaf2f6",
+      "backgroundColorSuccess": "#2e993a",
+      "brandPrimaryColor": "#006193",
+      "buttonBackgroundColorPrimary": "#e57725",
+      "buttonBackgroundColorSecondary": "#016fad",
+      "buttonColorPrimary": "#ffffff",
+      "buttonColorSecondary": "#ffffff",
+      "cautionBackgroundColor": "#fffdf3",
+      "colorOutline": "#999",
+      "containerShadowPrimary": "rgba(0,0,0,.2)",
+      "deviceType": "desktop",
+      "fieldBorderColor": "#bfbfbf",
+      "fieldBorderDisabledColor": "#bfdfdf",
+      "fieldBorderErrorColor": "#c00",
+      "fieldBorderFocusColor": "#006193",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontFamilyDefault": "Arial, Helvetica, sans-serif",
+      "fontFamilyIcon": "",
+      "fontFamilyPrimary": "Arial, Helvetica, sans-serif",
+      "fontFamilySecondary": "Arial, Helvetica, sans-serif",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "fontSizeBase": "16px",
+      "fontSizeButtonPrimary": "24px",
+      "fontSizeButtonSecondary": "16px",
+      "fontSizeDefault": "12px",
+      "letterSpacing": "1px",
+      "lineHeightBase": "1.5",
+      "linkColorPrimary": "#008CBA",
+      "textColorError": "#c00",
+      "textColorPlaceholder": "#dfdfdf",
+      "textColorPrimary": "#222",
+      "textColorSecondary": "#262626",
+      "textColorSuccess": "#2e993a",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+  valid={false}
+/>
+`;

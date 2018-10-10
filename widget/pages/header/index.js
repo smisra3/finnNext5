@@ -1,0 +1,62 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "../../../app/components/organisms/Header";
+const props = {
+  theme: {
+    minHeightHeaderMobile: 1,
+    deviceType: "Desktop",
+    backgroundColorDisabled: "grey",
+    backgroundColorGrey: "#eee",
+    backgroundColorPrimary: "#fff",
+    backgroundColorSecondary: "#eaf2f6",
+    backgroundColorSuccess: "#2e993a",
+    borderColorBoldest: "#c00",
+    borderColorSecondary: "#d9d9d9",
+    brandPrimaryColor: "#006193",
+    buttonBackgroundColorPrimary: "#e57725",
+    buttonBackgroundColorSecondary: "#016fad",
+    buttonColorPrimary: "#ffffff",
+    buttonColorSecondary: "#ffffff",
+    cautionBackgroundColor: "#fffdf3",
+    colorOutline: "#999",
+    containerShadowPrimary: "rgba(0,0,0,.2)",
+    deviceType: "desktop",
+    fieldBorderColor: "#bfbfbf",
+    fieldBorderDisabledColor: "#bfdfdf",
+    fieldBorderErrorColor: "#c00",
+    fieldBorderFocusColor: "#006193",
+    fontBold: "700",
+    fontBook: "400",
+    fontFamilyDefault: "Arial, Helvetica, sans-serif",
+    fontFamilyIcon: "",
+    fontFamilyPrimary: "Arial, Helvetica, sans-serif",
+    fontFamilySecondary: "Arial, Helvetica, sans-serif",
+    fontMedium: "500",
+    fontNormal: "normal",
+    fontSemiBold: "600",
+    fontSizeBase: "16px",
+    fontSizeButtonPrimary: "24px",
+    fontSizeButtonSecondary: "16px",
+    fontSizeDefault: "12px",
+    fontSizeHighlight: "18px",
+    hasRightGutter: false,
+    letterSpacing: "0px",
+    lineHeightBase: "1.5",
+    linkColorPrimary: "#008CBA",
+    linkColorSecondary: "#016fad",
+    maxWidthPageContent: "80rem",
+    minHeightHeaderDesktop: 76,
+    minHeightHeaderMobile: 113,
+    textColorBrandPrimary: "#006193",
+    textColorError: "#c00",
+    textColorPlaceholder: "#dfdfdf",
+    textColorPrimary: "#222",
+    textColorSecondary: "#262626",
+    textColorSecondaryLight: "#666",
+    textColorSuccess: "#2e993a",
+    zIndex: {
+      zSticky: 1
+    }
+  }
+};
+ReactDOM.render(<Header {...props} />, document.getElementById("header"));

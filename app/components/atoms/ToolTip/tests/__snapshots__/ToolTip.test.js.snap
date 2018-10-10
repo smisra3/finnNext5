@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToolTip /> should render correctly 1`] = `
+<button
+  className="string tooltip-parent  is-tooltip-hidden"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyPress={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="tooltip-icon"
+    data-slnm-id="toolTipCTA"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div>
+      TEST
+    </div>
+  </span>
+  <span
+    className="tooltip-label"
+    data-slnm-id="toolTipBubble"
+    style={
+      Object {
+        "left": "-100%",
+        "width": "13em",
+      }
+    }
+  >
+    <span
+      className="tooltip-label-child"
+    >
+      TEST
+    </span>
+  </span>
+</button>
+`;

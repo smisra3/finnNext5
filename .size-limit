@@ -1,0 +1,10 @@
+[
+    {
+      "path": "./app/.next/main.js",
+      "limit": "200 KB"
+    },
+    {
+      "path": "app/.next/bundles/pages/index.js",
+      "limit": "5 KB"
+    },
+]

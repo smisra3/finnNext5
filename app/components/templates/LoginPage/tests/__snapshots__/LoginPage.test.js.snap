@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn Component should render correctly 1`] = `
+<Connect(Layout)
+  className="row"
+  title="SIGN IN"
+>
+  <styled.div
+    className="col-xs-12 row"
+  >
+    <HeadTag
+      card="card"
+      description="Login | Ann Taylor Factory"
+      image="image"
+      siteName="factory.anntaylor.com"
+      title="Login | Ann Taylor Factory"
+      url="canonical url"
+    />
+    <h1
+      className="visually-hidden"
+    >
+      Login | Ann Taylor Factory
+    </h1>
+    <ContentSlotUnsafeHTML
+      className="col-xs-12"
+      hasScript={true}
+      wrapper={null}
+    />
+    <Connect(Styled(SignUp))
+      className="col-sm-offset-2 col-sm-4 col-xs-12"
+    />
+    <Connect(Styled(SignIn))
+      className="col-sm-offset-1 col-sm-4 col-xs-12"
+      showForgetModal={[Function]}
+    />
+  </styled.div>
+</Connect(Layout)>
+`;
+
+exports[`SignIn Component should render correctly 2`] = `
+<Connect(Layout)
+  className="row"
+  title="SIGN IN"
+>
+  <styled.div
+    className="col-xs-12 row"
+  >
+    <HeadTag
+      card="card"
+      description="Login | Ann Taylor Factory"
+      image="image"
+      siteName="factory.anntaylor.com"
+      title="Login | Ann Taylor Factory"
+      url="canonical url"
+    />
+    <h1
+      className="visually-hidden"
+    >
+      Login | Ann Taylor Factory
+    </h1>
+    <ContentSlotUnsafeHTML
+      className="col-xs-12"
+      hasScript={true}
+      wrapper={null}
+    />
+    <Connect(Styled(SignIn))
+      className="col-sm-offset-1 col-sm-4 col-xs-12"
+      showForgetModal={[Function]}
+    />
+    <Connect(Styled(SignUp))
+      className="col-sm-offset-2 col-sm-4 col-xs-12"
+    />
+  </styled.div>
+</Connect(Layout)>
+`;

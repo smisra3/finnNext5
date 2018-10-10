@@ -1,0 +1,18 @@
+{
+  "source": "./app",
+  "destination": "./reports/docs",
+  "excludes": ["\\style\\.js$", "\\.next", "test\\.js$"],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": { "enable": false },
+        "coverage": { "enable": false }
+      }
+    },
+    { "name": "esdoc-react-plugin" },
+    { "name": "esdoc-jsx-plugin", "option": { "enable": true } },
+    { "name": "esdoc-ecmascript-proposal-plugin", "option": { "all": true } },
+    { "name": "esdoc-flow-type-plugin", "option": { "enable": true } }
+  ]
+}

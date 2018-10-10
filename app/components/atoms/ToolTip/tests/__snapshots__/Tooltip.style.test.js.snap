@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToolTip /> should render correctly 1`] = `
+<button
+  className="string tooltip-parent  is-tooltip-hidden"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyPress={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="tooltip-icon"
+    data-slnm-id="toolTipCTA"
+    onClick={[Function]}
+    role="presentation"
+  >
+    <div>
+      TEST
+    </div>
+  </span>
+  <span
+    className="tooltip-label"
+    data-slnm-id="toolTipBubble"
+    style={
+      Object {
+        "left": "-100%",
+        "width": "13em",
+      }
+    }
+  >
+    <span
+      className="tooltip-label-child"
+    >
+      TEST
+    </span>
+  </span>
+</button>
+`;
+
+exports[`Tooltip Component should render with desktop styles correctly and match snapshot 1`] = `
+<ToolTip
+  className="string sc-bdVaJa eydXlM"
+  container="tooltip"
+  deviceType=""
+  isLargeToolTip={false}
+  label="TEST"
+  onClick={[Function]}
+  theme={
+    Object {
+      "backgroundColorDisabled": "grey",
+      "backgroundColorPrimary": "#fff",
+      "backgroundColorSecondary": "#eaf2f6",
+      "backgroundColorSuccess": "#2e993a",
+      "brandPrimaryColor": "#006193",
+      "buttonBackgroundColorPrimary": "#e57725",
+      "buttonBackgroundColorSecondary": "#016fad",
+      "buttonColorPrimary": "#ffffff",
+      "buttonColorSecondary": "#ffffff",
+      "cautionBackgroundColor": "#fffdf3",
+      "colorOutline": "#999",
+      "containerShadowPrimary": "rgba(0,0,0,.2)",
+      "deviceType": "desktop",
+      "fieldBorderColor": "#bfbfbf",
+      "fieldBorderDisabledColor": "#bfdfdf",
+      "fieldBorderErrorColor": "#c00",
+      "fieldBorderFocusColor": "#006193",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontFamilyDefault": "Arial, Helvetica, sans-serif",
+      "fontFamilyIcon": "",
+      "fontFamilyPrimary": "Arial, Helvetica, sans-serif",
+      "fontFamilySecondary": "Arial, Helvetica, sans-serif",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "fontSizeBase": "16px",
+      "fontSizeButtonPrimary": "24px",
+      "fontSizeButtonSecondary": "16px",
+      "fontSizeDefault": "12px",
+      "letterSpacing": "1px",
+      "lineHeightBase": "1.5",
+      "linkColorPrimary": "#008CBA",
+      "textColorError": "#c00",
+      "textColorPlaceholder": "#dfdfdf",
+      "textColorPrimary": "#222",
+      "textColorSecondary": "#262626",
+      "textColorSuccess": "#2e993a",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+>
+  <div>
+    TEST
+  </div>
+</ToolTip>
+`;

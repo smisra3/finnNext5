@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should render correctly 1`] = `
+.c0 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+<List
+  className="c0"
+  defaultStyles={false}
+  elementRef={null}
+  inheritedStyles=""
+  listItemStyle={null}
+  listType="ul"
+  theme={
+    Object {
+      "backgroundColorDisabled": "grey",
+      "backgroundColorPrimary": "#fff",
+      "backgroundColorSecondary": "#eaf2f6",
+      "backgroundColorSuccess": "#2e993a",
+      "borderColorBoldest": "#c00",
+      "borderColorSecondary": "#d9d9d9",
+      "brandPrimaryColor": "#006193",
+      "buttonBackgroundColorPrimary": "#e57725",
+      "buttonBackgroundColorSecondary": "#016fad",
+      "buttonColorPrimary": "#ffffff",
+      "buttonColorSecondary": "#ffffff",
+      "cautionBackgroundColor": "#fffdf3",
+      "colorOutline": "#999",
+      "containerShadowPrimary": "rgba(0,0,0,.2)",
+      "deviceType": "desktop",
+      "fieldBorderColor": "#bfbfbf",
+      "fieldBorderDisabledColor": "#bfdfdf",
+      "fieldBorderErrorColor": "#c00",
+      "fieldBorderFocusColor": "#006193",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontFamilyDefault": "Arial, Helvetica, sans-serif",
+      "fontFamilyIcon": "",
+      "fontFamilyPrimary": "Arial, Helvetica, sans-serif",
+      "fontFamilySecondary": "Arial, Helvetica, sans-serif",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "fontSizeBase": "16px",
+      "fontSizeButtonPrimary": "24px",
+      "fontSizeButtonSecondary": "16px",
+      "fontSizeDefault": "12px",
+      "fontSizeHighlight": "18px",
+      "letterSpacing": "0px",
+      "lineHeightBase": "1.5",
+      "linkColorPrimary": "#008CBA",
+      "linkColorSecondary": "#016fad",
+      "maxWidthPageContent": "80rem",
+      "minHeightHeaderDesktop": 76,
+      "minHeightHeaderMobile": 113,
+      "textColorBrandPrimary": "#006193",
+      "textColorError": "#c00",
+      "textColorPlaceholder": "#dfdfdf",
+      "textColorPrimary": "#222",
+      "textColorSecondary": "#262626",
+      "textColorSecondaryLight": "#666",
+      "textColorSuccess": "#2e993a",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+/>
+`;
+
+exports[`List should render correctly for mobile 1`] = `
+.c0 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+<List
+  className="c0"
+  defaultStyles={false}
+  elementRef={null}
+  inheritedStyles=""
+  listItemStyle={null}
+  listType="ul"
+  theme={
+    Object {
+      "backgroundColorDisabled": "grey",
+      "backgroundColorPrimary": "#fff",
+      "backgroundColorSecondary": "#eaf2f6",
+      "backgroundColorSuccess": "#2e993a",
+      "borderColorBoldest": "#c00",
+      "borderColorSecondary": "#d9d9d9",
+      "brandPrimaryColor": "#006193",
+      "buttonBackgroundColorPrimary": "#e57725",
+      "buttonBackgroundColorSecondary": "#016fad",
+      "buttonColorPrimary": "#ffffff",
+      "buttonColorSecondary": "#ffffff",
+      "cautionBackgroundColor": "#fffdf3",
+      "colorOutline": "#999",
+      "containerShadowPrimary": "rgba(0,0,0,.2)",
+      "deviceType": "mobile",
+      "fieldBorderColor": "#bfbfbf",
+      "fieldBorderDisabledColor": "#bfdfdf",
+      "fieldBorderErrorColor": "#c00",
+      "fieldBorderFocusColor": "#006193",
+      "fontBold": "700",
+      "fontBook": "400",
+      "fontFamilyDefault": "Arial, Helvetica, sans-serif",
+      "fontFamilyIcon": "",
+      "fontFamilyPrimary": "Arial, Helvetica, sans-serif",
+      "fontFamilySecondary": "Arial, Helvetica, sans-serif",
+      "fontMedium": "500",
+      "fontNormal": "normal",
+      "fontSemiBold": "600",
+      "fontSizeBase": "16px",
+      "fontSizeButtonPrimary": "24px",
+      "fontSizeButtonSecondary": "16px",
+      "fontSizeDefault": "12px",
+      "fontSizeHighlight": "18px",
+      "letterSpacing": "0px",
+      "lineHeightBase": "1.5",
+      "linkColorPrimary": "#008CBA",
+      "linkColorSecondary": "#016fad",
+      "maxWidthPageContent": "80rem",
+      "minHeightHeaderDesktop": 76,
+      "minHeightHeaderMobile": 113,
+      "textColorBrandPrimary": "#006193",
+      "textColorError": "#c00",
+      "textColorPlaceholder": "#dfdfdf",
+      "textColorPrimary": "#222",
+      "textColorSecondary": "#262626",
+      "textColorSecondaryLight": "#666",
+      "textColorSuccess": "#2e993a",
+      "zIndex": Object {
+        "zFilter": 100,
+        "zFilterActions": 400,
+        "zFilterList": 150,
+        "zFlyout": 200,
+        "zLoader": 1000,
+        "zMenu": 800,
+        "zNativeTickSelectIcon": 50,
+        "zOverlay": 900,
+        "zPlacesAutocomplete": 1100,
+        "zSticky": 700,
+      },
+    }
+  }
+/>
+`;

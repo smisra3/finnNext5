@@ -1,0 +1,12 @@
+{
+    "source": {
+        "include": ["./app", "./server", "./stories"],
+        "exclude": ["./app/.next"]
+    },
+    "opts": {
+        "template": "templates/default",
+        "encoding": "utf8",
+        "destination": "./docs/",
+        "recurse": true
+    }
+}

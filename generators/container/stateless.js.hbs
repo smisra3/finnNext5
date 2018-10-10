@@ -1,0 +1,14 @@
+/** * * {{properCase name }} * */ // @flow import type { Node } from 'react'; {{#if wantPage}} import enhance from '../../../lib/dynamicStore';
+{{else}} import { connect } from 'react-redux'; {{/if}} {{#if wantActionsAndReducer}} import { } from './{{properCase name}}.actions';
+import reducer from './{{properCase name}}.reducer'; import { } from '../../../constants'; {{/if}} {{#if wantSaga}} import
+saga from './{{properCase name}}.saga'; {{/if}} import type { State, Props } from './types'; import styles from './{{properCase
+name}}.style'; import styled from 'styled-components'; const {{ properCase name }} = ({ }: Props): Node => (
+<div>
+  <div>{{properCase name}} Component</div>
+</div>
+); {{ properCase name }}.defaultProps = { }; {{#if wantActionsAndReducer}} const mapStateToProps = (store) => ({}); const
+mapDispatchToProps = (dispatch) => ({}); {{#if wantPage}} const {{ properCase name }}Component = enhance(styled({{properCase
+name}}, styles), { mapStateToProps, mapDispatchToProps, key: '{{ camelCase name }}', {{#if wantActionsAndReducer}}reducer,{{/if}}
+{{#if wantSaga}}saga,{{/if}} }); export default {{ properCase name }}Component; {{else}} const {{ properCase name }}Component
+= connect(mapStateToProps, mapDispatchToProps); const {{ properCase name }}ComponentStyle = {{ properCase name }}Component(styled({{properCase
+name}}, styles)); export default {{ properCase name }}ComponentStyle; export { {{ properCase name }}Component};{{/if}}{{/if}}
