@@ -37,13 +37,17 @@ class HomePage extends Component<Props> {
 
   addWidgets = () => {
     alert("ran after popup is opened");
+    if(document.getElementById('widget'))
+      return;
     const script = document.createElement('script');
+    const scriptContainer = document.createElement('div');
+    scriptContainer.id = 'widget';
     script.type = 'text/javascript';
     script.async = true;
     script.src = 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css';
-    const s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(script, s); 
-    alert('Widget Script has been and downloaded..see network tab in Dev Tools')
+    document.getElementsByTagName('script')[0].parentNode.appendChild(scriptContainer); 
+    scriptContainer.appendChild(script) 
+    alert('Widget Script has been downloaded..see network tab in Dev Tools')
   }
   
   render() {
