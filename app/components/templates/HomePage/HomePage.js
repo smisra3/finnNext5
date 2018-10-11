@@ -1,5 +1,5 @@
 // @flow
-import { PureComponent } from "react";
+import { Component } from "react";
 import get from "lodash/get";
 import Layout from "../Layout";
 import enhance from "../../../lib/dynamicStore";
@@ -9,10 +9,12 @@ import Image from '../../atoms/Image';
 import saga from "./HomePage.saga";
 import reducer from "./HomePage.reducer";
 import TripDetailsCard from "../../molecules/TripDetailsCard";
+import Modal from '../../molecules/Modal';
+import Button from '../../atoms/Button';
 
 type Props = {};
 
-class HomePage extends PureComponent<Props> {
+class HomePage extends Component<Props> {
   static defaultProps = {
     seoData: {
       homePageMetaDesc: "",
@@ -23,23 +25,43 @@ class HomePage extends PureComponent<Props> {
     homePageData: {}
   };
 
-  createMarkup() {
-    return {__html: this.props.homePageData.stories[0].quote}
+  state = { openModal: false }
+
+  activateModal = () => {
+    this.setState({openModal: true});
+  } 
+
+  deactivateModal = () => {
+    this.setState( {openModal: false} );
   }
 
+  addWidgets = () => {
+    alert("ran after popup is opened");
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css';
+    const s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(script, s); 
+    alert('Widget Script has been and downloaded..see network tab in Dev Tools')
+  }
+  
   render() {
     const { homePageData } = this.props;
     const story = homePageData.stories[0] ;
+    console.log(this)
     return (
       <Layout title="home" className="row" id="content-wrapper">
         <HeadTag description="Home Page Description" title={story ? story.title : 'Home Page'} />
         <div className="row">
           {story.media.images.map( image => <Image className="row" src={image.cropped.large.url} alt="image" />)}
         </div>
-        <div dangerouslySetInnerHTML={this.createMarkup()}></div>
+        <div dangerouslySetInnerHTML={(() =>  ({__html: this.props.homePageData.stories[0].quote}))()}></div>
         <div className="row">
           <TripDetailsCard tripDetailsList={story.details} />
         </div>
+        <Button primary onClick={this.activateModal}>Activate Modal</Button>
+        <Modal handleAfterOpenFunc={this.addWidgets} closeModal={this.deactivateModal} isOpen={this.state.openModal}/>
       </Layout>
     );
   }

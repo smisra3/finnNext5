@@ -5,6 +5,15 @@ export default `
   box-sizing: border-box;
 }
 
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0b0b0b;
+}
+
 body {
   font-family: ${Theme.fontFamilyDefault};
   font-size: ${Theme.fontSizeDefault};
