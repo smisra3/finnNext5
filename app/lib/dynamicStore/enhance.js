@@ -57,19 +57,19 @@ const headerExclusionList = [
  *
  * @param {Object} requestHeaders Headers object received from the request
  */
-const cleanupRequestHeaders = (requestHeaders) => {
-  if (!requestHeaders) {
-    return null;
-  }
-  const requestHeadersCopy = Object.assign({}, requestHeaders);
-  headerExclusionList.forEach((header) => {
-    delete requestHeadersCopy[header];
-  });
+// const cleanupRequestHeaders = (requestHeaders) => {
+//   if (!requestHeaders) {
+//     return null;
+//   }
+//   const requestHeadersCopy = Object.assign({}, requestHeaders);
+//   headerExclusionList.forEach((header) => {
+//     delete requestHeadersCopy[header];
+//   });
 
-  // Alternative header for user agent
-  requestHeadersCopy['x-ua-browser'] = requestHeaders['user-agent'];
-  return requestHeadersCopy;
-};
+//   // Alternative header for user agent
+//   requestHeadersCopy['x-ua-browser'] = requestHeaders['user-agent'];
+//   return requestHeadersCopy;
+// };
 
 export const getWrapperComponent = (
   WrappedComponent,
@@ -100,10 +100,8 @@ export const getWrapperComponent = (
     static validatePageData(storeStruct, res, store, isServer) {
       if (storeStruct && storeStruct.length > 0) {
         const currentState = store.getState();
-        console.log('----------------------currentstate---------------------------',currentState)
         const missingDataList = [];
-
-        [...storeStruct, ...globalDataStructure].forEach((requiredDataPath) => {
+        [...storeStruct].forEach((requiredDataPath) => {
           try {
             if (!get(currentState, requiredDataPath)) {
               missingDataList.push(requiredDataPath);
@@ -112,7 +110,6 @@ export const getWrapperComponent = (
             missingDataList.push(requiredDataPath);
           }
         });
-        console.log('------------------missing----------------',missingDataList)
         if (missingDataList.length > 0) {
           logger.error(
             `${WrapperComponent.displayName} - Component failed to receive critical data`,
@@ -140,7 +137,6 @@ export const getWrapperComponent = (
       actions, store, needQuery, query, requestDetails,
     }) {
       actions.map(action =>{
-        console.log('---------------------------------------------------action',action)
         return store.dispatch(typeof action === 'function'
           ? WrapperComponent.addRequestDetails(
             action(needQuery ? query : undefined),
@@ -160,46 +156,46 @@ export const getWrapperComponent = (
       } = initialParams;     
       injectSagaAndReducer(key, store, saga, reducer);
       // store.dispatch(serverActions.setCurrentRoute(pathname));
-      let requestDetails;
-      let clientParams = {};
+      // let requestDetails;
+      // let clientParams = {};
 
-      if (isServer) {
-        const deviceType = req.device.type === PHONE ? MOBILE : DESKTOP;
-        const isTablet = req.device.type === TABLET;
-        // store.dispatch(serverActions.addIsTablet(isTablet));
-        // store.dispatch(serverActions.addDeviceType(deviceType));
-        // store.dispatch(serverActions.setPageUrl(req.url));
-        // store.dispatch(serverActions.setPageQuery({ ...req.query, ...query }));
-        // store.dispatch(serverActions.setPageOrigin(`${req.protocol}://${req.headers.host}`));
-        // store.dispatch(serverActions.getLables());
+      // if (isServer) {
+      //   const deviceType = req.device.type === PHONE ? MOBILE : DESKTOP;
+      //   const isTablet = req.device.type === TABLET;
+      //   // store.dispatch(serverActions.addIsTablet(isTablet));
+      //   // store.dispatch(serverActions.addDeviceType(deviceType));
+      //   // store.dispatch(serverActions.setPageUrl(req.url));
+      //   // store.dispatch(serverActions.setPageQuery({ ...req.query, ...query }));
+      //   // store.dispatch(serverActions.setPageOrigin(`${req.protocol}://${req.headers.host}`));
+      //   // store.dispatch(serverActions.getLables());
 
-        requestDetails = {
-          deviceType,
-          cookies: req.cookies.cookieList,
-          logger: req.perfLogger,
-          whitelistedHeaders: cleanupRequestHeaders(req.headers),
-        };
-      } else {
-        clientParams = parseQueryParams(asPath);
-        store.dispatch(serverActions.setPageQuery(clientParams));
-        requestDetails = {
-          deviceType: get(store.getState(),['global', 'globalData', 'deviceType']),
-        };
-      }
+      //   // requestDetails = {
+      //   //   deviceType,
+      //   //   cookies: req.cookies.cookieList,
+      //   //   logger: req.perfLogger,
+      //   //   whitelistedHeaders: cleanupRequestHeaders(req.headers),
+      //   // };
+      // } else {
+      //   clientParams = parseQueryParams(asPath);
+      //   store.dispatch(serverActions.setPageQuery(clientParams));
+      //   requestDetails = {
+      //     deviceType: get(store.getState(),['global', 'globalData', 'deviceType']),
+      //   };
+      // }
 
       if (preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
         await WrappedComponent.getInitialProps(...params);
       }
 
-      if (isServer && globalActions instanceof Array) {
-        WrapperComponent.dispatchActions({
-          actions: globalActions,
-          store,
-          needQuery: useQuery,
-          query,
-          requestDetails,
-        });
-      }
+      // if (isServer && globalActions instanceof Array) {
+      //   WrapperComponent.dispatchActions({
+      //     actions: globalActions,
+      //     store,
+      //     needQuery: useQuery,
+      //     query,
+      //     requestDetails,
+      //   });
+      // }
 
       const combinedPageActions =
         initialActions instanceof Array ? [...pageActions, ...initialActions] : [...pageActions];
@@ -207,14 +203,13 @@ export const getWrapperComponent = (
       WrapperComponent.dispatchActions({
         actions: combinedPageActions,
         store,
-        needQuery: useQuery,
-        query: { ...query, ...clientParams },
-        requestDetails,
+        // needQuery: useQuery,
+        // query: { ...query, ...clientParams },
+        // requestDetails,
       });
       // Wait till all sagas are done
       await monitorSagas(store, isServer);
-      console.log('==================state=======================',store.getState())
-      // WrapperComponent.validatePageData(criticalState, res, store, isServer);
+      WrapperComponent.validatePageData(criticalState, res, store, isServer);
 
       if (!preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
         await WrappedComponent.getInitialProps(...params);
