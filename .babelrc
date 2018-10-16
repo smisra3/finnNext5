@@ -13,9 +13,14 @@
   ],
   "env": {
     "development": {
-      "presets": ["next/babel", "flow"],
+      "presets": ["next/babel", "@babel/preset-flow"],
       "plugins": [
-        ["@quickbaseoss/babel-plugin-styled-components-css-namespace", { "cssNamespace": "app" }],
+        [
+          "@quickbaseoss/babel-plugin-styled-components-css-namespace",
+          {
+            "cssNamespace": "app"
+          }
+        ],
         [
           "babel-plugin-styled-components",
           {
@@ -28,7 +33,12 @@
     "production": {
       "presets": ["next/babel"],
       "plugins": [
-        ["@quickbaseoss/babel-plugin-styled-components-css-namespace", { "cssNamespace": "app" }],
+        [
+          "@quickbaseoss/babel-plugin-styled-components-css-namespace",
+          {
+            "cssNamespace": "app"
+          }
+        ],
         [
           "babel-plugin-styled-components",
           {

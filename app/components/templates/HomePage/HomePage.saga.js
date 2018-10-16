@@ -17,18 +17,16 @@ import Axios from "axios";
 
 function* loadHomePageData() {
   try {
-    const response = yield call(Axios, 'https://travelnowhere.citybreakweb.com/api/gateway');
-    yield put({type:"GOT_HOME_PAGE_DATA", data: response.data});
-  } catch(err) {
+    const response = yield call(Axios, "https://travelnowhere.citybreakweb.com/api/gateway");
+    yield put({ type: "GOT_HOME_PAGE_DATA", data: response.data });
+  } catch (err) {
     yield put(loadHomeFailure(err));
   }
 }
 
 export default function* homeLayoutSaga() {
   try {
-    yield all([
-      takeLatest("GET_HOME_PAGE_DATA", loadHomePageData)
-    ]);
+    yield all([takeLatest("GET_HOME_PAGE_DATA", loadHomePageData)]);
   } catch (err) {
     yield put(loadHomeFailure(err));
   }

@@ -1,3 +1,4 @@
+import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
@@ -26,18 +27,19 @@ const composeEnhancers =
  */
 export default options => BaseComponent => {
   const hasKey = !!options.key;
+  console.log(options);
   if (!hasKey) throw new Error(`${BaseComponent.displayName} needs to be passed with a key`);
   const hasReducer = !!options.reducer;
   const hasSaga = !!options.saga;
   const reducer = hasKey && hasReducer ? { [options.key]: options.reducer } : {};
 
   const configureStore = (initialState = {}) => {
-    const store = createStore(createReducer(reducer), initialState, composeEnhancers(...enhancers));
+    const store = options.store;
 
     // Keep access to 'run' method of saga task in store so thats its available globally with store
-    store.runSaga = sagaMiddleware.run;
+    //store.runSaga = sagaMiddleware.run;
     // Keep record of reducer injected in store associated with unique key
-    store.injectedReducers = reducer;
+    store.injectedReducers = options.reducer;
     if (globalSaga) {
       // Run global saga and keep the task returned by running saga to access later while cancelling
       store.globalSaga = { globalSaga, task: store.runSaga(globalSaga) };
@@ -46,9 +48,15 @@ export default options => BaseComponent => {
     store.injectedSagas = {};
     if (hasSaga) {
       // Run saga and keep the task returned by running saga to access later while cancelling
-      store.injectedSagas[options.key] = { ...options.saga, task: store.runSaga(options.saga) };
+      store.injectedSagas[options.key] = {
+        ...options.saga,
+        task: store.runSaga(options.saga)
+      };
     }
-    return store;
+    const storeData = () => {
+      return store;
+    };
+    return nextReduxWrapper(storeData)(BaseComponent);
   };
-  return nextReduxWrapper(configureStore)(BaseComponent);
+  return configureStore();
 };
