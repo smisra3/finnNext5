@@ -9,6 +9,7 @@ import createSagaMiddleware from "redux-saga";
 import enhance from "../lib/dynamicStore/enhance";
 import { withRouter } from "next/router";
 import globalReducer from "../global/reducer";
+import createReducer from "../lib/dynamicStore/reducers";
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
@@ -29,7 +30,11 @@ class MyApp extends App {
   }
 
   static configureStore(initialState = {}, pageConfig) {
-    const store = createStore(globalReducer, initialState, composeEnhancers(...enhancers));
+    const store = createStore(
+      createReducer(globalReducer),
+      initialState,
+      composeEnhancers(...enhancers)
+    );
 
     store.runSaga = sagaMiddleware.run;
     return store;
@@ -37,7 +42,6 @@ class MyApp extends App {
 
   render() {
     let { Component, store } = this.props;
-    console.log("when it is running2");
     return (
       <Container>
         <Provider store={store}>

@@ -240,7 +240,6 @@ export const getWrapperComponent = (
     }
 
     render() {
-      console.log(this.props);
       return <WrappedComponent {...this.props} />;
     }
   }
@@ -283,11 +282,10 @@ export default (
     useQuery,
     criticalState
   });
-  console.log(store, "newStore");
   // Move all non react specific static properties from WrappedComponent to WrapperComponent
-  // hoistNonReactStatic(WrapperComponent, WrappedComponent, {
-  //   getInitialProps: true
-  // });
+  hoistNonReactStatic(WrapperComponent, WrappedComponent, {
+    getInitialProps: true
+  });
 
   // Give a unique identifier to the new high horder component
   WrapperComponent.displayName = `enhanced(${WrappedComponent.displayName ||

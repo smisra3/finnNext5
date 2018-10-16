@@ -39,7 +39,7 @@ export default options => BaseComponent => {
     // Keep access to 'run' method of saga task in store so thats its available globally with store
     //store.runSaga = sagaMiddleware.run;
     // Keep record of reducer injected in store associated with unique key
-    store.injectedReducers = options.reducer;
+    store.injectedReducers = createReducer(options.reducer);
     if (globalSaga) {
       // Run global saga and keep the task returned by running saga to access later while cancelling
       store.globalSaga = { globalSaga, task: store.runSaga(globalSaga) };

@@ -45,7 +45,6 @@ class HomePage extends Component<Props> {
   render() {
     const { homePageData } = this.props;
     const story = homePageData ? homePageData.stories[0] : [];
-    // console.log(this);
     if (story.length === 0) {
       return <div>Data is being rendered</div>;
     } else {
