@@ -1,6 +1,6 @@
-import each from 'lodash/each';
-import { END } from 'redux-saga';
-import getSagaInjectors from './sagaInjectors';
+import each from "lodash/each";
+import { END } from "redux-saga";
+import getSagaInjectors from "./sagaInjectors";
 
 /**
  * @function monitorSagas - Wait till all sagas have been done
@@ -10,7 +10,7 @@ import getSagaInjectors from './sagaInjectors';
 export default function monitorSagas(store, isServer, shouldDispatchEnd = true) {
   const allTasks = [store.globalSaga.task];
   if (shouldDispatchEnd) store.dispatch(END);
-  each(store.injectedSagas, (saga) => {
+  each(store.injectedSagas, saga => {
     allTasks.push(saga.task);
   });
   return Promise.all(allTasks.map(t => t.done)).then(() => {

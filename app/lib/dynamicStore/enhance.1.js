@@ -34,6 +34,7 @@ import { parseQueryParams } from "../../utils/utils";
 import { pageClientSideActions } from "../../global/actions";
 
 const logger = loggerFactory.getLogger();
+
 // List of headers to be extracted before forwarding to the respective
 // endpoints from the application
 const headerExclusionList = [
@@ -50,24 +51,24 @@ const headerExclusionList = [
  *
  * @param {Object} requestHeaders Headers object received from the request
  */
-const cleanupRequestHeaders = requestHeaders => {
-  if (!requestHeaders) {
-    return null;
-  }
-  const requestHeadersCopy = Object.assign({}, requestHeaders);
-  headerExclusionList.forEach(header => {
-    delete requestHeadersCopy[header];
-  });
+// const cleanupRequestHeaders = (requestHeaders) => {
+//   if (!requestHeaders) {
+//     return null;
+//   }
+//   const requestHeadersCopy = Object.assign({}, requestHeaders);
+//   headerExclusionList.forEach((header) => {
+//     delete requestHeadersCopy[header];
+//   });
 
-  // Alternative header for user agent
-  requestHeadersCopy["x-ua-browser"] = requestHeaders["user-agent"];
-  return requestHeadersCopy;
-};
+//   // Alternative header for user agent
+//   requestHeadersCopy['x-ua-browser'] = requestHeaders['user-agent'];
+//   return requestHeadersCopy;
+// };
 
 export const getWrapperComponent = (
   WrappedComponent,
-  { store, key, reducer, saga, initialActions, useQuery, criticalState, preExecuteGetInitialProps }
-) => {
+  { key, reducer, saga, initialActions, useQuery, criticalState, preExecuteGetInitialProps }
+) =>
   class WrapperComponent extends Component {
     /**
      * Method to add the request details to the action object
@@ -78,6 +79,7 @@ export const getWrapperComponent = (
     static addRequestDetails(action, requestDetails) {
       return { ...action, requestDetails };
     }
+
     /**
      * Method to validate if critical data required for the page is present based on which
      * page is rendered or user redirected to an error page
@@ -87,12 +89,12 @@ export const getWrapperComponent = (
      * @param {Object} store Redux store of the application
      * @param {boolean} isServer Flag to indicate server/client
      */
+
     static validatePageData(storeStruct, res, store, isServer) {
       if (storeStruct && storeStruct.length > 0) {
         const currentState = store.getState();
         const missingDataList = [];
-
-        [...storeStruct, ...globalDataStructure].forEach(requiredDataPath => {
+        [...storeStruct].forEach(requiredDataPath => {
           try {
             if (!get(currentState, requiredDataPath)) {
               missingDataList.push(requiredDataPath);
@@ -101,7 +103,6 @@ export const getWrapperComponent = (
             missingDataList.push(requiredDataPath);
           }
         });
-
         if (missingDataList.length > 0) {
           logger.error(
             `${WrapperComponent.displayName} - Component failed to receive critical data`,
@@ -126,9 +127,8 @@ export const getWrapperComponent = (
      * @param {Object} param.requestDetails Object containing details of incoming request
      */
     static dispatchActions({ actions, store, needQuery, query, requestDetails }) {
-      console.log("helloo");
-      actions.map(action =>
-        store.dispatch(
+      actions.map(action => {
+        return store.dispatch(
           typeof action === "function"
             ? WrapperComponent.addRequestDetails(
                 action(needQuery ? query : undefined),
@@ -138,113 +138,107 @@ export const getWrapperComponent = (
                 { type: action, query: needQuery ? query : undefined },
                 requestDetails
               )
-        )
-      );
+        );
+      });
     }
 
     static async getInitialProps(...params) {
       const initialParams = params[0];
-      console.log("Inside GIP of enhance");
 
       const { store, isServer, req, query, res, pathname, asPath } = initialParams;
-
       injectSagaAndReducer(key, store, saga, reducer);
-      store.dispatch(serverActions.setCurrentRoute(pathname));
-      let requestDetails;
-      let clientParams = {};
+      // store.dispatch(serverActions.setCurrentRoute(pathname));
+      // let requestDetails;
+      // let clientParams = {};
+
       // if (isServer) {
       //   const deviceType = req.device.type === PHONE ? MOBILE : DESKTOP;
       //   const isTablet = req.device.type === TABLET;
-      //   store.dispatch(serverActions.addIsTablet(isTablet));
-      //   store.dispatch(serverActions.addDeviceType(deviceType));
-      //   store.dispatch(serverActions.setPageUrl(req.url));
-      //   store.dispatch(serverActions.setPageQuery({ ...req.query, ...query }));
-      //   store.dispatch(serverActions.setPageOrigin(`${req.protocol}://${req.headers.host}`));
-      //   store.dispatch(serverActions.getLables());
+      //   // store.dispatch(serverActions.addIsTablet(isTablet));
+      //   // store.dispatch(serverActions.addDeviceType(deviceType));
+      //   // store.dispatch(serverActions.setPageUrl(req.url));
+      //   // store.dispatch(serverActions.setPageQuery({ ...req.query, ...query }));
+      //   // store.dispatch(serverActions.setPageOrigin(`${req.protocol}://${req.headers.host}`));
+      //   // store.dispatch(serverActions.getLables());
 
-      //   requestDetails = {
-      //     deviceType,
-      //     cookies: req.cookies.cookieList,
-      //     logger: req.perfLogger,
-      //     whitelistedHeaders: cleanupRequestHeaders(req.headers)
-      //   };
+      //   // requestDetails = {
+      //   //   deviceType,
+      //   //   cookies: req.cookies.cookieList,
+      //   //   logger: req.perfLogger,
+      //   //   whitelistedHeaders: cleanupRequestHeaders(req.headers),
+      //   // };
       // } else {
       //   clientParams = parseQueryParams(asPath);
       //   store.dispatch(serverActions.setPageQuery(clientParams));
       //   requestDetails = {
-      //     deviceType: get(store.getState(), ["global", "globalData", "deviceType"])
+      //     deviceType: get(store.getState(),['global', 'globalData', 'deviceType']),
       //   };
       // }
 
-      if (preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
-        await WrappedComponent.getInitialProps({ ...params });
-      }
+      // if (preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
+      //   await WrappedComponent.getInitialProps(...params);
+      // }
 
-      if (isServer && globalActions instanceof Array) {
-        WrapperComponent.dispatchActions({
-          actions: globalActions,
-          store,
-          needQuery: useQuery,
-          query,
-          requestDetails
-        });
-      }
+      // if (isServer && globalActions instanceof Array) {
+      //   WrapperComponent.dispatchActions({
+      //     actions: globalActions,
+      //     store,
+      //     needQuery: useQuery,
+      //     query,
+      //     requestDetails,
+      //   });
+      // }
 
-      const combinedPageActions =
-        initialActions instanceof Array ? [...pageActions, ...initialActions] : [...pageActions];
-
-      WrapperComponent.dispatchActions({
-        actions: combinedPageActions,
-        store,
-        needQuery: useQuery,
-        query: { ...query, ...clientParams },
-        requestDetails
-      });
-
-      // Wait till all sagas are done
-      await monitorSagas(store, isServer);
-
-      WrapperComponent.validatePageData(criticalState, res, store, isServer);
-
-      if (!preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
-        await WrappedComponent.getInitialProps(...params);
-      }
-
-      return {
-        isServer
-      };
-    }
-
-    componentWillMount() {
-      const { store } = this.props;
-      injectSagaAndReducer(key, store, saga, reducer);
       const combinedPageActions =
         initialActions instanceof Array ? [...pageActions, ...initialActions] : [...pageActions];
 
       WrapperComponent.dispatchActions({
         actions: combinedPageActions,
         store
+        // needQuery: useQuery,
+        // query: { ...query, ...clientParams },
+        // requestDetails,
       });
-
       // Wait till all sagas are done
-
+      await monitorSagas(store, isServer);
       // WrapperComponent.validatePageData(criticalState, res, store, isServer);
+
+      // if (!preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
+      //   await WrappedComponent.getInitialProps(...params);
+      // }
+
+      return {
+        pathname
+      };
     }
 
     componentDidMount() {
-      const { dispatch } = this.props.store;
+      const { dispatch } = this.props;
       // pageClientSideActions.length &&
       //   pageClientSideActions.map(action => {
       //     dispatch(action());
       //   });
     }
 
+    // componentWillMount() {
+    //   const { store, isServer } = this.props;
+    //   const combinedPageActions =
+    //     initialActions instanceof Array ? [...pageActions, ...initialActions] : [...pageActions];
+
+    //   WrapperComponent.dispatchActions({
+    //     actions: combinedPageActions,
+    //     store
+    //     // needQuery: useQuery,
+    //     // query: { ...query, ...clientParams },
+    //     // requestDetails,
+    //   });
+    // }
+
     render() {
-      return <WrappedComponent {...this.props} />;
+      const { homePageData } = this.props;
+      return <WrappedComponent homePageData={homePageData} />;
     }
-  }
-  return WrapperComponent;
-};
+  };
 
 /**
  * Create a high order component to initialize store with reducers and sagas
@@ -269,12 +263,10 @@ export default (
     saga,
     initialActions,
     useQuery,
-    criticalState,
-    store
+    criticalState
   }
 ) => {
   const WrapperComponent = getWrapperComponent(WrappedComponent, {
-    store,
     key,
     reducer,
     saga,
@@ -282,6 +274,7 @@ export default (
     useQuery,
     criticalState
   });
+
   // Move all non react specific static properties from WrappedComponent to WrapperComponent
   hoistNonReactStatic(WrapperComponent, WrappedComponent, {
     getInitialProps: true
@@ -292,19 +285,8 @@ export default (
     WrappedComponent.name ||
     "Component"})`;
 
-  const withConnect = connect(
+  return connect(
     mapStateToProps,
     mapDispatchToProps
-  );
-  const withRedux = initRedux({
-    key,
-    reducer,
-    saga,
-    store
-  });
-
-  return compose(
-    withRedux,
-    withConnect
   )(WrapperComponent);
 };

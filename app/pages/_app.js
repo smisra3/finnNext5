@@ -10,38 +10,32 @@ import enhance from "../lib/dynamicStore/enhance";
 import { withRouter } from "next/router";
 import globalReducer from "../global/reducer";
 import createReducer from "../lib/dynamicStore/reducers";
+import configureStore from "../lib/dynamicStore/configureStore";
+import saga from "../components/templates/HomePage/HomePage.saga";
+import reducer from "../components/templates/HomePage/HomePage.reducer";
 
-const sagaMiddleware = createSagaMiddleware();
-const middlewares = [sagaMiddleware];
-const enhancers = [applyMiddleware(...middlewares)];
-const composeEnhancers =
-  process.env.NODE_ENV !== "production" && typeof window === "object"
-    ? composeWithDevTools
-    : compose;
+const configureStoreApp = (initialState = {}) => {
+  const key = "homePage";
+  const store = configureStore({
+    key,
+    saga,
+    reducer,
+    initialState
+  });
+  return store;
+};
 
 class MyApp extends App {
-  static async getInitialProps({ Component, routes, ctx }) {
+  static async getInitialProps({ Component, ctx }) {
     let pageProps;
     if (Component.getInitialProps) {
-      pageProps = Component.getInitialProps({ ...ctx });
+      pageProps = await Component.getInitialProps({ ...ctx });
     }
-    debugger;
     return { pageProps };
   }
 
-  static configureStore(initialState = {}, pageConfig) {
-    const store = createStore(
-      createReducer(globalReducer),
-      initialState,
-      composeEnhancers(...enhancers)
-    );
-
-    store.runSaga = sagaMiddleware.run;
-    return store;
-  }
-
   render() {
-    let { Component, store } = this.props;
+    let { Component, pageProps, store } = this.props;
     return (
       <Container>
         <Provider store={store}>
@@ -52,4 +46,4 @@ class MyApp extends App {
   }
 }
 
-export default withRedux(MyApp.configureStore)(MyApp);
+export default withRedux(configureStoreApp)(MyApp);

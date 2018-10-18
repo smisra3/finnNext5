@@ -35,6 +35,7 @@ export default class MyDocument extends Document {
         </Head>
         <body className="app">
           <Content />
+          <script src="pre" />
           <NextScript />
         </body>
       </html>
