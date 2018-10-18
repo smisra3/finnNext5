@@ -31,11 +31,13 @@ export default options => {
   const hasReducer = !!options.reducer;
   const hasSaga = !!options.saga;
   const reducer = hasKey && hasReducer ? { [options.key]: options.reducer } : {};
-  const initialState = {};
+  const initialState = options.initialState;
   const store = createStore(createReducer(reducer), initialState, composeEnhancers(...enhancers));
 
   // Keep access to 'run' method of saga task in store so thats its available globally with store
   store.runSaga = sagaMiddleware.run;
+  store.runSagaTask = () => {};
+
   // Keep record of reducer injected in store associated with unique key
   store.injectedReducers = createReducer(reducer);
   if (globalSaga) {

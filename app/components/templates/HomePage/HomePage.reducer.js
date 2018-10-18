@@ -33,6 +33,4 @@ export const layout = (state = {}, action: HomePageActions) => {
   }
 };
 
-export default combineReducers({
-  layout
-});
+export default layout;

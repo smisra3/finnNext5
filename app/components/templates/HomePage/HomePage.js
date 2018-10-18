@@ -84,7 +84,7 @@ class HomePage extends Component<Props> {
 }
 /* istanbul ignore next */
 const mapStateToProps = state => ({
-  homePageData: get(state, ["homePage", "layout", "homePageData"])
+  homePageData: get(state, ["homePage", "homePageData"])
 });
 
 const mapDispatchToProps = (dispatch: Map) => ({});

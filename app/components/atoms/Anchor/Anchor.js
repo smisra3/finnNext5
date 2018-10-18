@@ -1,23 +1,23 @@
 // @flow
-import Link from 'next/link';
-import type { Node } from 'react';
-import { PureComponent } from 'react';
-import styled from 'styled-components';
+import Link from "next/link";
+import type { Node } from "react";
+import { PureComponent } from "react";
+import styled from "styled-components";
 
-import styles from './Anchor.style';
-import { buildUrl } from '../../../utils/utils';
+import styles from "./Anchor.style";
+import { buildUrl } from "../../../utils/utils";
 
 type Props = {
   to: string | any,
   as?: string,
   children: Node,
   noLink?: boolean,
-  className: '',
+  className: "",
   inheritedStyles?: string,
   handleLinkClick: (SyntheticEvent<>) => void,
   shallow?: boolean,
   scroll?: boolean,
-  forceClick?: boolean,
+  forceClick?: boolean
 };
 
 class Anchor extends PureComponent<Props> {
@@ -34,6 +34,7 @@ class Anchor extends PureComponent<Props> {
       shallow,
       scroll,
       forceClick,
+      navigateTo,
       ...other
     } = this.props;
 
@@ -43,18 +44,17 @@ class Anchor extends PureComponent<Props> {
       </a>
     ) : (
       <Link href={to} as={as} shallow={shallow} scroll={scroll}>
-        {
-          forceClick ?
-            <div>
-              <a className={className} onClick={handleLinkClick} {...other}>
-                {children}
-              </a>
-            </div>
-            :
-            <a className={className} {...other}>
+        {forceClick ? (
+          <div>
+            <a className={className} onClick={handleLinkClick} {...other}>
               {children}
             </a>
-        }
+          </div>
+        ) : (
+          <a className={className} {...other}>
+            {children}
+          </a>
+        )}
       </Link>
     );
   }
@@ -62,15 +62,17 @@ class Anchor extends PureComponent<Props> {
 
 Anchor.defaultProps = {
   noLink: false,
-  to: '',
-  as: '',
-  inheritedStyles: '',
+  to: "",
+  as: "",
+  inheritedStyles: "",
   shallow: false,
   scroll: false,
   forceClick: false,
-  handleLinkClick: 'function'
+  handleLinkClick: "function"
 };
 
-export default styled(Anchor)`${styles}`;
+export default styled(Anchor)`
+  ${styles};
+`;
 
 export { Anchor as AnchorVanilla };

@@ -14,9 +14,8 @@ import configureStore from "../lib/dynamicStore/configureStore";
 import saga from "../components/templates/HomePage/HomePage.saga";
 import reducer from "../components/templates/HomePage/HomePage.reducer";
 
-const configureStoreApp = () => {
+const configureStoreApp = (initialState = {}) => {
   const key = "homePage";
-  const initialState = {};
   const store = configureStore({
     key,
     saga,
