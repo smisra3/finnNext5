@@ -203,12 +203,13 @@ export const getWrapperComponent = (
       await monitorSagas(store, isServer);
       // WrapperComponent.validatePageData(criticalState, res, store, isServer);
 
-      // if (!preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
-      //   await WrappedComponent.getInitialProps(...params);
-      // }
+      if (!preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
+        var enhanceProps = await WrappedComponent.getInitialProps(...params);
+      }
 
       return {
-        pathname
+        pathname,
+        enhanceProps
       };
     }
 
@@ -235,8 +236,8 @@ export const getWrapperComponent = (
     // }
 
     render() {
-      const { homePageData } = this.props;
-      return <WrappedComponent homePageData={homePageData} />;
+      const { homePageData, pageProps } = this.props;
+      return <WrappedComponent {...this.props} homePageData={homePageData} />;
     }
   };
 

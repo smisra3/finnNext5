@@ -11,6 +11,7 @@ import reducer from "./HomePage.reducer";
 import TripDetailsCard from "../../molecules/TripDetailsCard";
 import Modal from "../../molecules/Modal";
 import Button from "../../atoms/Button";
+import Link from 'next/link';
 
 type Props = {};
 
@@ -51,7 +52,6 @@ class HomePage extends Component<Props> {
   };
 
   render() {
-    console.log(this.props);
     const { homePageData } = this.props;
     const story = homePageData === undefined ? [] : homePageData.stories[0];
 
@@ -61,13 +61,27 @@ class HomePage extends Component<Props> {
       return (
         <Layout title="home" className="row" id="content-wrapper">
           <HeadTag description="Home Page Description" title={story ? story.title : "Home Page"} />
+          <Link as="/login/hello" href={ { pathname: '/login', query: { slug: 'Hello' }} }>
+            <a>
+              Hello page
+            </a>
+          </Link>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <Link as="/login/world" href={ { pathname: '/login', query: { slug: 'world' }} }>
+            <a>
+              world page
+            </a>
+          </Link>
           <div
             dangerouslySetInnerHTML={(() => ({
               __html: this.props.homePageData.stories[0].quote
             }))()}
           />
           <div className="row">
-            <TripDetailsCard tripDetailsList={story.details} />
+            {/* <TripDetailsCard tripDetailsList={story.details} /> */}
           </div>
           <Button primary onClick={this.activateModal}>
             Activate Modal

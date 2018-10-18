@@ -15,7 +15,8 @@ import HeadTag from "../../atoms/HeadTag";
 import { loginPageMetaLabels, metaInfo } from "./LoginPage.static.data";
 
 class Login extends PureComponent<any, any> {
-  static getInitialProps = ({ res, isServer, store }: any) => {
+  static getInitialProps = ({ res, isServer, store, query }: any) => {
+    const { slug } = query;
     const isUserLoggedIn = get(store.getState(), [
       "global",
       "globalData",
@@ -27,6 +28,7 @@ class Login extends PureComponent<any, any> {
         res.redirect(MY_ACCOUNT);
       }
     }
+    return slug 
   };
 
   sendToMyAccount = defaultRoute => {
@@ -47,7 +49,8 @@ class Login extends PureComponent<any, any> {
   }
 
   render() {
-    const { className } = this.props;
+    const { className, pageProps } = this.props;
+    console.log(this.props)
     return (
       <Layout title="SIGN IN">
         <div className={className}>
@@ -59,7 +62,8 @@ class Login extends PureComponent<any, any> {
             siteName={metaInfo.SITE_NAME}
             card="card"
           />
-          <h1 className="visually-hidden">{loginPageMetaLabels.loginPageTitleText}</h1>
+          <h1>This is the {pageProps.enhanceProps} page</h1>
+          {/* <h1 className="visually-hidden">{loginPageMetaLabels.loginPageTitleText}</h1> */}
           <section className="login-container" />
         </div>
       </Layout>
