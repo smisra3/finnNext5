@@ -1,5 +1,5 @@
 // @flow
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import get from "lodash/get";
 import Layout from "../Layout";
 import enhance from "../../../lib/dynamicStore";
@@ -15,9 +15,17 @@ import Button from "../../atoms/Button";
 type Props = {};
 
 class HomePage extends Component<Props> {
-  static getInitialProps = ({ store, isServer, req, query, res, pathname, asPath }: any) => {
-    return { store, isServer, query, pathname, asPath };
+  static async getInitialProps(props) {}
+  static defaultProps = {
+    seoData: {
+      homePageMetaDesc: "",
+      homePagePageTitle: "",
+      seoMetaDesc: undefined
+    },
+    editorialData: {},
+    homePageData: undefined
   };
+
   state = { openModal: false };
 
   activateModal = () => {
@@ -43,38 +51,52 @@ class HomePage extends Component<Props> {
   };
 
   render() {
+    console.log(this.props);
     const { homePageData } = this.props;
-    const story = homePageData ? homePageData.stories[0] : [];
+    const story = homePageData === undefined ? [] : homePageData.stories[0];
+
     if (story.length === 0) {
-      return <div>Data is being rendered</div>;
+      return <div>It should work now</div>;
     } else {
       return (
         <Layout title="home" className="row" id="content-wrapper">
           <HeadTag description="Home Page Description" title={story ? story.title : "Home Page"} />
-          <Fragment>
-            <div className="row">
-              {story.media.images.map(image => (
-                <Image className="row" src={image.cropped.large.url} alt="image" />
-              ))}
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: story.quote }} />
-            <div className="row">
-              <TripDetailsCard tripDetailsList={story.details} />
-            </div>
-            <Button primary onClick={this.activateModal}>
-              Activate Modal
-            </Button>
-            <Modal
-              handleAfterOpenFunc={this.addWidgets}
-              closeModal={this.deactivateModal}
-              isOpen={this.state.openModal}
-            />
-          </Fragment>
+          <div
+            dangerouslySetInnerHTML={(() => ({
+              __html: this.props.homePageData.stories[0].quote
+            }))()}
+          />
+          <div className="row">
+            <TripDetailsCard tripDetailsList={story.details} />
+          </div>
+          <Button primary onClick={this.activateModal}>
+            Activate Modal
+          </Button>
+          <Modal
+            handleAfterOpenFunc={this.addWidgets}
+            closeModal={this.deactivateModal}
+            isOpen={this.state.openModal}
+          />
         </Layout>
       );
     }
   }
 }
-export default HomePage;
+/* istanbul ignore next */
+const mapStateToProps = state => ({
+  homePageData: get(state, ["homePage", "layout", "homePageData"])
+});
+
+const mapDispatchToProps = (dispatch: Map) => ({});
+
+export default enhance(HomePage, {
+  mapStateToProps,
+  mapDispatchToProps,
+  saga,
+  reducer,
+  key: "homePage",
+  initialActions,
+  criticalState: [["homePage", "layout", "homePageData"]]
+});
 
 export { HomePage as HomePageDisconnected };
