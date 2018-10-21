@@ -63,12 +63,14 @@ class HomePage extends Component<Props> {
           <HeadTag description="Home Page Description" title={story ? story.title : "Home Page"} />
           <div
             dangerouslySetInnerHTML={(() => ({
-              __html: this.props.homePageData.stories[0].quote
+              __html: this.props.homePageData.seasons[0].description
             }))()}
           />
-          <div className="row">
-            <TripDetailsCard tripDetailsList={story.details} />
-          </div>
+          {story.details && (
+            <div className="row">
+              <TripDetailsCard tripDetailsList={story.details} />
+            </div>
+          )}
           <Button primary onClick={this.activateModal}>
             Activate Modal
           </Button>
@@ -96,7 +98,7 @@ export default enhance(HomePage, {
   reducer,
   key: "homePage",
   initialActions,
-  criticalState: [["homePage", "layout", "homePageData"]]
+  criticalState: [["homePageData"]]
 });
 
 export { HomePage as HomePageDisconnected };

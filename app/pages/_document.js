@@ -34,8 +34,7 @@ export default class MyDocument extends Document {
           {styleTags}
         </Head>
         <body className="app">
-          <Content />
-          <script src="pre" />
+          <Main />
           <NextScript />
         </body>
       </html>
