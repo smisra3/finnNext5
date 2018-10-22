@@ -10,7 +10,11 @@ import initialActions from './StoryDescription.actions';
 import enhance from '../../../lib/dynamicStore';
 
 class StoryDescription extends React.Component {
-  static async getInitialProps(props) {}
+  static async getInitialProps(...params) {
+    const initialParams = params[0];
+    const { store, isServer, req, query, res, pathname, asPath,  } = initialParams;
+    console.log('-----------------------',asPath);
+  }
 
   static defaultProps = {
     seoData: {
@@ -20,7 +24,6 @@ class StoryDescription extends React.Component {
     },
     storyListing: {}
   };
-
   render() {
     return (
       <Layout>
@@ -44,5 +47,6 @@ export default enhance(StoryDescription, {
   reducer,
   key: 'storyDescription',
   initialActions,
-  criticalState: [['storyDescriptionPage']]
+  criticalState: [['storyDescriptionPage']],
+  needQuery: true
 });

@@ -145,6 +145,7 @@ export const getWrapperComponent = (
     static async getInitialProps(...params) {
       const initialParams = params[0];
       const { store, isServer, req, query, res, pathname, asPath } = initialParams;
+      let enhancedProps;
       injectSagaAndReducer(key, store, saga, reducer);
       // store.dispatch(serverActions.setCurrentRoute(pathname));
       // let requestDetails;
@@ -174,9 +175,9 @@ export const getWrapperComponent = (
       //   };
       // }
 
-      // if (preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
-      //   await WrappedComponent.getInitialProps(...params);
-      // }
+      if (WrappedComponent.getInitialProps) {
+        enhancedProps = await WrappedComponent.getInitialProps(...params);
+      }
 
       // if (isServer && globalActions instanceof Array) {
       //   WrapperComponent.dispatchActions({
@@ -207,7 +208,8 @@ export const getWrapperComponent = (
       // }
 
       return {
-        pathname
+        pathname,
+        enhancedProps
       };
     }
 
