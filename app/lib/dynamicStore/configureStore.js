@@ -27,31 +27,43 @@ const composeEnhancers =
  */
 export default options => {
   const hasKey = !!options.key;
-  if (!hasKey) throw new Error(`${BaseComponent.displayName} needs to be passed with a key`);
+  // if (!hasKey) throw new Error(`${BaseComponent.displayName} needs to be passed with a key`);
   const hasReducer = !!options.reducer;
-  const hasSaga = !!options.saga;
+
   const reducer = hasKey && hasReducer ? { [options.key]: options.reducer } : {};
   const initialState = options.initialState;
   const store = createStore(createReducer(reducer), initialState, composeEnhancers(...enhancers));
 
   // Keep access to 'run' method of saga task in store so thats its available globally with store
-  store.runSaga = sagaMiddleware.run;
-  store.runSagaTask = () => {};
-
-  // Keep record of reducer injected in store associated with unique key
-  store.injectedReducers = createReducer(reducer);
-  if (globalSaga) {
-    // Run global saga and keep the task returned by running saga to access later while cancelling
-    store.globalSaga = { globalSaga, task: store.runSaga(globalSaga) };
-  }
-  // Keep record of saga injected in store associated with unique key
-  store.injectedSagas = {};
-  if (hasSaga) {
-    // Run saga and keep the task returned by running saga to access later while cancelling
-    store.injectedSagas[options.key] = {
-      ...options.saga,
-      task: store.runSaga(options.saga)
-    };
-  }
   return store;
+};
+
+export const injectPageSagaReducer = options => {
+  const hasKey = !!options.key;
+  const store = options.store;
+  const hasSaga = !!options.saga;
+  const hasReducer = !!options.reducer;
+  const reducer = hasKey && hasReducer ? { [options.key]: options.reducer } : {};
+
+  if (store !== undefined) {
+    store.runSaga = sagaMiddleware.run;
+
+    // Keep record of reducer injected in store associated with unique key
+    store.injectedReducers = createReducer(reducer);
+
+    if (globalSaga) {
+      // Run global saga and keep the task returned by running saga to access later while cancelling
+      store.globalSaga = { globalSaga, task: store.runSaga(globalSaga) };
+    }
+    // Keep record of saga injected in store associated with unique key
+    store.injectedSagas = {};
+
+    if (hasSaga) {
+      // Run saga and keep the task returned by running saga to access later while cancelling
+      store.injectedSagas[options.key] = {
+        ...options.saga,
+        task: store.runSaga(options.saga)
+      };
+    }
+  }
 };

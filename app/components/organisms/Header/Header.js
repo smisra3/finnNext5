@@ -42,15 +42,15 @@ const Header = ({ className }: Props): Node => (
           </Link>
           <ul className="row col-xs-9 col-md-5 antonymous-header-info">
             {AntonymousHeaderInfo.map(item => (
-              <li key={item.id} className={item.id} keys={item.id}>
+              <li key={item.id} className={item.id}>
                 {item.value}
               </li>
             ))}
           </ul>
         </div>
       </div>
-      {css.map(cssPath => {
-        return <link type="text/css" rel="stylesheet" href={cssPath} />;
+      {css.map((cssPath, idx) => {
+        return <link type="text/css" rel="stylesheet" href={cssPath} key={idx} />;
       })}
     </header>
   </div>

@@ -1,26 +1,21 @@
-import App, { Container } from "next/app";
-import React from "react";
-import { createStore, applyMiddleware, compose } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import withRedux from "next-redux-wrapper";
-import withReduxSaga from "next-redux-saga";
-import { Provider } from "react-redux";
-import createSagaMiddleware from "redux-saga";
-import enhance from "../lib/dynamicStore/enhance";
-import { withRouter } from "next/router";
-import globalReducer from "../global/reducer";
-import createReducer from "../lib/dynamicStore/reducers";
-import configureStore from "../lib/dynamicStore/configureStore";
-import saga from "../components/templates/HomePage/HomePage.saga";
-import reducer from "../components/templates/HomePage/HomePage.reducer";
+import App, { Container } from 'next/app';
+import { END } from 'redux-saga';
+import React from 'react';
+import withRedux from 'next-redux-wrapper';
+import { Provider } from 'react-redux';
+import configureStore, { injectPageSagaReducer } from '../lib/dynamicStore/configureStore';
+import { PageMap } from '../constants';
+
+const dynamicImport = name => {
+  switch (name) {
+    case 'HomePage':
+      return import('../components/templates/HomePage/HomePage.exporter.js');
+  }
+};
 
 const configureStoreApp = (initialState = {}) => {
-  const key = "homePage";
   const store = configureStore({
-    key,
-    saga,
-    reducer,
-    initialState
+    initialState,
   });
   return store;
 };
@@ -28,14 +23,31 @@ const configureStoreApp = (initialState = {}) => {
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps;
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps({ ...ctx });
+    const { pathname, store } = ctx;
+    if (PageMap[pathname] !== undefined) {
+      store.dispatch(END);
+      const pagePath = PageMap[pathname];
+      const pageConfig = await dynamicImport(pagePath);
+      // Dynamic reducer and saga
+      const config = pageConfig.default;
+      const { reducer, saga, key } = config;
+
+      await injectPageSagaReducer({
+        store,
+        key,
+        reducer,
+        saga,
+      });
+
+      if (Component.getInitialProps) {
+        pageProps = await Component.getInitialProps({ ...ctx });
+      }
     }
     return { pageProps };
   }
 
   render() {
-    let { Component, pageProps, store } = this.props;
+    const { Component, store } = this.props;
     return (
       <Container>
         <Provider store={store}>
