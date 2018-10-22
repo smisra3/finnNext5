@@ -31,7 +31,7 @@ class StoryDescription extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  storyListingPageData: get(state, ['storyPage', 'storyPageData'])
+  storyData: get(state, ['story'])
 });
 
 const mapDispatchToProps = dispatch => ({});
