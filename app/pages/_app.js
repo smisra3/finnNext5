@@ -10,6 +10,10 @@ const dynamicImport = name => {
   switch (name) {
     case 'HomePage':
       return import('../components/templates/HomePage/HomePage.exporter.js');
+    case 'StoryDescriptionPage':
+      return import('../components/templates/StoryDescription/StoryDescription.exporter.js');
+    case 'Story': 
+      return import('../components/templates/Story/Story.exporter.js');
   }
 };
 
