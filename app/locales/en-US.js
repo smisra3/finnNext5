@@ -5,6 +5,24 @@ export const myAccount = "My Account";
 export const skipNavigation = "Skip Navigation";
 export const PersonalInvesting = "CUSTOMER CARE";
 export const PersonalInvestingContactNo = "+358 9 818 0800";
+//Navigation
+export const navigationLabels = {
+  destinationText: "Destinations",
+  seasonsText: "Seasons",
+  themeText: "Theme",
+  travelStorieText: "Travel Stories",
+  experiencesText: "Individual Experiences"
+}
+//Footer
+export const footerNav = {
+  aboutUsText: "About Us",
+  privacy: "Privacy",
+  cookie: "Cookies"
+}
+// specialcharacter 
+export const specialcharacter = {
+  forwardslash: "/"
+}
 // Login Page Labels
 export const loginPageLabels = {
   loginPageTitleText: "Log in | Fidelity International",

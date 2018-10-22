@@ -61,14 +61,14 @@ class HomePage extends Component<Props> {
       return (
         <Layout title="home" className="row" id="content-wrapper">
           <HeadTag description="Home Page Description" title={story ? story.title : "Home Page"} />
-          <div
+          <div style={{ height: "2000px"}}
             dangerouslySetInnerHTML={(() => ({
-              __html: this.props.homePageData.stories[0].quote
+              __html: this.props.homePageData.stories[0].curator.description
             }))()}
           />
-          <div className="row">
+          {story.details && <div className="row">
             <TripDetailsCard tripDetailsList={story.details} />
-          </div>
+          </div>}
           <Button primary onClick={this.activateModal}>
             Activate Modal
           </Button>

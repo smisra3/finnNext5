@@ -7,6 +7,7 @@ import get from "lodash/get";
 
 import Theme from "../../../styles/theme/";
 import Header from "../../organisms/Header";
+import Footer from "../../organisms/Footer";
 import { MOBILE } from "../../../constants";
 import API from "../../../utils/fetch";
 
@@ -48,6 +49,7 @@ const Layout = ({ children, deviceType, hasRightGutter }: Props): Node => {
         </Head>
         <Header />
         {children}
+        <Footer />
       </main>
     </ThemeProvider>
   );

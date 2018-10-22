@@ -9,10 +9,11 @@ const commonStyles = css`
       : props.theme.minHeightHeaderDesktop}px;
 
   header {
-    box-shadow: ${props => props.theme.containerShadowPrimary} 0 6px 2px -3px;
+    position: absolute;
+    /* box-shadow: ${props => props.theme.containerShadowPrimary} 0 6px 2px -3px;
     position: fixed;
     z-index: ${props => props.theme.zIndex.zSticky};
-    background-color: ${props => props.theme.backgroundColorPrimary};
+    background-color: ${props => props.theme.backgroundColorPrimary}; */
     top: 0;
     width: 100%;
     min-height: ${props =>
@@ -45,7 +46,11 @@ const commonStyles = css`
   }
 
   .header-content {
-    padding-top: 16px;
+    padding-top: 45px;
+
+    @media (max-width: 767px) {
+      padding-top: 30px;
+    }
   }
 
   @media (max-width: 767px) {
@@ -84,6 +89,13 @@ const commonStyles = css`
     height: auto;
     overflow: visible;
     text-decoration: underline;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
   }
 `;
 
