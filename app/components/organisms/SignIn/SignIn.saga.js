@@ -52,6 +52,6 @@ export function* userSignInSaga(action): Generator<*, *, *> {
   }
 }
 
-const signInSaga = () => [yield takeLatest(VALIDATE_USER_NAME, validateUserSaga), takeLatest(SIGNIN_REQUEST, userSignInSaga)];
+const signInSaga = () => [ takeLatest(VALIDATE_USER_NAME, validateUserSaga), takeLatest(SIGNIN_REQUEST, userSignInSaga)];
 
 export default signInSaga;

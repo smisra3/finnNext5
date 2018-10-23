@@ -13,6 +13,7 @@ import {
   GET_LABELS,
   GET_LABELS_SUCCESS,
   GET_LABELS_FAILURE,
+  HEADER_FOOTER_DATA
 } from '../constants';
 
 export const globalDataFailureAction = (error: Error) => ({ type: GLOBAL_DATA_FAILURE, error });
@@ -38,5 +39,6 @@ export const serverActions = {
   setPageUrl: (pageUrl: string) => ({ type: PAGE_URL, pageUrl }),
   setPageQuery: (pageQuery: { [string]: Array<string> }) => ({ type: PAGE_QUERY, pageQuery }),
   setPageOrigin: (origin: string) => ({ type: PAGE_ORIGIN, origin }),
+  getHeaderFooter: () => ({ type: HEADER_FOOTER_DATA }),
   getLables: () => ({ type: GET_LABELS }),
 };

@@ -17,8 +17,15 @@ const commonStyles = css`
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: ${props => props.theme.backgroundColorPrimary};
+      background-color: ${props => props.theme.buttonColorSecondary};
       /* box-shadow: ${props => props.theme.containerShadowPrimary} 0 6px 2px -3px; */
+
+      .navigation-links {
+        li {
+          color: #000;
+          transition: 0.9s;
+        }
+      }
     }
     .main-body {
       margin-top: ${props =>
@@ -64,16 +71,15 @@ const commonStyles = css`
     }
   } */
 
-  @media (max-width: 767px) {
-    .brand-logo {
-      overflow: hidden;
-      width: 44px;
-      height: 44px;
-      img {
-        max-width: initial;
+  .brand-logo {
+    img{
+      width: 160px;
+      @media (min-width: 767px) {
+        width: 100%;
       }
     }
   }
+
   .cart-logo {
       overflow: hidden;
       img {

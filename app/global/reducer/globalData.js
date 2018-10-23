@@ -27,7 +27,7 @@ import { setCookie } from '../../utils/utils';
 export const initState = {
   deviceType: '',
   activeRegion: '',
-};
+  headerFooterData: {}};
 
 const setDevice = (state, { deviceType }): DeviceType => updateState(state, { deviceType });
 
@@ -50,6 +50,7 @@ const setUserState = (state, { userState }) => {
   return updateState(state, { userState });
 };
 
+const setHeaderFooterData  = (state, action) => updateState(state, action.payload);
 const setPageOrigin = (state, { origin }) => updateState(state, { pageOrigin: origin });
 
 export default (state = initState, action: GlobalType = '') => {
@@ -74,6 +75,8 @@ export default (state = initState, action: GlobalType = '') => {
       return setUserState(state, action);
     case PAGE_ORIGIN:
       return setPageOrigin(state, action);
+    case 'GOT_HEADER_FOOTER_DATA': 
+      return setHeaderFooterData(state, action);
     default:
       return state;
   }

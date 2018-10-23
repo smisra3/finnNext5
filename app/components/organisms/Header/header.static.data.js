@@ -28,13 +28,13 @@ css.push(
   'http://127.0.0.1:3002/static/styles/main.css',
 );
 
-// const brandLogoImage = {
-//   className: "",
-//   src: "http://127.0.0.1:3002/static/images/Finnair.png",
-//   srcset:
-//     "http://127.0.0.1:3002/static/images/Finnair.png, http://127.0.0.1:3002/static/images/Finnair-2x.png 2x",
-//   alt: fidelity
-// };
+const cartLogoImage = {
+  className: "",
+  src: "http://127.0.0.1:3002/static/images/Cart.svg",
+  srcset:
+    "http://127.0.0.1:3002/static/images/Cart.svg, http://127.0.0.1:3002/static/images/Cart.svg 2x",
+  alt: fidelity
+};
 
 const NavigationText = [
   {
@@ -59,4 +59,4 @@ const NavigationText = [
   },
 ];
 
-export { brandLogoImage, AntonymousHeaderInfo, css, NavigationText };
+export { brandLogoImage, cartLogoImage, AntonymousHeaderInfo, css, NavigationText };

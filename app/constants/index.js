@@ -37,5 +37,7 @@ export const BRAND_THEME = 'BRAND_THEME';
 
 // Page Mapping
 export const PageMap = {
-  '/': 'HomePage',
+  "/": "HomePage",
+  "/storydescription": "StoryDescriptionPage",
+  "/story": "Story"
 };

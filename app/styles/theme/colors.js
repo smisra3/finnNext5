@@ -28,4 +28,5 @@ export default ({
   ERROR: '#c00',
   SUCCESS: '#2e993a',
   CONTAINER_SHADOW_PRIMARY: 'rgba(0,0,0,.2)',
+  TEXT_COLOR_DIVIDER: '#39E7B3',
 }: colors);

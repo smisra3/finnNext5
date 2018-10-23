@@ -51,6 +51,7 @@ const theme = {
   minHeightHeaderMobile: dimension.HEADER_MIN_HEIGHT_MOBILE,
   minHeightHeaderDesktop: dimension.HEADER_MIN_HEIGHT_DESKTOP,
   maxWidthPageContent: dimension.PAGE_CONTENT_MAX_WIDTH,
+  textColorDivider: colors.TEXT_COLOR_DIVIDER
 };
 
 const themes = { zIndex, ...theme };

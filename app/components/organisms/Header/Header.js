@@ -1,6 +1,8 @@
 // @flow
 import { Fragment, Component } from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
+import { connect } from 'react-redux';
+import get from 'lodash/get';
 
 import type { Props } from './types';
 import styled from 'styled-components';
@@ -12,49 +14,15 @@ import Anchor from '../../atoms/Anchor';
 import Image from '../../atoms/Image';
 import { LOGIN } from '../../../routes';
 import { skipNavigation } from '../../../locales/en-US';
-import { brandLogoImage, AntonymousHeaderInfo, NavigationText, css } from './header.static.data';
+import { brandLogoImage, cartLogoImage, NavigationText, css } from './header.static.data';
 import '../../../styles/index';
+// import { get } from 'http';
 
 const skipNavigationHandler = (e: SyntheticEvent<>) => {
   e.preventDefault();
   const wrapper = document.getElementById('content-wrapper');
   wrapper.focus();
 };
-
-// const Header = ({ className }: Props): Node => (
-//   <div className={className}>
-//     <header id="main-header">
-//       <div className="skip-nav">
-//         <Anchor
-//           to="#content-wrapper"
-//           noLink
-//           handleLinkClick={e => skipNavigationHandler(e)}
-//           navigateTo="content-wrapper"
-//         >
-//           {skipNavigation}
-//         </Anchor>
-//       </div>
-//       <div className="content-width">
-//       <div className="row middle-xs between-xs header-content">
-//           <Link href={LOGIN}>
-//             <a className="brand-logo col-xs-3 first-lg">
-//               <Image {...brandLogoImage} />
-//             </a>
-//           </Link>
-//           <Nav />
-//             <Link href={LOGIN}>
-//               <a className="brand-logo col-xs-1">
-//                 <Image {...brandLogoImage} />
-//               </a>
-//             </Link>
-//         </div>
-//       </div>
-//       {css.map((cssPath, idx) => {
-//         return <link type="text/css" rel="stylesheet" href={cssPath} key={idx} />;
-//       })}
-//     </header>
-//   </div>
-// );
 
 class Header extends Component<Props, State> {
   constructor(props) {
@@ -97,7 +65,7 @@ class Header extends Component<Props, State> {
             {/* navigation links and hamburger */}
             {NavigationText &&
               <div className="first-xs">
-                <Nav NavigationText={NavigationText} brandLogoImage={brandLogoImage} />
+                <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} />
               </div>
                 }
             {/* end navigation links and hamburger */}
@@ -105,7 +73,7 @@ class Header extends Component<Props, State> {
             {/* cart script */}
             <div>
               <div className="cart-logo row end-xs">
-                <Image {...brandLogoImage} />
+                <Image {...cartLogoImage} />
               </div>
             </div>
             {/* end cart script */}
@@ -118,8 +86,12 @@ class Header extends Component<Props, State> {
   }
 }
 
-export default styled(Header)`
+const mapStateToProps = state => ({
+  header: get(state, ['global', 'globalData', 'header']),
+});
+
+export default connect(mapStateToProps)(styled(Header)`
   ${styles};
-`;
+`);
 
 export { Header as HeaderVanilla };

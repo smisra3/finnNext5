@@ -11,51 +11,40 @@ const commonStyles = css`
     position: relative;
     float: left;
     display: block;
-    width: 35px;
-    height: 18px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 8px;
-      height: 3px;
-      background: #231f20;
-      box-shadow: 0 -8px 0 0 #231f20, 0 8px 0 0 #231f20;
+    &:focus {
+      outline: none;
     }
 
     @media (min-width: 1024px) {
       display: none;
       float: right;
     }
+
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: ${props => props.theme.textColorDivider};;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    .bar2 {
+      width: 30px;
+    }
+    .bar3 {
+      width: 25px;
+    }
   }
 
-  .closebtn {
-    position: relative;
-    height: 20px;
-    width: 20px;
-    border: 0;
-    background: none;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 10px;
-      height: 20px;
-      width: 2px;
-      background-color: #000;
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
-    }
+  .change {
+      .bar1 {
+        transform: rotate(-45deg) translate(-9px, 7px);
+      }
+      .bar2 {opacity: 0;}
+      .bar3 {
+        width: 35px;
+        transform: rotate(45deg) translate(-8px, -7px);
+      }
   }
 
   .navigation-links {
@@ -63,21 +52,18 @@ const commonStyles = css`
       list-style-type: none;
       margin: 0;
       padding: 0;
-      font-size: ${props => props.theme.fontSizeHighlight};
 
       li {
-        font-size: ${props => props.theme.fontSizeBase};
-        padding-right: 5px;
-        padding-left: 5px;
-        line-height: 2;
-        color: ${props => props.theme.WHITE};
+        font-size: ${props => props.theme.fontSizeHighlight};
+        color: ${props => props.theme.buttonColorSecondary};
       }
       a {
         position: relative;
           span {
             &::before {
               content: '/';
-              margin: 0 0 0 5px;
+              color: ${props => props.theme.textColorDivider};
+              margin: 0 18px 0 18px;
             }
           }
         &:last-child {
@@ -111,20 +97,31 @@ const commonStyles = css`
     z-index: 99999;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: ${props => props.theme.buttonColorSecondary};
     overflow-x: hidden;
     overflow-y: scroll;
-    padding: 60px 20px 0;
-    animation: slide-menu 0.5s ease-out;
+    /* padding: 60px 20px 0; */
+
+    margin-top: ${props =>
+    (props.deviceType === MOBILE
+      ? props.theme.minHeightHeaderMobile
+      : props.theme.minHeightHeaderDesktop)}px;
 
     ul {
       flex-direction: column;
-      padding-top: 50px;
-      padding-bottom: 15px;
-
-      li {
+      a{
         border-bottom: 1px solid #d5d5d5;
-        padding-left: 25px;
+        height: 80px;
+        line-height: 80px;
+        li {
+          padding-left: 25px;
+          padding-right: 25px;
+
+          &::after {
+            content: '->';
+            float: right;
+          }
+        }
       }
     }
 
@@ -144,34 +141,24 @@ const commonStyles = css`
     }
   }
 
- .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-
-    &.show {
-      display: block;
+  .brand-logo {
+    img{
+      width: 160px;
+      @media (min-width: 767px) {
+        width: 100%;
+      }
     }
-}
+  }
 
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
+  .slide-menu-in {
+    animation: slide-menu-in 0.5s ease-out;
+  }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+  .slide-menu-out {
+    animation: slide-menu-out 0.5s ease-out;
+  }
 
-
-  @keyframes slide-menu {
+  @keyframes slide-menu-in {
     0% {
       opacity: 0;
       transform: translateX(-100%);
@@ -182,7 +169,7 @@ const commonStyles = css`
       transform: translateX(0);
     }
   }
-  @keyframes slide-menu-in {
+  @keyframes slide-menu-out {
     0% {
       opacity: 0;
       transform: translateX(0);

@@ -8,7 +8,8 @@ module.exports = {
   },
 
   additionalRoutes: {
-    error: '/:page',
+    error: "/:page",
+    storydescription: "/story/:slug"
   },
 
   fileExclusionList: ['_document.js', 'index.js', 'error.js'],

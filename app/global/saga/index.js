@@ -6,6 +6,7 @@ import { CHECK_AUTH, GET_LABELS } from '../constants';
 import { STATUS_ERROR, STATUS_SUCCESS } from '../../constants';
 import signInSaga from '../../components/organisms/SignIn/SignIn.saga';
 import Labels from '../../../mock/labels';
+import Axios from 'axios';
 
 export function* authenticationSaga() {
   try {
@@ -31,10 +32,16 @@ export function* fetchLabels(action) {
   }
 }
 
+export function* getHeaderFooterData() {
+  const response = yield call(Axios, 'https://travelnowhere.citybreakweb.com/api/gateway/header-footer');
+  yield put({ type: 'GOT_HEADER_FOOTER_DATA', payload: response.data});
+}
+
 export default function* globalSaga() {
   yield all([
     takeLatest(CHECK_AUTH, authenticationSaga),
     [...signInSaga()],
     takeLatest(GET_LABELS, fetchLabels),
+    takeLatest('GET_HEADER_FOOTER_DATA', getHeaderFooterData)
   ]);
 }
