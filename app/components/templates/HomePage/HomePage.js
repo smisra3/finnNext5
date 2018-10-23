@@ -51,7 +51,6 @@ class HomePage extends Component<Props> {
   };
 
   render() {
-    console.log(this.props);
     const { homePageData } = this.props;
     const story = homePageData === undefined ? [] : homePageData.stories[0];
 

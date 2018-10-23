@@ -144,60 +144,67 @@ export const getWrapperComponent = (
 
     static async getInitialProps(...params) {
       const initialParams = params[0];
-
       const { store, isServer, req, query, res, pathname, asPath } = initialParams;
+      let enhancedProps;
       injectSagaAndReducer(key, store, saga, reducer);
-      // store.dispatch(serverActions.setCurrentRoute(pathname));
-      // let requestDetails;
-      // let clientParams = {};
 
-      // if (isServer) {
-      //   const deviceType = req.device.type === PHONE ? MOBILE : DESKTOP;
-      //   const isTablet = req.device.type === TABLET;
-      //   // store.dispatch(serverActions.addIsTablet(isTablet));
-      //   // store.dispatch(serverActions.addDeviceType(deviceType));
-      //   // store.dispatch(serverActions.setPageUrl(req.url));
-      //   // store.dispatch(serverActions.setPageQuery({ ...req.query, ...query }));
-      //   // store.dispatch(serverActions.setPageOrigin(`${req.protocol}://${req.headers.host}`));
-      //   // store.dispatch(serverActions.getLables());
+      //-----------------------------------------------------------------------------------------------------------------------
 
-      //   // requestDetails = {
-      //   //   deviceType,
-      //   //   cookies: req.cookies.cookieList,
-      //   //   logger: req.perfLogger,
-      //   //   whitelistedHeaders: cleanupRequestHeaders(req.headers),
-      //   // };
-      // } else {
-      //   clientParams = parseQueryParams(asPath);
-      //   store.dispatch(serverActions.setPageQuery(clientParams));
-      //   requestDetails = {
-      //     deviceType: get(store.getState(),['global', 'globalData', 'deviceType']),
-      //   };
-      // }
+      store.dispatch(serverActions.setCurrentRoute(pathname));
+      let requestDetails;
+      let clientParams = {};
 
-      // if (preExecuteGetInitialProps && WrappedComponent.getInitialProps) {
-      //   await WrappedComponent.getInitialProps(...params);
-      // }
+      if (isServer) {
+        const deviceType = req.device.type === PHONE ? MOBILE : DESKTOP;
+        const isTablet = req.device.type === TABLET;
+        store.dispatch(serverActions.addIsTablet(isTablet));
+        store.dispatch(serverActions.addDeviceType(deviceType));
+        store.dispatch(serverActions.setPageUrl(req.url));
+        store.dispatch(serverActions.setPageQuery({ ...req.query, ...query }));
+        store.dispatch(serverActions.setPageOrigin(`${req.protocol}://${req.headers.host}`));
+        store.dispatch(serverActions.getLables());
 
-      // if (isServer && globalActions instanceof Array) {
-      //   WrapperComponent.dispatchActions({
-      //     actions: globalActions,
-      //     store,
-      //     needQuery: useQuery,
-      //     query,
-      //     requestDetails,
-      //   });
-      // }
+        requestDetails = {
+          deviceType,
+          asPath
+          // cookies: req.cookies.cookieList,
+          // logger: req.perfLogger,
+          // whitelistedHeaders: cleanupRequestHeaders(req.headers),
+        };
+      } else {
+        clientParams = parseQueryParams(asPath);
+        store.dispatch(serverActions.setPageQuery(clientParams));
+        requestDetails = {
+          deviceType: get(store.getState(),['global', 'globalData', 'deviceType']),
+        };
+      }
+
+
+      //-----------------------------------------------------------------------------------------------------------------------
+
+      if (WrappedComponent.getInitialProps) {
+        enhancedProps = await WrappedComponent.getInitialProps(...params);
+      }
+
+      if (isServer && globalActions instanceof Array) {
+        WrapperComponent.dispatchActions({
+          actions: globalActions,
+          store,
+          needQuery: useQuery,
+          query,
+          requestDetails,
+        });
+      }
 
       const combinedPageActions =
         initialActions instanceof Array ? [...pageActions, ...initialActions] : [...pageActions];
 
       WrapperComponent.dispatchActions({
         actions: combinedPageActions,
-        store
-        // needQuery: useQuery,
-        // query: { ...query, ...clientParams },
-        // requestDetails,
+        store,
+        needQuery: useQuery,
+        query: { ...query, ...clientParams },
+        requestDetails,
       });
       // Wait till all sagas are done
       await monitorSagas(store, isServer);
@@ -208,7 +215,8 @@ export const getWrapperComponent = (
       // }
 
       return {
-        pathname
+        pathname,
+        enhancedProps
       };
     }
 
