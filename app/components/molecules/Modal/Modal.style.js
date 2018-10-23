@@ -1,8 +1,6 @@
-import {
-  css
-} from 'styled-components';
+import { css } from 'styled-components';
 
-const ModalStyles = css `
+const ModalStyles = css`
   position: absolute;
   top: 100px;
   left: 140px;

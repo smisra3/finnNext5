@@ -6,38 +6,37 @@ import {
   VALIDATE_USER_NAME,
   VALIDATE_USER_NAME_SUCCESS,
   SIGNIN_ERRORS,
-  UPDATE_LOGIN_FORM
+  UPDATE_LOGIN_FORM,
 } from './SignIn.constants';
 import { signInRequestType } from './types';
 
-export const checkUserValidAction = (userID) => ({
+export const checkUserValidAction = userID => ({
   type: VALIDATE_USER_NAME,
   userID,
 });
 
-export const setUserValidAction = (response) => ({
+export const setUserValidAction = response => ({
   type: VALIDATE_USER_NAME_SUCCESS,
   response,
 });
 
-export const requestSignInAction = (requestData): signInRequestType => ({type: SIGNIN_REQUEST,
+export const requestSignInAction = (requestData): signInRequestType => ({
+  type: SIGNIN_REQUEST,
   requestData,
 });
 
-export const loadingIndicatorAction = (status) => ({
+export const loadingIndicatorAction = status => ({
   type: LOADING_INDICATOR_STATUS,
-  status
+  status,
 });
 
-export const setErrorsAction = (error) => ({
+export const setErrorsAction = error => ({
   type: SIGNIN_ERRORS,
-  error
+  error,
 });
 
-export const updateLoginAction = (identifier, value) => {
-  return {
-    type: UPDATE_LOGIN_FORM,
-    identifier,
-    value
-  }
-}
+export const updateLoginAction = (identifier, value) => ({
+  type: UPDATE_LOGIN_FORM,
+  identifier,
+  value,
+});

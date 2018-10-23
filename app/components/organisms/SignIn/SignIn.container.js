@@ -11,7 +11,7 @@ const mapStateToProps = (state): MapStateToProps => ({
   loginForm: _.get(state, ['global', 'signIn', 'loginForm']),
   isValidUser: _.get(state, ['global', 'signIn', 'isUserValid']),
   errorMessage: _.get(state, ['global', 'signIn', 'errorMessage']),
-  isLoaderActive: _.get(state, ['global', 'signIn', "isLoaderActive"]),
+  isLoaderActive: _.get(state, ['global', 'signIn', 'isLoaderActive']),
   deviceType: _.get(state, ['global', 'globalData', 'deviceType']),
 });
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch): void => ({
   checkUserValid: userID => dispatch(checkUserValidAction(userID)),
   submitHandler: userInputs => dispatch(requestSignInAction(userInputs)),
   resetError: () => dispatch(setErrorsAction({})),
-  updateLoginHandler: (identifier, value) => dispatch(updateLoginAction(identifier, value))
+  updateLoginHandler: (identifier, value) => dispatch(updateLoginAction(identifier, value)),
 });
 
 const SignInContainer = connect(

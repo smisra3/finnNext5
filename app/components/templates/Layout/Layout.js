@@ -1,15 +1,15 @@
 // @flow
-import { ThemeProvider } from "styled-components";
-import type { Node } from "react";
-import { connect } from "react-redux";
-import Head from "next/head";
-import get from "lodash/get";
+import { ThemeProvider } from 'styled-components';
+import type { Node } from 'react';
+import { connect } from 'react-redux';
+import Head from 'next/head';
+import get from 'lodash/get';
 
-import Theme from "../../../styles/theme/";
-import Header from "../../organisms/Header";
-import Footer from "../../organisms/Footer";
-import { MOBILE } from "../../../constants";
-import API from "../../../utils/fetch";
+import Theme from '../../../styles/theme/';
+import Header from '../../organisms/Header';
+import Footer from '../../organisms/Footer';
+import { MOBILE } from '../../../constants';
+import API from '../../../utils/fetch';
 
 type Props = {
   children: Node,
@@ -56,22 +56,22 @@ const Layout = ({ children, deviceType, hasRightGutter }: Props): Node => {
 };
 
 Layout.defaultProps = {
-  hasRightGutter: false
+  hasRightGutter: false,
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = () => ({});
 
 const mapStateToProps /* istanbul ignore next */ = (state): { deviceType: string } => ({
-  deviceType: get(state, ["global", "globalData", "deviceType"]),
-  isNavigationDrawerOpen: get(state, ["global", "header", "isNavigationDrawerOpen"]),
-  topBanner: get(state, ["global", "header", "topBanner"]),
-  isTablet: get(state, ["global", "globalData", "isTablet"]),
-  topBannerModalContent: get(state, ["global", "header", "topBannerModalContent"])
+  deviceType: get(state, ['global', 'globalData', 'deviceType']),
+  isNavigationDrawerOpen: get(state, ['global', 'header', 'isNavigationDrawerOpen']),
+  topBanner: get(state, ['global', 'header', 'topBanner']),
+  isTablet: get(state, ['global', 'globalData', 'isTablet']),
+  topBannerModalContent: get(state, ['global', 'header', 'topBannerModalContent']),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Layout);
 export { Layout };

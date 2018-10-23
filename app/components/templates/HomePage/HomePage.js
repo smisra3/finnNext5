@@ -20,10 +20,10 @@ class HomePage extends Component<Props> {
     seoData: {
       homePageMetaDesc: '',
       homePagePageTitle: '',
-      seoMetaDesc: undefined
+      seoMetaDesc: undefined,
     },
     editorialData: {},
-    homePageData: undefined
+    homePageData: undefined,
   };
 
   state = { openModal: false };
@@ -57,36 +57,36 @@ class HomePage extends Component<Props> {
 
     if (story.length === 0) {
       return <div>It should work now</div>;
-    } else {
-      return (
-        <Layout title="home" className="row" id="content-wrapper">
-          <HeadTag description="Home Page Description" title={story ? story.title : 'Home Page'} />
-          <div style={{marginTop: "80px", height: "1000px"}}
-            dangerouslySetInnerHTML={(() => ({
-              __html: this.props.homePageData.seasons[0].description
-            }))()}
-          />
-          {story.details && (
-            <div className="row">
-              <TripDetailsCard tripDetailsList={story.details} />
-            </div>
-          )}
-          <Button primary onClick={this.activateModal}>
-            Activate Modal
-          </Button>
-          <Modal
-            handleAfterOpenFunc={this.addWidgets}
-            closeModal={this.deactivateModal}
-            isOpen={this.state.openModal}
-          />
-        </Layout>
-      );
     }
+    return (
+      <Layout title="home" className="row" id="content-wrapper">
+        <HeadTag description="Home Page Description" title={story ? story.title : 'Home Page'} />
+        <div
+          style={{ marginTop: '80px', height: '1000px' }}
+          dangerouslySetInnerHTML={(() => ({
+              __html: this.props.homePageData.seasons[0].description,
+            }))()}
+        />
+        {story.details && (
+        <div className="row">
+          <TripDetailsCard tripDetailsList={story.details} />
+        </div>
+          )}
+        <Button primary onClick={this.activateModal}>
+            Activate Modal
+        </Button>
+        <Modal
+          handleAfterOpenFunc={this.addWidgets}
+          closeModal={this.deactivateModal}
+          isOpen={this.state.openModal}
+        />
+      </Layout>
+    );
   }
 }
 /* istanbul ignore next */
 const mapStateToProps = state => ({
-  homePageData: get(state, ['homePage', 'homePageData'])
+  homePageData: get(state, ['homePage', 'homePageData']),
 });
 
 const mapDispatchToProps = (dispatch: Map) => ({});
@@ -98,7 +98,7 @@ export default enhance(HomePage, {
   reducer,
   key: 'homePage',
   initialActions,
-  criticalState: [['homePageData']]
+  criticalState: [['homePageData']],
 });
 
 export { HomePage as HomePageDisconnected };

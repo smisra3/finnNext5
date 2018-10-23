@@ -1,27 +1,27 @@
 // @flow
-import { Fragment, Component } from "react";
-import styled from "styled-components";
-import styles from "./SignIn.style";
-import Button from "../../atoms/Button";
-import Anchor from "../../atoms/Anchor";
-import Input from "../../atoms/Input";
-import CheckBox from "../../atoms/CheckBox";
-import type { Props, State } from "./types";
-import { loginPageLabels } from "../../../locales/en-US";
-import { SUPPORT_PAGE } from "../../../routes";
-import { checkValidity } from "../../../utils/validation";
+import { Fragment, Component } from 'react';
+import styled from 'styled-components';
+import styles from './SignIn.style';
+import Button from '../../atoms/Button';
+import Anchor from '../../atoms/Anchor';
+import Input from '../../atoms/Input';
+import CheckBox from '../../atoms/CheckBox';
+import type { Props, State } from './types';
+import { loginPageLabels } from '../../../locales/en-US';
+import { SUPPORT_PAGE } from '../../../routes';
+import { checkValidity } from '../../../utils/validation';
 
 const initialState = () => ({
   userNameControl: {
-    errorMessage: "",
-    rules: [{ required: true }, { minLength: 3 }]
+    errorMessage: '',
+    rules: [{ required: true }, { minLength: 3 }],
   },
   passwordControl: {
-    errorMessage: "",
-    rules: [{ required: true }]
+    errorMessage: '',
+    rules: [{ required: true }],
   },
   isRememberMeChecked: false,
-  isFormSubmitted: false
+  isFormSubmitted: false,
 });
 
 /**
@@ -52,23 +52,23 @@ class SignIn extends Component<Props, State> {
   checkUserValidHandler = () => {
     this.validateLoginForm();
     const { checkUserValid, loginForm } = this.props;
-    if (loginForm.userName.trim() !== "") {
+    if (loginForm.userName.trim() !== '') {
       checkUserValid(loginForm.userName);
     }
   };
 
   validateLoginForm = () => {};
 
-  formSubmit = event => {
+  formSubmit = (event) => {
     event.preventDefault();
     const { submitHandler } = this.props;
     const { userName, password } = this.props.loginForm;
     this.setState({
-      isFormSubmitted: true
+      isFormSubmitted: true,
     });
     submitHandler({
       userName: userName.value,
-      password: password.value
+      password: password.value,
     });
   };
 
@@ -76,26 +76,28 @@ class SignIn extends Component<Props, State> {
     this.props.updateLoginHandler(inputIdentifier, value);
   };
 
-  rememberMeHandler = e => {
+  rememberMeHandler = (e) => {
     this.setState(prevState => ({
-      isRememberMeChecked: !prevState.isRememberMeChecked
+      isRememberMeChecked: !prevState.isRememberMeChecked,
     }));
   };
 
   renderLoginForm = () => {
     const { userName, password } = this.props.loginForm;
     const { isValidUser, isLoaderActive } = this.props;
-    const { userNameControl, passwordControl, isRememberMeChecked, isFormSubmitted } = this.state;
+    const {
+      userNameControl, passwordControl, isRememberMeChecked, isFormSubmitted,
+    } = this.state;
     const loginForm = (
       <div className="form-inner-wrapper">
         <Input
           labelContent={loginPageLabels.userNameLabel}
-          key={"userName"}
+          key="userName"
           type="text"
           placeholder=""
           value={userName}
           errorMessage={userNameControl.errorMessage}
-          onChange={event => this.inputChangedHandler(event.target.value, "userName")}
+          onChange={event => this.inputChangedHandler(event.target.value, 'userName')}
           onBlur={event => this.checkUserValidHandler()}
           data-slnm-id="userName"
           isParentSubmitted={isFormSubmitted}
@@ -104,13 +106,13 @@ class SignIn extends Component<Props, State> {
         {isValidUser && (
           <Input
             labelContent={loginPageLabels.passwordLabel}
-            key={"password"}
+            key="password"
             type="password"
             placeholder=""
             value={password}
             errorMessage={passwordControl.errorMessage}
-            onChange={event => this.inputChangedHandler(event.target.value, "password")}
-            onBlur={event => this.inputChangedHandler(event.target.value, "password")}
+            onChange={event => this.inputChangedHandler(event.target.value, 'password')}
+            onBlur={event => this.inputChangedHandler(event.target.value, 'password')}
             data-slnm-id="password"
           />
         )}
@@ -157,7 +159,7 @@ class SignIn extends Component<Props, State> {
         >
           <div className="help-support circular-buffer center-align">
             <p>
-              {loginPageLabels.signInHelpText}{" "}
+              {loginPageLabels.signInHelpText}{' '}
               <Anchor to={SUPPORT_PAGE}>{loginPageLabels.viewSupportPage}</Anchor>
             </p>
           </div>

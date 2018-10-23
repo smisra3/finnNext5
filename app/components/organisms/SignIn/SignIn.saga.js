@@ -5,7 +5,7 @@ import { SIGNIN_REQUEST, VALIDATE_USER_NAME, UPDATE_LOGIN_FORM } from './SignIn.
 import {
   loadingIndicatorAction,
   setErrorsAction,
-  setUserValidAction
+  setUserValidAction,
 } from './SignIn.actions';
 import API from '../../../utils/fetch';
 import { STATUS_ERROR, STATUS_SUCCESS } from '../../../constants';
@@ -38,11 +38,11 @@ export function* userSignInSaga(action): Generator<*, *, *> {
     yield put(loadingIndicatorAction(true));
     const data = yield call(API.fetch, API_URLS.login);
     if (data.status.toUpperCase() === STATUS_ERROR) {
-      yield put(setAuthenticationAction(false, {}))
+      yield put(setAuthenticationAction(false, {}));
       yield put(setErrorsAction(data.message));
       yield put(loadingIndicatorAction(false));
     } else if (data.status.toUpperCase() === STATUS_SUCCESS) {
-      yield put(setAuthenticationAction(true, data.data))
+      yield put(setAuthenticationAction(true, data.data));
       yield put(setUserStateAction(data.data));
       yield put(loadingIndicatorAction(false));
     }
@@ -52,8 +52,6 @@ export function* userSignInSaga(action): Generator<*, *, *> {
   }
 }
 
-const signInSaga = () => {
-  return [takeLatest(VALIDATE_USER_NAME, validateUserSaga),takeLatest(SIGNIN_REQUEST, userSignInSaga)]
-}
+const signInSaga = () => [yield takeLatest(VALIDATE_USER_NAME, validateUserSaga), takeLatest(SIGNIN_REQUEST, userSignInSaga)];
 
 export default signInSaga;

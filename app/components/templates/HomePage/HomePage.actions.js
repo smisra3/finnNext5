@@ -39,6 +39,6 @@ export const loadHomePageEditorialSuccess = (data: Map): LoadHomeEditorialDataSu
 
 export const loadHomePageData = () => ({
   type: 'GET_HOME_PAGE_DATA',
-})
+});
 
 export default [loadHomePageData];

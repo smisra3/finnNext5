@@ -1,6 +1,6 @@
-import { css } from "styled-components";
-import { MOBILE } from "../../../constants";
-import { specialcharacter } from "../../../locales/en-US";
+import { css } from 'styled-components';
+import { MOBILE } from '../../../constants';
+import { specialcharacter } from '../../../locales/en-US';
 
 const commonStyles = css`
 

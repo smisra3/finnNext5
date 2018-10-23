@@ -112,49 +112,49 @@ class CheckBox extends PureComponent<Props, State> {
     return (
       <div className={className}>
         <input
-        id={id}
-        type="checkbox"
-        checked={!!isChecked}
-        onChange={onChecked}
-        ref={(element) => {
+          id={id}
+          type="checkbox"
+          checked={!!isChecked}
+          onChange={onChecked}
+          ref={(element) => {
           this.inputRef = element;
         }}
-        disabled={disabled}
-        onFocus={event =>
+          disabled={disabled}
+          onFocus={event =>
           this.setState({ isFocused: true }, () => {
             if (onFocus) onFocus(event);
           })
         }
-        onBlur={event =>
+          onBlur={event =>
           this.setState({ isFocused: false }, () => {
             if (onBlur) onBlur(event);
           })
         }
-        readOnly={readOnly}
-        aria-label={inputAriaLabel}
-      />
-      <label
-        htmlFor={id}
-        className={`${isChecked ? ' is-checked' : ''}${
+          readOnly={readOnly}
+          aria-label={inputAriaLabel}
+        />
+        <label
+          htmlFor={id}
+          className={`${isChecked ? ' is-checked' : ''}${
           isFocused && isFocusVisible ? ' is-focused' : ''
         }`}
-        {...others}
-      >
+          {...others}
+        >
 
-        {isCustom ? <span className={isChecked ? checkedClass : uncheckedClass} /> : null}
-        {!isCustom && !labelOnly ? (
-          <span
-            className={`checkbox${!imageUrl ? this.getClasses() : ''}`}
-            data-slnm-id={dataSlnmId}
-            aria-hidden={!!inputAriaLabel}
-          />
+          {isCustom ? <span className={isChecked ? checkedClass : uncheckedClass} /> : null}
+          {!isCustom && !labelOnly ? (
+            <span
+              className={`checkbox${!imageUrl ? this.getClasses() : ''}`}
+              data-slnm-id={dataSlnmId}
+              aria-hidden={!!inputAriaLabel}
+            />
         ) : null}
-        {this.createLabelField()}
-      </label>
-    </div>
+          {this.createLabelField()}
+        </label>
+      </div>
     );
   }
 }
 
 export default styled(CheckBox)`${styles}`;
-export { CheckBox as CheckBoxVanilla};
+export { CheckBox as CheckBoxVanilla };

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore, { injectPageSagaReducer } from '../lib/dynamicStore/configureStore';
 import { PageMap } from '../constants';
 
-const dynamicImport = name => {
+const dynamicImport = (name) => {
   switch (name) {
     case 'HomePage':
       return import('../components/templates/HomePage/HomePage.exporter.js');

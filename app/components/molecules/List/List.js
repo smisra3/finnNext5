@@ -24,14 +24,12 @@ class List extends PureComponent<Props> {
       listItems,
       listItemStyle,
     } = this.props;
-    const TagTypeKey = listType ? listType : 'ul';
+    const TagTypeKey = listType || 'ul';
     const listItemsData = fromJS(listItems);
     const listItemStyleData = fromJS(listItemStyle);
-    <TagTypeKey className={className}>
-      {listItemsData.map((item, index) => {
-        return (<li className={listItemStyleData[index]} keys={`list-index-${index}`}>{item}</li>);
-      })}
-    </TagTypeKey>
+      <TagTypeKey className={className}>
+        {listItemsData.map((item, index) => (<li className={listItemStyleData[index]} keys={`list-index-${index}`}>{item}</li>))}
+      </TagTypeKey>;
   }
 }
 

@@ -1,12 +1,12 @@
-import { css } from "styled-components";
-import { MOBILE } from "../../../constants";
+import { css } from 'styled-components';
+import { MOBILE } from '../../../constants';
 
 const commonStyles = css`
 
   /* padding-bottom: ${props =>
-    props.deviceType === MOBILE
+    (props.deviceType === MOBILE
       ? props.theme.minHeightHeaderMobile
-      : props.theme.minHeightHeaderDesktop}px; */
+      : props.theme.minHeightHeaderDesktop)}px; */
     position: absolute;
     z-index: ${props => props.theme.zIndex.zSticky};
     top: 0;
@@ -22,9 +22,9 @@ const commonStyles = css`
     }
     .main-body {
       margin-top: ${props =>
-      props.deviceType === MOBILE
-        ? props.theme.minHeightHeaderMobile
-        : props.theme.minHeightHeaderDesktop}px;
+    (props.deviceType === MOBILE
+      ? props.theme.minHeightHeaderMobile
+      : props.theme.minHeightHeaderDesktop)}px;
     }
 
   .antonymous-header-info {
@@ -51,9 +51,9 @@ const commonStyles = css`
 
   .header-content {
     min-height: ${props =>
-      props.deviceType === MOBILE
-        ? props.theme.minHeightHeaderMobile
-        : props.theme.minHeightHeaderDesktop}px;
+    (props.deviceType === MOBILE
+      ? props.theme.minHeightHeaderMobile
+      : props.theme.minHeightHeaderDesktop)}px;
   }
   
   /* .header-content {

@@ -17,7 +17,7 @@ import {
 
 export const globalDataFailureAction = (error: Error) => ({ type: GLOBAL_DATA_FAILURE, error });
 export const checkAuthenticationAction = () => ({ type: CHECK_AUTH });
-export const setAuthenticationAction = (isUserLoggedIn: boolean, sessionData: any) => ({ type: CHECK_AUTH_SUCCESS, sessionInfo:{isUserLoggedIn,sessionData} });
+export const setAuthenticationAction = (isUserLoggedIn: boolean, sessionData: any) => ({ type: CHECK_AUTH_SUCCESS, sessionInfo: { isUserLoggedIn, sessionData } });
 export const setUserStateAction = (userState: any) => ({ type: SET_USER_STATE, userState });
 export const setLabelsAction = (labels: any) => ({ type: GET_LABELS_SUCCESS, labels });
 export const setLabelsErrorAction = (error: Error) => ({ type: GET_LABELS_FAILURE, error });

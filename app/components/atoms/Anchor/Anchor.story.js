@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {defaultAnchor, secondaryAnchor} from './Anchor.mock';
+import { defaultAnchor, secondaryAnchor } from './Anchor.mock';
 // Import Vanilla Component to display markup and props
 import { AnchorVanilla } from './Anchor';
 // Import Styled Component to showcase variations

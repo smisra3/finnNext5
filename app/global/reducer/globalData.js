@@ -16,11 +16,11 @@ import {
 } from '../constants';
 import type {
   DeviceType,
-    GlobalType,
-    ActiveRegionType,
-    ConfigKeyType,
-    RouteType,
-    setIsTabletType,
+  GlobalType,
+  ActiveRegionType,
+  ConfigKeyType,
+  RouteType,
+  setIsTabletType,
 } from '../types';
 import { setCookie } from '../../utils/utils';
 

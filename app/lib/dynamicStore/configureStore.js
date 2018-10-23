@@ -1,11 +1,11 @@
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import createSagaMiddleware from "redux-saga";
-import nextReduxWrapper from "next-redux-wrapper";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga';
+import nextReduxWrapper from 'next-redux-wrapper';
 
-import createReducer from "./reducers";
-import globalSaga from "../../global/saga";
+import createReducer from './reducers';
+import globalSaga from '../../global/saga';
 
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware];
@@ -13,7 +13,7 @@ const enhancers = [applyMiddleware(...middlewares)];
 
 // Choose compose method depending upon environment and platform
 const composeEnhancers =
-  process.env.NODE_ENV !== "production" && typeof window === "object"
+  process.env.NODE_ENV !== 'production' && typeof window === 'object'
     ? composeWithDevTools
     : compose;
 
@@ -25,7 +25,7 @@ const composeEnhancers =
  * @param {Object} options.reducer - Reducers associated with the page commponent
  * @param {Object} options.saga - Sagas associated with the page commponent
  */
-export default options => {
+export default (options) => {
   const hasKey = !!options.key;
   // if (!hasKey) throw new Error(`${BaseComponent.displayName} needs to be passed with a key`);
   const hasReducer = !!options.reducer;
@@ -38,7 +38,7 @@ export default options => {
   return store;
 };
 
-export const injectPageSagaReducer = options => {
+export const injectPageSagaReducer = (options) => {
   const hasKey = !!options.key;
   const store = options.store;
   const hasSaga = !!options.saga;
@@ -62,7 +62,7 @@ export const injectPageSagaReducer = options => {
       // Run saga and keep the task returned by running saga to access later while cancelling
       store.injectedSagas[options.key] = {
         ...options.saga,
-        task: store.runSaga(options.saga)
+        task: store.runSaga(options.saga),
       };
     }
   }

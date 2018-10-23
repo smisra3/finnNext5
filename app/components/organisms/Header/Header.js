@@ -1,23 +1,23 @@
 // @flow
-import { Fragment, Component } from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import { Fragment, Component } from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
 
-import type { Props } from "./types";
-import styled from "styled-components";
-import Link from "next/link";
-import Nav from "./../../molecules/Navigation"
+import type { Props } from './types';
+import styled from 'styled-components';
+import Link from 'next/link';
+import Nav from './../../molecules/Navigation';
 
-import styles from "./Header.style";
-import Anchor from "../../atoms/Anchor";
-import Image from "../../atoms/Image";
-import { LOGIN } from "../../../routes";
-import { skipNavigation } from "../../../locales/en-US";
-import { brandLogoImage, AntonymousHeaderInfo, NavigationText, css } from "./header.static.data";
-import "../../../styles/index";
+import styles from './Header.style';
+import Anchor from '../../atoms/Anchor';
+import Image from '../../atoms/Image';
+import { LOGIN } from '../../../routes';
+import { skipNavigation } from '../../../locales/en-US';
+import { brandLogoImage, AntonymousHeaderInfo, NavigationText, css } from './header.static.data';
+import '../../../styles/index';
 
 const skipNavigationHandler = (e: SyntheticEvent<>) => {
   e.preventDefault();
-  const wrapper = document.getElementById("content-wrapper");
+  const wrapper = document.getElementById('content-wrapper');
   wrapper.focus();
 };
 
@@ -70,52 +70,50 @@ class Header extends Component<Props, State> {
   }
 
   handleScroll = (event) => {
-    let headerMarkup = document.getElementById("main-header");
-    var sticky = headerMarkup.offsetTop;
+    const headerMarkup = document.getElementById('main-header');
+    const sticky = headerMarkup.offsetTop;
 
     if (window.pageYOffset > sticky) {
-      headerMarkup.classList.add("sticky");
+      headerMarkup.classList.add('sticky');
     } else {
-      headerMarkup.classList.remove("sticky");
+      headerMarkup.classList.remove('sticky');
     }
   }
 
   render() {
     const { className } = this.props;
-    return(
-        <header className={`main-header ${className}`} id="main-header">
-          <div className="container-fluid">
-            <div className="row middle-xs between-xs header-content">
-                {/* main logo */}
-                <div className="brand-logo first-lg">
-                  <Anchor to="#content-wrapper" >
-                    {brandLogoImage && <Image {...brandLogoImage} /> }
-                  </Anchor>
-                </div>
-                {/* end main logo */}
-                
-                {/* navigation links and hamburger */}
-                {NavigationText &&
-                  <div className= "first-xs">
-                    <Nav NavigationText= {NavigationText} brandLogoImage={brandLogoImage}/>
-                  </div>
-                }
-                {/* end navigation links and hamburger */}
-                
-                {/* cart script */}
-                <div>
-                    <div className="cart-logo row end-xs">
-                      <Image {...brandLogoImage} />
-                    </div>
-                  </div>
-                {/* end cart script */}
-
+    return (
+      <header className={`main-header ${className}`} id="main-header">
+        <div className="container-fluid">
+          <div className="row middle-xs between-xs header-content">
+            {/* main logo */}
+            <div className="brand-logo first-lg">
+              <Anchor to="#content-wrapper" >
+                {brandLogoImage && <Image {...brandLogoImage} /> }
+              </Anchor>
             </div>
+            {/* end main logo */}
+
+            {/* navigation links and hamburger */}
+            {NavigationText &&
+              <div className="first-xs">
+                <Nav NavigationText={NavigationText} brandLogoImage={brandLogoImage} />
+              </div>
+                }
+            {/* end navigation links and hamburger */}
+
+            {/* cart script */}
+            <div>
+              <div className="cart-logo row end-xs">
+                <Image {...brandLogoImage} />
+              </div>
+            </div>
+            {/* end cart script */}
+
           </div>
-          {css.map((cssPath, idx) => {
-            return <link type="text/css" rel="stylesheet" href={cssPath} key={idx} />;
-          })}
-        </header>
+        </div>
+        {css.map((cssPath, idx) => <link type="text/css" rel="stylesheet" href={cssPath} key={idx} />)}
+      </header>
     );
   }
 }

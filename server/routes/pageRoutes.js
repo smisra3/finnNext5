@@ -4,12 +4,12 @@
 
 module.exports = {
   baseRoutes: {
-    index: "/"
+    index: '/',
   },
 
   additionalRoutes: {
-    error: "/:page"
+    error: '/:page',
   },
 
-  fileExclusionList: ["_document.js", "index.js", "error.js"]
+  fileExclusionList: ['_document.js', 'index.js', 'error.js'],
 };

@@ -1,8 +1,8 @@
-import saga from "./HomePage.saga";
-import reducer from "./HomePage.reducer";
+import saga from './HomePage.saga';
+import reducer from './HomePage.reducer';
 
 export default {
-  key: "homePage",
+  key: 'homePage',
   reducer,
-  saga
+  saga,
 };

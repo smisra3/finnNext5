@@ -3,15 +3,15 @@ import {
   SIGNIN_ERRORS,
   LOADING_INDICATOR_STATUS,
   VALIDATE_USER_NAME_SUCCESS,
-  UPDATE_LOGIN_FORM
+  UPDATE_LOGIN_FORM,
 } from './SignIn.constants';
 import { updateState } from '../../../utils/utils';
 
 export const initialState = {
   loginForm: {
     userName: '',
-    password: ''
-  }
+    password: '',
+  },
 };
 /**
  * Method to capture error in case of action failure
@@ -22,15 +22,15 @@ export const initialState = {
 
 const setErrors = (state, { error }) => updateState(state, { errorMessage: error });
 
-const loadingIndicator = (state, {status}) => updateState(state, { isLoaderActive: status });
+const loadingIndicator = (state, { status }) => updateState(state, { isLoaderActive: status });
 
 const setUserValid = (state, { response }) => updateState(state, { isUserValid: response });
 
 const updateLogin = (state, action) => {
-  let newState = {...state};
+  const newState = { ...state };
   newState.loginForm[action.identifier] = action.value;
   return newState;
-}
+};
 
 const signIn = (state = initialState, action) => {
   switch (action.type) {
@@ -38,10 +38,10 @@ const signIn = (state = initialState, action) => {
       return setErrors(state, action);
     case LOADING_INDICATOR_STATUS:
       return loadingIndicator(state, action);
-    case VALIDATE_USER_NAME_SUCCESS: 
-      return setUserValid(state, action)
+    case VALIDATE_USER_NAME_SUCCESS:
+      return setUserValid(state, action);
     case UPDATE_LOGIN_FORM:
-      return updateLogin(state, action)
+      return updateLogin(state, action);
     default:
       return state;
   }

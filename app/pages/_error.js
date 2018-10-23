@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default class CustomError extends React.Component {
   static getInitialProps({ res, pathname, err }) {
@@ -6,7 +6,7 @@ export default class CustomError extends React.Component {
       const statusCode = res && res.statusCode > 200 ? res.statusCode : false;
       if (
         (statusCode || err) &&
-        !(pathname.match("/webassets") || pathname.match("/api") || pathname.match("/static"))
+        !(pathname.match('/webassets') || pathname.match('/api') || pathname.match('/static'))
       ) {
         if (res && res.redirect) {
           // return res.redirect(ERROR_PAGE);

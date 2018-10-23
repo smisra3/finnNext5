@@ -136,16 +136,15 @@ export const getWrapperComponent = (
     static dispatchActions({
       actions, store, needQuery, query, requestDetails,
     }) {
-      actions.map(action =>{
-        return store.dispatch(typeof action === 'function'
-          ? WrapperComponent.addRequestDetails(
-            action(needQuery ? query : undefined),
-            requestDetails,
-          )
-          : WrapperComponent.addRequestDetails(
-            { type: action, query: needQuery ? query : undefined },
-            requestDetails,
-          ))});
+      actions.map(action => store.dispatch(typeof action === 'function'
+        ? WrapperComponent.addRequestDetails(
+          action(needQuery ? query : undefined),
+          requestDetails,
+        )
+        : WrapperComponent.addRequestDetails(
+          { type: action, query: needQuery ? query : undefined },
+          requestDetails,
+        )));
     }
 
     static async getInitialProps(...params) {
@@ -153,7 +152,7 @@ export const getWrapperComponent = (
 
       const {
         store, isServer, req, query, res, pathname, asPath,
-      } = initialParams;     
+      } = initialParams;
       injectSagaAndReducer(key, store, saga, reducer);
       // store.dispatch(serverActions.setCurrentRoute(pathname));
       // let requestDetails;
@@ -220,11 +219,11 @@ export const getWrapperComponent = (
       };
     }
 
-    componentDidMount(){
+    componentDidMount() {
       const { dispatch } = this.props;
       pageClientSideActions.length && pageClientSideActions.map((action) => {
         dispatch(action());
-      })
+      });
     }
 
     render() {

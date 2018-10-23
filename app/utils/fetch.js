@@ -1,15 +1,15 @@
 // @flow
-import axios from "axios";
-import es6promise from "es6-promise";
-import getConfig from "next/config";
-import agent from "../../server/utils/proxyAgent";
-import loggerFactory from "../utils/logger";
-import { DESKTOP, ENV_DEVELOPMENT, RESPONSE_OK, RESPONSE_SERVER_ERROR } from "../constants";
-import { CACHEABLE_SERVICES_LIST } from "./cacheableServices";
+import axios from 'axios';
+import es6promise from 'es6-promise';
+import getConfig from 'next/config';
+import agent from '../../server/utils/proxyAgent';
+import loggerFactory from '../utils/logger';
+import { DESKTOP, ENV_DEVELOPMENT, RESPONSE_OK, RESPONSE_SERVER_ERROR } from '../constants';
+import { CACHEABLE_SERVICES_LIST } from './cacheableServices';
 
 const { publicRuntimeConfig } = getConfig();
 
-const API_HOSTS = require("../../API_HOST").environment;
+const API_HOSTS = require('../../API_HOST').environment;
 
 const logger = loggerFactory.getLogger();
 
@@ -23,10 +23,10 @@ class ServiceUtils {
   envApiKey: string;
 
   constructor() {
-    this.envApiKey = process.env.ENV_API_KEY || "";
+    this.envApiKey = process.env.ENV_API_KEY || '';
     this.environment = process.env.NODE_ENV || ENV_DEVELOPMENT;
-    this.clientPathPrefix = process.env.API_PROXY_PATH || "";
-    this.serverPathPrefix = process.env.API_DOMAIN || "";
+    this.clientPathPrefix = process.env.API_PROXY_PATH || '';
+    this.serverPathPrefix = process.env.API_DOMAIN || '';
     this.currentDevice = DESKTOP;
 
     /**
@@ -36,9 +36,9 @@ class ServiceUtils {
      * 3. <host_datacenter> entry available in hosts file
      */
     if (
-      typeof API_HOSTS !== "undefined" &&
+      typeof API_HOSTS !== 'undefined' &&
       this.envApiKey &&
-      typeof API_HOSTS[this.envApiKey] !== "undefined"
+      typeof API_HOSTS[this.envApiKey] !== 'undefined'
     ) {
       this.serverPathPrefix = API_HOSTS[this.envApiKey];
     }
@@ -55,7 +55,7 @@ class ServiceUtils {
   static appendParams(url: string, requestData?: Object): string {
     let appendedURL: string = url;
     if (requestData) {
-      if (url.indexOf("?") < 0) appendedURL = url.concat("?");
+      if (url.indexOf('?') < 0) appendedURL = url.concat('?');
       appendedURL = appendedURL.concat(`device=${requestData.deviceType}`);
     }
     return appendedURL;
@@ -69,24 +69,22 @@ class ServiceUtils {
     let response = {};
     let responseData;
     const isCacheableService =
-      CACHEABLE_SERVICES_LIST.indexOf(url.split("?")[0]) !== -1 &&
+      CACHEABLE_SERVICES_LIST.indexOf(url.split('?')[0]) !== -1 &&
       publicRuntimeConfig.isCachingEnabled;
     const apiTimeout = +process.env.API_TIMEOUT;
-    const isClient = typeof window !== "undefined";
+    const isClient = typeof window !== 'undefined';
 
     if (isClient) {
       // Client-side call
       fetchUrl = ServiceUtils.appendParams(`${url}`);
     } else if (!(actionObject && actionObject.type)) {
       // Server-side call from initial actions (with no action object)
-      throw new Error(
-        `Oh oh, maybe you forgot adding your action object to your fetch in your saga with url ${url}?`
-      );
+      throw new Error(`Oh oh, maybe you forgot adding your action object to your fetch in your saga with url ${url}?`);
     } else {
       // Server-side call with proper action object from initial actions
       headers = {
         // Cookie: actionObject.requestDetails.cookies || '',
-        "secret-key": "$2a$10$f43a7fmsIv/2DNbFTzfiyeGv1mORmjYNbTqqCM.BJ/JuaIxFHZ.Ou"
+        'secret-key': '$2a$10$f43a7fmsIv/2DNbFTzfiyeGv1mORmjYNbTqqCM.BJ/JuaIxFHZ.Ou',
         // ...actionObject.requestDetails.whitelistedHeaders,
       };
       perfLogger = actionObject.requestDetails.logger;
@@ -97,8 +95,8 @@ class ServiceUtils {
           const cachedResponse = global.servicesCache.get(`${fetchUrl}`);
           if (cachedResponse !== null) {
             perfLogger.log(
-              "error",
-              `[PERFLOG] [CACHE: HIT] URL: ${fetchUrl} Elapsed Time: ${Date.now() - start}ms`
+              'error',
+              `[PERFLOG] [CACHE: HIT] URL: ${fetchUrl} Elapsed Time: ${Date.now() - start}ms`,
             );
             return cachedResponse;
           }
@@ -114,11 +112,11 @@ class ServiceUtils {
       headers,
       timeout: apiTimeout,
       withCredentials: true,
-      ...additionalFetchOptions
+      ...additionalFetchOptions,
     };
 
     // Add https agent for requests that start with https protocol in url
-    if (fetchUrl.startsWith("https")) {
+    if (fetchUrl.startsWith('https')) {
       reqOptions.agent = agent.https;
     }
 
@@ -128,7 +126,7 @@ class ServiceUtils {
     } catch (err) {
       responseData = {
         status: RESPONSE_SERVER_ERROR,
-        error: err.message
+        error: err.message,
       };
     }
 
@@ -139,7 +137,7 @@ class ServiceUtils {
           `${fetchUrl}`,
 
           // Cacheable response data
-          responseData
+          responseData,
         );
       }
     } catch (err) {
@@ -148,11 +146,11 @@ class ServiceUtils {
 
     if (perfLogger) {
       perfLogger.log(
-        "error",
-        `[PERFLOG] [SERVICE] ${isCacheableService ? "[CACHE: MISS]" : ""} Status: ${
+        'error',
+        `[PERFLOG] [SERVICE] ${isCacheableService ? '[CACHE: MISS]' : ''} Status: ${
           response.status
-        } Method: ${reqOptions.method || "GET"} URL: ${fetchUrl} Elapsed Time: ${Date.now() -
-          start}ms`
+        } Method: ${reqOptions.method || 'GET'} URL: ${fetchUrl} Elapsed Time: ${Date.now() -
+          start}ms`,
       );
     }
 

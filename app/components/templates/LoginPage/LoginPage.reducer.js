@@ -1,9 +1,7 @@
 // @flow
 import { combineReducers } from 'redux';
 
-export const loginPageData = (state = {}, action) => {
-  return state;
-};
+export const loginPageData = (state = {}, action) => state;
 
 export default combineReducers({
   loginPageData,

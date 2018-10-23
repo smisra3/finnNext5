@@ -1,10 +1,10 @@
 // @flow
-import React from "react";
-import styled from "styled-components";
-import styles from "./AccountSummary.style";
-import Layout from "../Layout";
-import HeadTag from "../../atoms/HeadTag";
-import AccountSummary from "../../organisms/AccountSummary";
+import React from 'react';
+import styled from 'styled-components';
+import styles from './AccountSummary.style';
+import Layout from '../Layout';
+import HeadTag from '../../atoms/HeadTag';
+import AccountSummary from '../../organisms/AccountSummary';
 
 type Props = {
   labels: object,

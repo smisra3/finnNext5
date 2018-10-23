@@ -1,9 +1,9 @@
-import { css } from "styled-components";
-import { MOBILE } from "../../../constants";
-    
+import { css } from 'styled-components';
+import { MOBILE } from '../../../constants';
+
 const commonStyles = css`
   background: url(${props =>
-    props.backgroundImg ? props.backgroundImg : "https://www.finnair.com/go/2018.10-93/Plus/promo/2018/Finnair_plus_big_banner_avis_desktop.jpg"});
+    (props.backgroundImg ? props.backgroundImg : 'https://www.finnair.com/go/2018.10-93/Plus/promo/2018/Finnair_plus_big_banner_avis_desktop.jpg')});
   width: 100%;
   padding: 50px 0;
   background-position: center;

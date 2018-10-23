@@ -1,13 +1,13 @@
 // @flow
-import { Fragment } from "react";
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import { Fragment } from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
-import styles from "../styles"; // eslint-disable-line no-unused-vars
-import catchErrors from "../utils/errorBoundary";
+import styles from '../styles'; // eslint-disable-line no-unused-vars
+import catchErrors from '../utils/errorBoundary';
 
-import cssIncludes from "../styles/cssIncludes";
-import { PHONE, MOBILE, DESKTOP } from "../constants";
+import cssIncludes from '../styles/cssIncludes';
+import { PHONE, MOBILE, DESKTOP } from '../constants';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage, req }: any) {

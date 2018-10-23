@@ -13,7 +13,7 @@ storiesOf('Atoms', module).addWithChapters('Image', {
     {
       sections: [
         {
-          sectionFn: () => <ImageVanilla {...defaultImage} className={`hide-default-sample`} />,
+          sectionFn: () => <ImageVanilla {...defaultImage} className="hide-default-sample" />,
           options: {
             showSource: true,
             allowSourceToggling: true,
@@ -29,7 +29,7 @@ storiesOf('Atoms', module).addWithChapters('Image', {
         {
           title: 'Default',
           sectionFn: () => <Image {...defaultImage} />,
-        }
+        },
       ],
     },
   ],

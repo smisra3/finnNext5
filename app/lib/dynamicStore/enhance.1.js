@@ -15,35 +15,35 @@
  *
  * Details: [docs/PageLevelComponents_Enhance.md]
  */
-import { Component } from "react";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import get from "lodash/get";
-import hoistNonReactStatic from "hoist-non-react-statics";
-import Router from "next/router";
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import get from 'lodash/get';
+import hoistNonReactStatic from 'hoist-non-react-statics';
+import Router from 'next/router';
 
-import initRedux from "./configureStore";
-import monitorSagas from "./monitorSagas";
-import loggerFactory from "../../utils/logger";
-import { DESKTOP, MOBILE, PHONE, API_ERROR_HANDLER_PAGE, TABLET } from "../../constants";
-import globalActions, { serverActions, pageActions } from "../../global/actions";
+import initRedux from './configureStore';
+import monitorSagas from './monitorSagas';
+import loggerFactory from '../../utils/logger';
+import { DESKTOP, MOBILE, PHONE, API_ERROR_HANDLER_PAGE, TABLET } from '../../constants';
+import globalActions, { serverActions, pageActions } from '../../global/actions';
 
-import { globalDataStructure } from "../../global/reducer";
-import injectSagaAndReducer from "./injectSagaAndReducer";
-import { parseQueryParams } from "../../utils/utils";
-import { pageClientSideActions } from "../../global/actions";
+import { globalDataStructure } from '../../global/reducer';
+import injectSagaAndReducer from './injectSagaAndReducer';
+import { parseQueryParams } from '../../utils/utils';
+import { pageClientSideActions } from '../../global/actions';
 
 const logger = loggerFactory.getLogger();
 
 // List of headers to be extracted before forwarding to the respective
 // endpoints from the application
 const headerExclusionList = [
-  "host",
-  "accept",
-  "content-length",
-  "content-type",
-  "connection",
-  "cookie"
+  'host',
+  'accept',
+  'content-length',
+  'content-type',
+  'connection',
+  'cookie',
 ];
 
 /**
@@ -67,7 +67,9 @@ const headerExclusionList = [
 
 export const getWrapperComponent = (
   WrappedComponent,
-  { key, reducer, saga, initialActions, useQuery, criticalState, preExecuteGetInitialProps }
+  {
+    key, reducer, saga, initialActions, useQuery, criticalState, preExecuteGetInitialProps,
+  },
 ) =>
   class WrapperComponent extends Component {
     /**
@@ -94,7 +96,7 @@ export const getWrapperComponent = (
       if (storeStruct && storeStruct.length > 0) {
         const currentState = store.getState();
         const missingDataList = [];
-        [...storeStruct].forEach(requiredDataPath => {
+        [...storeStruct].forEach((requiredDataPath) => {
           try {
             if (!get(currentState, requiredDataPath)) {
               missingDataList.push(requiredDataPath);
@@ -106,7 +108,7 @@ export const getWrapperComponent = (
         if (missingDataList.length > 0) {
           logger.error(
             `${WrapperComponent.displayName} - Component failed to receive critical data`,
-            JSON.stringify(missingDataList)
+            JSON.stringify(missingDataList),
           );
           if (isServer) {
             res.redirect(API_ERROR_HANDLER_PAGE);
@@ -126,26 +128,26 @@ export const getWrapperComponent = (
      * @param {Object} param.query Query params of the incoming request
      * @param {Object} param.requestDetails Object containing details of incoming request
      */
-    static dispatchActions({ actions, store, needQuery, query, requestDetails }) {
-      actions.map(action => {
-        return store.dispatch(
-          typeof action === "function"
-            ? WrapperComponent.addRequestDetails(
-                action(needQuery ? query : undefined),
-                requestDetails
-              )
-            : WrapperComponent.addRequestDetails(
-                { type: action, query: needQuery ? query : undefined },
-                requestDetails
-              )
-        );
-      });
+    static dispatchActions({
+      actions, store, needQuery, query, requestDetails,
+    }) {
+      actions.map(action => store.dispatch(typeof action === 'function'
+        ? WrapperComponent.addRequestDetails(
+          action(needQuery ? query : undefined),
+          requestDetails,
+        )
+        : WrapperComponent.addRequestDetails(
+          { type: action, query: needQuery ? query : undefined },
+          requestDetails,
+        )));
     }
 
     static async getInitialProps(...params) {
       const initialParams = params[0];
 
-      const { store, isServer, req, query, res, pathname, asPath } = initialParams;
+      const {
+        store, isServer, req, query, res, pathname, asPath,
+      } = initialParams;
       injectSagaAndReducer(key, store, saga, reducer);
       // store.dispatch(serverActions.setCurrentRoute(pathname));
       // let requestDetails;
@@ -194,7 +196,7 @@ export const getWrapperComponent = (
 
       WrapperComponent.dispatchActions({
         actions: combinedPageActions,
-        store
+        store,
         // needQuery: useQuery,
         // query: { ...query, ...clientParams },
         // requestDetails,
@@ -208,7 +210,7 @@ export const getWrapperComponent = (
       // }
 
       return {
-        pathname
+        pathname,
       };
     }
 
@@ -263,8 +265,8 @@ export default (
     saga,
     initialActions,
     useQuery,
-    criticalState
-  }
+    criticalState,
+  },
 ) => {
   const WrapperComponent = getWrapperComponent(WrappedComponent, {
     key,
@@ -272,21 +274,21 @@ export default (
     saga,
     initialActions,
     useQuery,
-    criticalState
+    criticalState,
   });
 
   // Move all non react specific static properties from WrappedComponent to WrapperComponent
   hoistNonReactStatic(WrapperComponent, WrappedComponent, {
-    getInitialProps: true
+    getInitialProps: true,
   });
 
   // Give a unique identifier to the new high horder component
   WrapperComponent.displayName = `enhanced(${WrappedComponent.displayName ||
     WrappedComponent.name ||
-    "Component"})`;
+    'Component'})`;
 
   return connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
   )(WrapperComponent);
 };

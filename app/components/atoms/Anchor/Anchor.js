@@ -1,11 +1,11 @@
 // @flow
-import Link from "next/link";
-import type { Node } from "react";
-import { PureComponent } from "react";
-import styled from "styled-components";
+import Link from 'next/link';
+import type { Node } from 'react';
+import { PureComponent } from 'react';
+import styled from 'styled-components';
 
-import styles from "./Anchor.style";
-import { buildUrl } from "../../../utils/utils";
+import styles from './Anchor.style';
+import { buildUrl } from '../../../utils/utils';
 
 type Props = {
   to: string | any,

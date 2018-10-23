@@ -48,41 +48,39 @@ const Input = ({
   dataSlnmId,
   labelAddOnComponent,
   ...others
-}: Props): Node => {
-  return (
-    <div className={className}>
-      <div className="label-wrapper">
-        <label htmlFor={id}>{labelContent}</label>
-        {labelAddOnComponent ? (<div className="addOnComponentWrapper">{labelAddOnComponent}</div>) : null}
-      </div>
-      <div className="input-wrapper">
-        <input
-          id={id}
-          maxLength={maxLength}
-          type={type}
-          onKeyUp={(event) => {
+}: Props): Node => (
+  <div className={className}>
+    <div className="label-wrapper">
+      <label htmlFor={id}>{labelContent}</label>
+      {labelAddOnComponent ? (<div className="addOnComponentWrapper">{labelAddOnComponent}</div>) : null}
+    </div>
+    <div className="input-wrapper">
+      <input
+        id={id}
+        maxLength={maxLength}
+        type={type}
+        onKeyUp={(event) => {
             keyUpHandler(event, maxLength);
             if (onKeyUp) onKeyUp(event);
           }}
-          onChange={(event) => {
+        onChange={(event) => {
             if (onChange) onChange(event);
           }}
-          onBlur={(event) => {
+        onBlur={(event) => {
             if (onBlur) onBlur(event);
           }}
-          ref={inputRef}
-          placeholder={placeholder}
-          value={value}
-          aria-invalid={errorMessage && errorMessage.length ? true : null}
-          aria-required={required || null}
-          data-slnm-id={camelCase(placeholder)}
-          {...others}
-        />
-      </div>
-      <FieldError errorMessage={errorMessage} dataSlnmId={dataSlnmId} />
+        ref={inputRef}
+        placeholder={placeholder}
+        value={value}
+        aria-invalid={errorMessage && errorMessage.length ? true : null}
+        aria-required={required || null}
+        data-slnm-id={camelCase(placeholder)}
+        {...others}
+      />
     </div>
-  )
-}
+    <FieldError errorMessage={errorMessage} dataSlnmId={dataSlnmId} />
+  </div>
+);
 
 Input.defaultProps = {
   type: 'text',
@@ -99,7 +97,7 @@ Input.defaultProps = {
   dataSlnmId: 'InputField',
   onChange: () => { },
   onBlur: () => { },
-  isParentSubmitted: false
+  isParentSubmitted: false,
 };
 
 export default styled(Input)`

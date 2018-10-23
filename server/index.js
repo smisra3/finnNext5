@@ -1,39 +1,39 @@
-const express = require("express");
-const next = require("next");
-const { parse } = require("url");
-const { join } = require("path");
-const compression = require("compression");
-const { spawn } = require("child_process");
-const device = require("express-device");
-const cookieParser = require("cookie-parser");
-const helmet = require("helmet");
-const cache = require("memory-cache");
-const cron = require("cron");
+const express = require('express');
+const next = require('next');
+const { parse } = require('url');
+const { join } = require('path');
+const compression = require('compression');
+const { spawn } = require('child_process');
+const device = require('express-device');
+const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
+const cache = require('memory-cache');
+const cron = require('cron');
 
-const { MACHINE_IP, PORT, CONFIG_CRON_SCHEDULE } = require("./config/appConfig");
-const { isStaticUrl, parseStaticUrl } = require("./utils/staticVersioning");
+const { MACHINE_IP, PORT, CONFIG_CRON_SCHEDULE } = require('./config/appConfig');
+const { isStaticUrl, parseStaticUrl } = require('./utils/staticVersioning');
 
 const {
   ENV_PRODUCTION,
   SERVICE_WORKER_FILE,
   API_PROXY_PATH,
   CLEAR_SERVICES_CACHE,
-  HEALTH_CHECK
-} = require("../isomorphic/constants");
+  HEALTH_CHECK,
+} = require('../isomorphic/constants');
 
-const routes = require("./routes");
-const apiProxy = require("./utils/apiProxy");
-const requestTime = require("./utils/perfCalc");
-const checkDirectory = require("./utils/checkDirectory");
-const getPerfLoggerFactory = require("./utils/perfLogger");
+const routes = require('./routes');
+const apiProxy = require('./utils/apiProxy');
+const requestTime = require('./utils/perfCalc');
+const checkDirectory = require('./utils/checkDirectory');
+const getPerfLoggerFactory = require('./utils/perfLogger');
 
 const blackListUrls = [
-  "/static/",
-  "/fonts/",
-  "/_next/",
-  "favicon.ico",
-  "robots.txt",
-  "sitemap.xml"
+  '/static/',
+  '/fonts/',
+  '/_next/',
+  'favicon.ico',
+  'robots.txt',
+  'sitemap.xml',
 ];
 
 // Security level configurations using the helmet module
@@ -43,25 +43,25 @@ const helmetConfig = {
   noCache: false,
   ieNoOpen: false,
   noSniff: false,
-  hidePoweredBy: true
+  hidePoweredBy: true,
 };
 
 const app = next({
   dev: process.env.NODE_ENV !== ENV_PRODUCTION,
-  dir: "./app"
+  dir: './app',
 });
 
-process.on("unhandledRejection", err => {
+process.on('unhandledRejection', (err) => {
   /* eslint-disable-next-line no-console */
-  console.log("Unhandled rejection:", err);
+  console.log('Unhandled rejection:', err);
 });
 
-const cleanupPerfLogger = req => {
+const cleanupPerfLogger = (req) => {
   if (req.perfLoggerEnabled) {
     req.perfLogger.log(
-      "error",
+      'error',
       `[PERFLOG] [PAGE] Method: ${req.method} URL: ${req.url} Elapsed Time: ${Date.now() -
-        req.startTime}ms`
+        req.startTime}ms`,
     );
 
     req.perfLoggerEnabled = false;
@@ -73,30 +73,32 @@ const cleanupPerfLogger = req => {
 
 // Code for making the synchronous call to the session API to make
 // sure there is no duplication for session IDs at the ATG layer
-const handler = routes.getRequestHandler(app, async ({ req, res, route, query }) => {
+const handler = routes.getRequestHandler(app, async ({
+  req, res, route, query,
+}) => {
   app
     .render(req, res, route.page, query)
     .then(() => {
       cleanupPerfLogger(req);
     })
-    .catch(err => {
+    .catch((err) => {
       /* eslint-disable-next-line no-console */
       console.log(err);
       cleanupPerfLogger(req);
     });
 });
 
-if (process.env.CACHE_ENABLED !== "false") {
+if (process.env.CACHE_ENABLED !== 'false') {
   global.servicesCache = new cache.Cache();
 }
 
-if (process.env.CACHE_FLUSH_ENABLED !== "false" && typeof global.servicesCache !== "undefined") {
+if (process.env.CACHE_FLUSH_ENABLED !== 'false' && typeof global.servicesCache !== 'undefined') {
   const servicesCacheCronJob = new cron.CronJob({
     cronTime: CONFIG_CRON_SCHEDULE,
     onTick() {
       global.servicesCache.clear();
     },
-    start: false
+    start: false,
   });
 
   // start cron job with first call
@@ -116,7 +118,7 @@ app.prepare().then(() => {
     .use((req, res, nextMiddleware) => {
       let isStaticPath = false;
 
-      blackListUrls.forEach(path => {
+      blackListUrls.forEach((path) => {
         if (req.url.indexOf(path) !== -1) {
           isStaticPath = true;
         }
@@ -141,16 +143,14 @@ app.prepare().then(() => {
     .use(helmet(helmetConfig))
 
     // Capture the device type
-    .use(
-      device.capture({
-        unknownUserAgentDeviceType: "desktop" // default to DESKTOP when user agent is unrecognized
-      })
-    );
+    .use(device.capture({
+      unknownUserAgentDeviceType: 'desktop', // default to DESKTOP when user agent is unrecognized
+    }));
 
   // Health check route for load balanacer
   server.get(HEALTH_CHECK, (req, res) => {
     res.send({
-      success: true
+      success: true,
     });
   });
 
@@ -163,7 +163,7 @@ app.prepare().then(() => {
     } catch (err) {
       res.send({
         success: false,
-        error: err
+        error: err,
       });
       return;
     }
@@ -171,21 +171,21 @@ app.prepare().then(() => {
   });
 
   // Handle all other requests as page / static requests
-  server.get("*", (req, res) => {
+  server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
 
     const { pathname } = parsedUrl;
 
     // remove build if static
     if (isStaticUrl(req.url) && process.env.NODE_ENV === ENV_PRODUCTION) {
-      [req.url] = parseStaticUrl(req.url).split("?");
-      const filePath = join(__dirname, "../app/.next/dist", req.url);
+      [req.url] = parseStaticUrl(req.url).split('?');
+      const filePath = join(__dirname, '../app/.next/dist', req.url);
       res.sendFile(filePath);
       return;
     }
 
     if (pathname === SERVICE_WORKER_FILE) {
-      const filePath = join(__dirname, "../app/.next", pathname);
+      const filePath = join(__dirname, '../app/.next', pathname);
       app.serveStatic(req, res, filePath);
     } else {
       handler(req, res, parsedUrl);
@@ -193,25 +193,25 @@ app.prepare().then(() => {
   });
 
   /* eslint-disable no-console */
-  const serve = server.listen(PORT, err => {
+  const serve = server.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://${MACHINE_IP}:${PORT}`);
 
-    if (process.argv.indexOf("--report") !== -1) {
-      console.log("Lighthouse is analysing the app.....");
-      checkDirectory("reports/lighthouse/", true);
+    if (process.argv.indexOf('--report') !== -1) {
+      console.log('Lighthouse is analysing the app.....');
+      checkDirectory('reports/lighthouse/', true);
       spawn(
-        "node",
+        'node',
         [
-          "./node_modules/lighthouse/lighthouse-cli",
+          './node_modules/lighthouse/lighthouse-cli',
           `http://${MACHINE_IP}:${PORT}`,
-          "--output-path=reports/lighthouse/report.html"
+          '--output-path=reports/lighthouse/report.html',
         ],
-        { stdio: "inherit" }
-      ).on("exit", code => {
+        { stdio: 'inherit' },
+      ).on('exit', (code) => {
         console.log(`Lighthouse exited with code ${code.toString()}`);
         console.log(`Closing down app server on port ${PORT}`);
-        serve.close("SIGTERM");
+        serve.close('SIGTERM');
         process.exit(0);
       });
     }

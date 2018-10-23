@@ -13,7 +13,7 @@ import { InputVanilla } from './Input';
 import Input from './index';
 
 const wrapperStyle = {
-  width: '400px'
+  width: '400px',
 };
 
 storiesOf('Atoms', module).addWithChapters('Inputs', {
