@@ -61,7 +61,6 @@ class HomePage extends Component<Props> {
       <Layout title="home" className="row" id="content-wrapper">
         <HeadTag description="Home Page Description" title={story ? story.title : 'Home Page'} />
         <div
-          style={{ marginTop: '80px', height: '1000px' }}
           dangerouslySetInnerHTML={(() => ({
               __html: this.props.homePageData.seasons[0].description,
             }))()}

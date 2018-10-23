@@ -11,7 +11,6 @@ import styles from './Navigation.style';
 import '../../../styles/index';
 
 class Navigation extends PureComponent<Props> {
-
   render() {
     const { className, NavigationText } = this.props;
 
@@ -30,6 +29,7 @@ class Navigation extends PureComponent<Props> {
         elem.classList.add('slide-menu-out');
         elem.style.cssText = null;
         elem.classList.remove('sidenav', 'slide-menu-in');
+        document.getElementsByClassName('btn-hamburger')[0].classList.remove("change");
       } else {
         body.style.backgroundColor = 'rgba(0,0,0,0.4)';
         body.style.overflow = 'hidden';
