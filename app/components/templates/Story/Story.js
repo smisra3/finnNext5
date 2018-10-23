@@ -43,5 +43,6 @@ export default enhance(StoryDescription, {
   reducer,
   key: 'story',
   initialActions,
+  useQuery: true,
   criticalState: [['storyPage']]
 });
