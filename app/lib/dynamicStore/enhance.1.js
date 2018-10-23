@@ -220,14 +220,6 @@ export const getWrapperComponent = (
       };
     }
 
-    componentDidMount() {
-      const { dispatch } = this.props;
-      // pageClientSideActions.length &&
-      //   pageClientSideActions.map(action => {
-      //     dispatch(action());
-      //   });
-    }
-
     // componentWillMount() {
     //   const { store, isServer } = this.props;
     //   const combinedPageActions =
@@ -243,8 +235,7 @@ export const getWrapperComponent = (
     // }
 
     render() {
-      const { homePageData } = this.props;
-      return <WrappedComponent homePageData={homePageData} />;
+      return <WrappedComponent {...this.props} />;
     }
   };
 

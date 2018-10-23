@@ -4,6 +4,7 @@ import chaptersAddon, { setDefaults } from 'react-storybook-addon-chapters';
 import { ThemeProvider } from 'styled-components';
 import Theme from './../app/styles/theme';
 import '../app/static/styles/vendor/flexboxgrid.css';
+import '../app/static/styles/vendor/slick.css';
 
 setDefaults({
   sectionOptions: {

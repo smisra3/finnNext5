@@ -6,7 +6,7 @@ import Axios from "axios";
 function* loadStoryListingPageData({ requestDetails }) {
   const { asPath } = requestDetails;
   const slugId = asPath.split('/')[2];
-  const url = `https://travelnowhere.citybreakweb.com/api/gateway/${slugId}`;
+  const url = API_URLS.https + API_URLS.domainName + slugId;
   try {
     const response = yield call(Axios, url);
     yield put({ type: "GOT_STORY_DESCRIPTION_PAGE_DATA", data: response.data });
