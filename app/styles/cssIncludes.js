@@ -6,7 +6,9 @@ if (process.env.NODE_ENV === "development") {
     "/static/styles/font-awesome.min.css",
     "/static/styles/icons/icomoon.css",
     "/static/styles/vendor/flexboxgrid.css",
-    "/static/styles/main.css"
+    "/static/styles/main.css",
+    '/static/styles/vendor/slick.css',
+    '/static/styles/vendor/slick-theme.css'
   );
 }
 
