@@ -11,11 +11,15 @@ export default css`
     }
   }
   .pagination-links {
-    width: 150px;
+    width: 3.5rem;
+    padding: 0.1rem 0.4rem;
+    @media(min-width:600px) {
+      width: 9.5rem;
+      padding: 0.3rem;
+    }
     border: 2px solid #fff;
     opacity: 0.8;
-    padding: 5px;
-    margin: 20px;
+    margin: 1.25rem;
   }
   ul.slick-dots {
     bottom: 0;
@@ -40,7 +44,10 @@ export default css`
     position: absolute;
     top: 30%;
     left: 35%;
-    font-size: 3rem;
+    font-size: 0.75rem;
+    @media(min-width:600px) {
+      font-size: 3rem;
+    }
     font-weight: bold;
     font-style: italic;
   }

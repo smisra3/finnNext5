@@ -11,7 +11,6 @@ class HeroCarousel extends React.Component {
 
   render() {
     const { heroCarouselData, className, title } = this.props;
-    console.log(heroCarouselData)
     const settings = {
       dots: true,
       infinite: true,
@@ -22,11 +21,12 @@ class HeroCarousel extends React.Component {
       customPaging: () => <div className="pagination-links"></div>
     };
     let viewArray = heroCarouselData.map( element => {
-      const { url } = element.isVideo ? element.placeholderImage.original : element.image.original;
-      const { alt } = element.isVideo ? element.placeholderImage : element.image;
+      const { isVideo } = element;
+      const { url } = isVideo ? element.placeholderImage.original : element.image.original;
+      const { alt } = isVideo ? element.placeholderImage : element.image;
       const title = element.title ? element.title : '';
       return <div className="img-container">
-        <Image src={url} alt={alt} />
+        <Image isVideo={isVideo} src={url} alt={alt}  />
         <div className="title">{title}</div>
         </div>
     });
