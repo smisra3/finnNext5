@@ -2,26 +2,30 @@ import { css } from "styled-components";
 import { MOBILE } from "../../../constants";
 
 const commonStyles = css`
-  position: relative;
-  padding-bottom: ${props =>
+
+  /* padding-bottom: ${props =>
     props.deviceType === MOBILE
       ? props.theme.minHeightHeaderMobile
-      : props.theme.minHeightHeaderDesktop}px;
-
-  header {
+      : props.theme.minHeightHeaderDesktop}px; */
     position: absolute;
-    /* box-shadow: ${props => props.theme.containerShadowPrimary} 0 6px 2px -3px;
-    position: fixed;
     z-index: ${props => props.theme.zIndex.zSticky};
-    background-color: ${props => props.theme.backgroundColorPrimary}; */
     top: 0;
     width: 100%;
-    min-height: ${props =>
+    will-change: opacity;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: ${props => props.theme.backgroundColorPrimary};
+      /* box-shadow: ${props => props.theme.containerShadowPrimary} 0 6px 2px -3px; */
+    }
+    .main-body {
+      margin-top: ${props =>
       props.deviceType === MOBILE
         ? props.theme.minHeightHeaderMobile
         : props.theme.minHeightHeaderDesktop}px;
-    will-change: opacity;
-  }
+    }
 
   .antonymous-header-info {
     list-style-type: none;
@@ -46,12 +50,19 @@ const commonStyles = css`
   }
 
   .header-content {
+    min-height: ${props =>
+      props.deviceType === MOBILE
+        ? props.theme.minHeightHeaderMobile
+        : props.theme.minHeightHeaderDesktop}px;
+  }
+  
+  /* .header-content {
     padding-top: 45px;
 
     @media (max-width: 767px) {
       padding-top: 30px;
     }
-  }
+  } */
 
   @media (max-width: 767px) {
     .brand-logo {
@@ -63,6 +74,12 @@ const commonStyles = css`
       }
     }
   }
+  .cart-logo {
+      overflow: hidden;
+      img {
+        max-width: initial;
+      }
+    }
 
   .skip-nav {
     text-align: left;
@@ -89,13 +106,6 @@ const commonStyles = css`
     height: auto;
     overflow: visible;
     text-decoration: underline;
-  }
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #fff;
   }
 `;
 

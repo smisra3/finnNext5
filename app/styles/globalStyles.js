@@ -125,22 +125,22 @@ textarea {
 
 /* overriding the grid padding and margin values defined in flexboxgrid.css to 1rem = 20px instead of 16px */
 
-.row.full {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-}
+// .row.full {
+//     margin-left: -1.25rem;
+//     margin-right: -1.25rem;
+// }
 
-.content-width {
-  max-width: ${Theme.maxWidthPageContent};
-  margin-left: auto;
-  margin-right: auto;
-}
+// .content-width {
+//   max-width: ${Theme.maxWidthPageContent};
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-.row {
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
+// .row {
+//     margin-right: -0.625rem;
+//     margin-left: -0.625rem;
 
-}
+// }
 
 .col {
     margin-right: -0.625rem;

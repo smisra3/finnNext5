@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import globalReducer from '../../global/reducer';
+import { combineReducers } from "redux";
+import globalReducer from "../../global/reducer";
 
 /**
  * @function createReducer - Combine reducer for given page level component with global ones
@@ -9,6 +9,6 @@ import globalReducer from '../../global/reducer';
 export default function createReducer(injectedReducers) {
   return combineReducers({
     global: globalReducer,
-    ...injectedReducers,
+    ...injectedReducers
   });
 }

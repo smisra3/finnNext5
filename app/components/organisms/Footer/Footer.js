@@ -13,11 +13,15 @@ const Footer = ({ className }: Props): Node => (
         <footer className={`row center-xs middle-xs ${className}`}>
             <Image {...brandLogoImage} />
             <ul>
-            {AntonymousHeaderInfo.map(item => (
-              <li key={item.id} className={item.id} keys={item.id}>
-                {item.value}
-              </li>
-            ))}
+                  {AntonymousHeaderInfo.map(item => (
+                    <Anchor
+                    to="#content-wrapper"
+                    >
+                    <li key={item.id} className={item.id} keys={item.id}>
+                      {item.value}
+                    </li>
+                  </Anchor>
+                  ))}
             </ul>   
         </footer>
 );

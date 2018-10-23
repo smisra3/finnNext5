@@ -3,6 +3,7 @@ import { MOBILE } from "../../../constants";
 import { specialcharacter } from "../../../locales/en-US";
 
 const commonStyles = css`
+
   .btn-hamburger {
     cursor: pointer;
     background: none;
@@ -35,6 +36,7 @@ const commonStyles = css`
     height: 20px;
     width: 20px;
     border: 0;
+    background: none;
 
     &::before,
     &::after {
@@ -68,18 +70,21 @@ const commonStyles = css`
         padding-right: 5px;
         padding-left: 5px;
         line-height: 2;
+        color: ${props => props.theme.WHITE};
       }
       a {
+        position: relative;
           span {
             &::before {
               content: '/';
-              margin: 0 5px;
+              margin: 0 0 0 5px;
             }
           }
         &:last-child {
           span{
             &::before {
               content: '';
+              margin: 0;
             }
           }
         }
@@ -103,13 +108,14 @@ const commonStyles = css`
   .sidenav {
     height: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 99999;
     top: 0;
     left: 0;
     background-color: #fff;
     overflow-x: hidden;
+    overflow-y: scroll;
     padding: 60px 20px 0;
-    animation: slide-menu 0.74s ease-out;
+    animation: slide-menu 0.5s ease-out;
 
     ul {
       flex-direction: column;
@@ -131,6 +137,40 @@ const commonStyles = css`
     }
   }
 
+  .collapse {
+    display: none;
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+  }
+
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    &.show {
+      display: block;
+    }
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
   @keyframes slide-menu {
     0% {
       opacity: 0;
@@ -142,12 +182,15 @@ const commonStyles = css`
       transform: translateX(0);
     }
   }
+  @keyframes slide-menu-in {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
 
-  .collapse {
-    display: none;
-
-    @media (min-width: 1024px) {
-      display: flex;
+    100% {
+      opacity: 1;
+      transform: translateX(-100%);
     }
   }
 `;

@@ -2,9 +2,9 @@ import { fidelity, footerNav } from "../../../locales/en-US";
 
 const brandLogoImage = {
   className: "",
-  src: "http://127.0.0.1:3002/static/images/Finnair.png",
+  src: "https://travelnowhere.citybreakweb.com/themes/custom/citybreakweb/cb_travelnowhere/styles/images/logo.svg",
   srcset:
-    "http://127.0.0.1:3002/static/images/Finnair.png, http://127.0.0.1:3002/static/images/Finnair-2x.png 2x",
+    "https://travelnowhere.citybreakweb.com/themes/custom/citybreakweb/cb_travelnowhere/styles/images/logo.svg, https://travelnowhere.citybreakweb.com/themes/custom/citybreakweb/cb_travelnowhere/styles/images/logo.svg 2x",
   alt: fidelity
 };
 
