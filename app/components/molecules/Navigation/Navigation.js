@@ -72,7 +72,7 @@ class Navigation extends PureComponent<Props> {
           <ul className="row">
             {NavigationText && NavigationText.map((item, idx) => (
               <Anchor
-                to="#content-wrapper"
+                to={item.url}
               >
                 <li key={idx} className={item.name}>
                   {item.name}
