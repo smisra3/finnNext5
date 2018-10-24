@@ -91,8 +91,12 @@ const commonStyles = css`
     }
   }
 
-  .sidenav {
+  .navWidth {
     width: 80%;
+  }
+
+  .sidenav {
+    user-select: none;
     height: 100%;
     position: fixed;
     z-index: 99999;
@@ -101,7 +105,6 @@ const commonStyles = css`
     background-color: ${props => props.theme.buttonColorSecondary};
     overflow-x: hidden;
     overflow-y: scroll;
-    /* padding: 60px 20px 0; */
 
     margin-top: ${props =>
     (props.deviceType === MOBILE
@@ -172,12 +175,12 @@ const commonStyles = css`
   }
   @keyframes slide-menu-out {
     0% {
-      opacity: 0;
+      opacity: 1;
       transform: translateX(0);
     }
 
     100% {
-      opacity: 1;
+      opacity: 0;
       transform: translateX(-100%);
     }
   }
