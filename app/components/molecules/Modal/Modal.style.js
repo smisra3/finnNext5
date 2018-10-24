@@ -7,6 +7,11 @@ const ModalStyles = css`
   right: 140px;
   bottom: 20px;
   background-color: #fff;
+  .btn-modal-close {
+    position: absolute;
+    right: 0.85rem;
+    top: 0.5rem;
+  }
 `;
 
 export default ModalStyles;

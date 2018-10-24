@@ -9,9 +9,16 @@ import enhance from '../../../lib/dynamicStore';
 import HeroCarousel from '../../organisms/HeroCarousel/HeroCarousel';
 
 class StoryDescription extends React.Component {
+  state = { openModal: false }
+  activateModal = () => {
+    this.setState({ openModal: true });
+  };
+
+  deactivateModal = () => {
+    this.setState({ openModal: false });
+  };
 
   render() {
-    console.log(this.props);
     return (
       <Layout>
         <HeadTag description="Story Description" title={'Story Description'} />
