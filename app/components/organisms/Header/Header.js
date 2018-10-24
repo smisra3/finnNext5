@@ -16,6 +16,7 @@ import { LOGIN } from '../../../routes';
 import { skipNavigation } from '../../../locales/en-US';
 import { brandLogoImage, cartLogoImage, NavigationText, css } from './header.static.data';
 import '../../../styles/index';
+import { timingSafeEqual } from 'crypto';
 // import { get } from 'http';
 
 const skipNavigationHandler = (e: SyntheticEvent<>) => {
@@ -27,6 +28,10 @@ const skipNavigationHandler = (e: SyntheticEvent<>) => {
 class Header extends Component<Props, State> {
   constructor(props) {
     super(props);
+    this.mainHeader = React.createRef();
+    this.state = {
+      sideMenu: false
+    };
   }
 
   componentDidMount() {
@@ -38,7 +43,7 @@ class Header extends Component<Props, State> {
   }
 
   handleScroll = (event) => {
-    const headerMarkup = document.getElementById('main-header');
+    const headerMarkup = this.mainHeader.current;
     const sticky = headerMarkup.offsetTop;
 
     if (window.pageYOffset > sticky) {
@@ -48,40 +53,48 @@ class Header extends Component<Props, State> {
     }
   }
 
+  openNav = () => {
+    this.setState({ sideMenu: !this.state.sideMenu });
+  };
+
+
   render() {
     const { className } = this.props;
+    const { sideMenu } = this.state;
     return (
-      <header className={`main-header ${className}`} id="main-header">
-        <div className="container-fluid">
-          <div className="row middle-xs between-xs header-content">
-            {/* main logo */}
-            <div className="brand-logo first-lg">
-              <Anchor to="#content-wrapper" >
-                {brandLogoImage && <Image {...brandLogoImage} /> }
-              </Anchor>
-            </div>
-            {/* end main logo */}
-
-            {/* navigation links and hamburger */}
-            {NavigationText &&
-              <div className="first-xs">
-                <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} />
+      <div className={className}>
+        <header className={`main-header ${sideMenu ? 'sticky' : ''}`} id="main-header" ref={this.mainHeader}>
+          <div className="container-fluid">
+            <div className="row middle-xs between-xs header-content">
+              {/* main logo */}
+              <div className="brand-logo first-lg">
+                <Anchor to="#content-wrapper" >
+                  {brandLogoImage && <Image {...brandLogoImage} />}
+                </Anchor>
               </div>
-                }
-            {/* end navigation links and hamburger */}
+              {/* end main logo */}
 
-            {/* cart script */}
-            <div>
-              <div className="cart-logo row end-xs">
-                <Image {...cartLogoImage} />
+              {/* navigation links and hamburger */}
+              {NavigationText &&
+                <div className="first-xs">
+                  <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} openSideNav={this.openNav} sideMenu={sideMenu} />
+                </div>
+              }
+              {/* end navigation links and hamburger */}
+
+              {/* cart script */}
+              <div>
+                <div className="cart-logo row end-xs">
+                  <Image {...cartLogoImage} />
+                </div>
               </div>
-            </div>
-            {/* end cart script */}
+              {/* end cart script */}
 
+            </div>
           </div>
-        </div>
-        {css.map((cssPath, idx) => <link type="text/css" rel="stylesheet" href={cssPath} key={idx} />)}
-      </header>
+          {css.map((cssPath, idx) => <link type="text/css" rel="stylesheet" href={cssPath} key={idx} />)}
+        </header>
+      </div>
     );
   }
 }
