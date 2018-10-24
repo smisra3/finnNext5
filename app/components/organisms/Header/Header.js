@@ -27,6 +27,7 @@ const skipNavigationHandler = (e: SyntheticEvent<>) => {
 class Header extends Component<Props, State> {
   constructor(props) {
     super(props);
+    this.mainHeader = React.createRef();
   }
 
   componentDidMount() {
@@ -38,7 +39,7 @@ class Header extends Component<Props, State> {
   }
 
   handleScroll = (event) => {
-    const headerMarkup = document.getElementById('main-header');
+    const headerMarkup = this.mainHeader.current;
     const sticky = headerMarkup.offsetTop;
 
     if (window.pageYOffset > sticky) {
@@ -51,13 +52,13 @@ class Header extends Component<Props, State> {
   render() {
     const { className } = this.props;
     return (
-      <header className={`main-header ${className}`} id="main-header">
+      <header className={`main-header ${className}`} id="main-header" ref={this.mainHeader}>
         <div className="container-fluid">
           <div className="row middle-xs between-xs header-content">
             {/* main logo */}
             <div className="brand-logo first-lg">
               <Anchor to="#content-wrapper" >
-                {brandLogoImage && <Image {...brandLogoImage} /> }
+                {brandLogoImage && <Image {...brandLogoImage} />}
               </Anchor>
             </div>
             {/* end main logo */}
@@ -65,9 +66,9 @@ class Header extends Component<Props, State> {
             {/* navigation links and hamburger */}
             {NavigationText &&
               <div className="first-xs">
-                <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} />
+                <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} mainHeader={this.mainHeader} />
               </div>
-                }
+            }
             {/* end navigation links and hamburger */}
 
             {/* cart script */}
