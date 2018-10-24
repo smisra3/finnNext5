@@ -11,52 +11,15 @@ import styles from './Navigation.style';
 import '../../../styles/index';
 
 class Navigation extends PureComponent<Props> {
+
   render() {
-    const { className, NavigationText, mainHeader } = this.props;
-    let buttonMarkUp, sideNavMenu;
-    console.log('mainHeader', mainHeader);
-
-    const openNav = (e) => {
-      const body = document.body;
-      const headerMarkup = document.getElementById('main-header');
-
-      if (buttonMarkUp.classList.contains('cross-icon')) {
-        buttonMarkUp.classList.remove('cross-icon');
-
-        body.style.backgroundColor = 'rgba(255,255,255, 0.9)';
-        body.style.overflow = 'scroll';
-
-        document.getElementById('main-header').style.cssText = null;
-
-        sideNavMenu.classList.add('slide-menu-out');
-        sideNavMenu.style.cssText = null;
-        sideNavMenu.classList.remove('sidenav', 'slide-menu-in');
-        document.getElementsByClassName('btn-hamburger')[0].classList.remove("change");
-        headerMarkup.classList.remove('sticky');
-      } else {
-        body.style.backgroundColor = 'rgba(0,0,0,0.4)';
-        body.style.overflow = 'hidden';
-
-        document.getElementsByClassName('btn-hamburger')[0].classList.add("change");
-
-        headerMarkup.classList.add('sticky');
-
-
-        // sidenav styling
-        sideNavMenu.style.width = '80%';
-        sideNavMenu.classList.remove('slide-menu-out');
-        sideNavMenu.classList.add('sidenav', 'slide-menu-in');
-
-        buttonMarkUp.classList.add('cross-icon');
-      }
-    };
-
+    const { className, NavigationText, sideMenu } = this.props;
     return (
       <nav className={`${className}`}>
         {/* humburder menu button */}
         {NavigationText &&
-          <div onClick={openNav}>
-            <button type="button" className="btn-hamburger" id="btn-hamburger" ref={elem => buttonMarkUp = elem} >
+          <div onClick={this.props.openSideNav}>
+            <button type="button" className={` btn-hamburger ${sideMenu ? 'cross-icon change' : ''}`}>
               <div class="bar1"></div>
               <div class="bar2"></div>
               <div class="bar3"></div>
@@ -65,7 +28,7 @@ class Navigation extends PureComponent<Props> {
         }
 
         {/* sideBar menu container */}
-        <div className="row navigation-links collapse" id="sidenav-menu" ref={elem => sideNavMenu = elem}>
+        <div className={` row navigation-links collapse ${sideMenu ? 'sidenav slide-menu-in' : 'slide-menu-out'}`}>
           <div className="slide-header between-lg">
           </div>
           {/* navigation links used for both desktop amd mobile */}

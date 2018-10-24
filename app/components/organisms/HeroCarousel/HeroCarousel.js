@@ -20,22 +20,22 @@ class HeroCarousel extends React.Component {
       lazyLoad: true,
       customPaging: () => <div className="pagination-links"></div>
     };
-    let viewArray = heroCarouselData.map( element => {
+    let viewArray = heroCarouselData.map(element => {
       const { isVideo } = element;
       const { url } = isVideo ? element.placeholderImage.original : element.image.original;
       const { alt } = isVideo ? element.placeholderImage : element.image;
       const title = element.title ? element.title : '';
       return <div className="img-container">
-        <Image isVideo={isVideo} src={url} alt={alt}  />
+        <Image isVideo={isVideo} src={url} alt={alt} />
         <div className="title">{title}</div>
-        </div>
+      </div>
     });
     return (
-    <div className={className}>
-      <Slider {...settings}>
-        {viewArray}
-      </Slider>
-    </div>
+      <div className={className}>
+        <Slider {...settings}>
+          {viewArray}
+        </Slider>
+      </div>
     );
   }
 }

@@ -13,7 +13,7 @@ const commonStyles = css`
     width: 100%;
     will-change: opacity;
 
-    &.sticky {
+    .sticky {
       position: fixed;
       top: 0;
       width: 100%;
