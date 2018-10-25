@@ -22,28 +22,49 @@ const commonStyles = css`
     }
 
     .bar1, .bar2, .bar3 {
-      width: 35px;
-      height: 5px;
-      background-color: ${props => props.theme.textColorDivider};;
-      margin: 6px 0;
+      width: 20px;
+      height: 3px;
+      background-color: ${props => props.theme.textColorDivider};
+      margin: 3px 0;
       transition: 0.4s;
+      position: relative;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: ${props => props.theme.textColorDivider};;
+        transform-origin: bottom left;
+        transform: skew(-30deg, 0deg);
+      }
     }
     .bar2 {
-      width: 30px;
+      width: 18px;
     }
     .bar3 {
-      width: 25px;
+      width: 16px;
     }
   }
 
   .change {
       .bar1 {
-        transform: rotate(-45deg) translate(-9px, 7px);
+        width: 16px;;
+        transform: rotate(-45deg) translate(-3px, 5px);
       }
       .bar2 {opacity: 0;}
       .bar3 {
-        width: 35px;
-        transform: rotate(45deg) translate(-8px, -7px);
+        width: 16px;
+        transform: rotate(45deg) translate(-3px, -6px);
+      }
+      .bar1, .bar3 {
+        &::after{
+          transform: skew(0deg, 0deg);
+        }
       }
   }
 
@@ -54,7 +75,8 @@ const commonStyles = css`
       padding: 0;
 
       li {
-        font-size: ${props => props.theme.fontSizeHighlight};
+        font-size: ${props => props.theme.fontSizeDefault};
+        font-weight: 900;
         color: ${props => props.theme.buttonColorSecondary};
       }
       a {
@@ -106,24 +128,25 @@ const commonStyles = css`
     overflow-x: hidden;
     overflow-y: scroll;
 
-    margin-top: ${props =>
-    (props.deviceType === MOBILE
-      ? props.theme.minHeightHeaderMobile
-      : props.theme.minHeightHeaderDesktop)}px;
+    margin-top: 60px;
 
     ul {
       flex-direction: column;
       a{
         border-bottom: 1px solid #d5d5d5;
-        height: 80px;
-        line-height: 80px;
+        height: 60px;
+        line-height: 60px;
         li {
           padding-left: 25px;
           padding-right: 25px;
+          font-size: ${props => props.theme.fontFamilyMenu};
 
           &::after {
-            content: '->';
+            content: '';
+            background-image: url('http://127.0.0.1:3002/static/images/Arrow-submenu_mobile.svg');
             float: right;
+            width: 11px;
+            height: 17px;
           }
         }
       }

@@ -13,6 +13,10 @@ const commonStyles = css`
     width: 100%;
     will-change: opacity;
 
+    .main-header {
+      height: 60px;
+    }
+
     .sticky {
       position: fixed;
       top: 0;
@@ -43,9 +47,10 @@ const commonStyles = css`
 
   .brand-logo {
     img{
-      width: 160px;
+      width: 130px;
       @media (min-width: 767px) {
         width: 100%;
+        height: 20px;
       }
     }
   }
@@ -54,6 +59,12 @@ const commonStyles = css`
       overflow: hidden;
       img {
         max-width: initial;
+        width: 25px;
+        height: 18px;
+        @media (min-width: 767px) {
+            width: 100%;
+            height: 22px;
+        }
       }
     }
 

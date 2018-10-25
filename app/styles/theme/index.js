@@ -35,6 +35,7 @@ const theme = {
   fontFamilyDefault: fonts.FALLBACK_FONT,
   fontFamilyPrimary: fonts.PRIMARY_FONT,
   fontFamilySecondary: fonts.SECONDARY_FONT,
+  fontFamilyMenu: fonts.DEFAULT_MENU_FONT_SIZE,
   fontFamilyIcon: fonts.ICON_FONT,
   fontSizeBase: fonts.BASE_FONT_SIZE,
   fontSizeDefault: fonts.DEFAULT_FONT_SIZE,

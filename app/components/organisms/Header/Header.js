@@ -69,6 +69,29 @@ class Header extends Component<Props, State> {
       body.style.overflow = 'scroll';
     }
   };
+  handleClick = () => {
+    if (!this.state.popupVisible) {
+      // attach/remove event handler
+      document.addEventListener('click', this.handleOutsideClick, false);
+    } else {
+      document.removeEventListener('click', this.handleOutsideClick, false);
+    }
+
+    this.setState(prevState => ({
+      popupVisible: !prevState.popupVisible,
+    }));
+  }
+
+  handleOutsideClick(e) {
+    // ignore clicks on the component itself
+    console.log('out', this.node, e.target, this.node.contains(e.target));
+    if (this.node.contains(e.target)) {
+
+      return;
+    }
+
+    this.handleClick();
+  }
 
 
   render() {
@@ -91,7 +114,7 @@ class Header extends Component<Props, State> {
 
                 {/* navigation links and hamburger */}
                 {NavigationText &&
-                  <div className="first-xs">
+                  <div className="first-xs" ref={node => { this.node = node; }}>
                     <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} openSideNav={this.openNav} sideMenu={sideMenu} />
                   </div>
                 }
