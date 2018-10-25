@@ -6,11 +6,10 @@ import styles from './Video.style';
 const Video = ({
   controls,
   src,
-  width,
-  height,
-  autoplay,
-  children
+  children,
+  settings
 }) => {
+  const { width, height, autoplay } = settings;
   return <video
     src={src}
     controls={controls}

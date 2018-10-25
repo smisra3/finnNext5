@@ -10,14 +10,6 @@ import HeroCarousel from '../../organisms/HeroCarousel/HeroCarousel';
 import { heroCarouselSettings } from './StoryDescription.constants';
 
 class StoryDescription extends React.Component {
-  state = { openModal: false }
-  activateModal = () => {
-    this.setState({ openModal: true });
-  };
-
-  deactivateModal = () => {
-    this.setState({ openModal: false });
-  };
 
   render() {
     return (

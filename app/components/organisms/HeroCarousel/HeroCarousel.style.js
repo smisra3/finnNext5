@@ -14,12 +14,12 @@ export default css`
     width: 3.5rem;
     padding: 0.1rem 0.4rem;
     @media(min-width:600px) {
-      width: 9.5rem;
-      padding: 0.3rem;
+      width: 6.0625rem;
+      padding: 0.2031rem 0;
     }
-    border: 2px solid #fff;
+    border: 0.5px solid #fff;
     opacity: 0.8;
-    margin: 1.25rem;
+    margin: 0 0.71875rem 2.1875rem 0;
   }
   ul.slick-dots {
     bottom: 0;
@@ -34,10 +34,14 @@ export default css`
   } 
   .img-container {
     position: relative;
-    div.title {
+    p.title {
       background: unset;
       color: #fff;
-    }
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      padding: 10px;
+      font-weight: 900;
     }
   }
   .title{

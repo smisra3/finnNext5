@@ -8,9 +8,3 @@ export const heroCarouselSettings = {
     shouldCloseOnOverlayClick: true,
     shouldCloseOnEsc: true,
   };
-
-  export const CAROUSEL_VIDEO_SETTINGS = {
-      width: '100%',
-      height: '100%',
-      autoplay: 'true',
-  }

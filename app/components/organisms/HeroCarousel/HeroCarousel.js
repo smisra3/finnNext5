@@ -25,7 +25,6 @@ class HeroCarousel extends React.Component {
   state = { openModal: false, videoUrl: this.props.heroCarouselData[0].large };
   modalConfig = {
     ...MODAL_CONFIG,
-    isOpen: this.state.openModal,
     closeModal: this.closeModal
   };
   settings = {
@@ -39,12 +38,11 @@ class HeroCarousel extends React.Component {
     const viewArray = heroCarouselData.map(element => {
       const { isVideo } = element;
       const { large, medium, small } = isVideo ? element.placeholderImage.cropped : element.image.cropped;
-      const { url } = isVideo ? element.placeholderImage.cropped.large : element.image.cropped.large;
       const { alt } = isVideo ? element.placeholderImage : element.image;
       const title = element.title ? element.title : '';
-      return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => { }}>
+      return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => {}}>
         <Picture large={large} medium={medium} small={small} alt={alt} />
-        <div className="title">{title}</div>
+        <p className="title">{title}</p>
       </div>
     });
     return (
@@ -52,12 +50,10 @@ class HeroCarousel extends React.Component {
         <Slider {...this.settings}>
           {viewArray}
         </Slider>
-        <Modal {...this.modalConfig} isOpen={this.state.openModal} closeModal={this.closeModal}>
+        <Modal config = {this.modalConfig} isOpen={this.state.openModal}>
           <Video controls
             src={this.state.videoUrl}
-            width="100%"
-            height="100%"
-            autoplay="true">
+            settings = {CAROUSEL_VIDEO_SETTINGS}>
             Sorry, your browser doesn't support embedded videos.
           </Video>
         </Modal>
