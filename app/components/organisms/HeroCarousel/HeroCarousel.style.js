@@ -12,12 +12,10 @@ export default css`
     }
   }
   .pagination-links {
-    width: 3rem;
+    width: 4rem;
     padding: 0.203rem 0;
     border: 0.5px solid #fff;
-    margin-bottom: 1.5rem;
-    margin-right: 0.6875rem;
-    
+    margin: 0 0.6875rem 1.5rem 0;
   }
   .slick-dots {
     bottom: 0;
@@ -51,11 +49,11 @@ export default css`
     font-weight: bold;
   }
   .slick-slide {
-    height:540px;
+    height:33.75rem;
   }
 
   .slick-slide img {
-    height:540px;
+    height:33.75rem;
   } 
 
   @media(min-width: 64rem) {
