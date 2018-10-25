@@ -42,7 +42,7 @@ class HeroCarousel extends React.Component {
       const title = element.title ? element.title : '';
       return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => {}}>
         <Picture large={large} medium={medium} small={small} alt={alt} />
-        <p className="title">{title}</p>
+        <div className="title-container row"><p className="title">{title}</p></div>
       </div>
     });
     return (
