@@ -20,15 +20,15 @@ class Navigation extends PureComponent<Props> {
         {NavigationText &&
           <div onClick={this.props.openSideNav}>
             <button type="button" className={` btn-hamburger ${sideMenu ? 'cross-icon change' : ''}`}>
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
+              <div className="bar1"></div>
+              <div className="bar2"></div>
+              <div className="bar3"></div>
             </button>
           </div>
         }
 
         {/* sideBar menu container */}
-        <div className={` row navigation-links collapse ${sideMenu ? 'sidenav slide-menu-in' : 'slide-menu-out'}`}>
+        <div className={` row navigation-links collapse ${sideMenu ? 'sidenav navWidth slide-menu-in' : ' slide-menu-out'}`}>
           <div className="slide-header between-lg">
           </div>
           {/* navigation links used for both desktop amd mobile */}

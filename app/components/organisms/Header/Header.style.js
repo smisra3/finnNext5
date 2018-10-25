@@ -13,6 +13,10 @@ const commonStyles = css`
     width: 100%;
     will-change: opacity;
 
+    .main-header {
+      height: 60px;
+    }
+
     .sticky {
       position: fixed;
       top: 0;
@@ -34,48 +38,19 @@ const commonStyles = css`
       : props.theme.minHeightHeaderDesktop)}px;
     }
 
-  .antonymous-header-info {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-size: ${props => props.theme.fontSizeHighlight};
-    max-width: 380px;
-    li {
-      padding-right: 1rem;
-      padding-left: 1rem;
-      line-height: 2;
-    }
-  }
-
-  .contact-no {
-    border-right: 10px solid ${props => props.theme.borderColorBoldest};
-  }
-
-  .personal-investing {
-    color: ${props => props.theme.textColorBrandPrimary};
-    font-weight: ${props => props.theme.fontSemiBold};
-  }
-
   .header-content {
     min-height: ${props =>
     (props.deviceType === MOBILE
       ? props.theme.minHeightHeaderMobile
       : props.theme.minHeightHeaderDesktop)}px;
   }
-  
-  /* .header-content {
-    padding-top: 45px;
-
-    @media (max-width: 767px) {
-      padding-top: 30px;
-    }
-  } */
 
   .brand-logo {
     img{
-      width: 160px;
+      width: 130px;
       @media (min-width: 767px) {
         width: 100%;
+        height: 20px;
       }
     }
   }
@@ -84,35 +59,22 @@ const commonStyles = css`
       overflow: hidden;
       img {
         max-width: initial;
+        width: 25px;
+        height: 18px;
+        @media (min-width: 767px) {
+            width: 100%;
+            height: 22px;
+        }
       }
     }
 
-  .skip-nav {
-    text-align: left;
-    padding: 20px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: ${props => props.theme.zIndex.zSticky - 10};
-  }
-
-  .skip-nav a {
-    position: absolute;
-    left: -10000px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-
-  .skip-nav a:focus,
-  .skip-nav a:active {
-    position: static;
-    left: 0;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    text-decoration: underline;
-  }
+    .header-observer {
+  height: 1px;
+  margin-top: -1px;
+  position: absolute;
+  top: 2em;
+  width: 1px;
+}
 `;
 
 export default commonStyles;
