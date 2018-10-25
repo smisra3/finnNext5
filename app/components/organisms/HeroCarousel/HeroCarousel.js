@@ -5,58 +5,61 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 
 import styles from './HeroCarousel.style';
-import Image from '../../atoms/Image';
+import Video from '../../atoms/Video';
 import Modal from '../../molecules/Modal';
+import Picture from '../../atoms/Picture';
+import { MODAL_CONFIG, CAROUSEL_VIDEO_SETTINGS } from './HeroCarousel.constants';
 
 class HeroCarousel extends React.Component {
 
-  state = { openModal: false };
-  // children,
-  // closeModal,
-  // className,
-  // isOpen,
-  // handleAfterOpenFunc,
-  // handleRequestCloseFunc,
-  // setOverlayRef,
-  // setContentRef,
+  /**
+   * Method used to change the value of state to open the modal.
+   */
   openModal = () => this.setState({ openModal: true });
+
+  /**
+  * Method used to change the value of the state to close the modal.
+  */
   closeModal = () => this.setState({ openModal: false });
 
+  state = { openModal: false, videoUrl: this.props.heroCarouselData[0].large };
+  modalConfig = {
+    ...MODAL_CONFIG,
+    isOpen: this.state.openModal,
+    closeModal: this.closeModal
+  };
+  settings = {
+    ...this.props.settings,
+    customPaging: () => <div className="pagination-links"></div>,
+    afterChange: index => this.setState({ videoUrl: this.props.heroCarouselData[index].large }),
+  };
+
   render() {
-    const { heroCarouselData, className, title } = this.props;
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      lazyLoad: true,
-      customPaging: () => <div className="pagination-links"></div>,
-      afterChange: () => console.log('chnaged')
-    };
-    let viewArray = heroCarouselData.map(element => {
+    const { heroCarouselData, className } = this.props;
+    const viewArray = heroCarouselData.map(element => {
       const { isVideo } = element;
-      const { url } = isVideo ? element.placeholderImage.original : element.image.original;
+      const { large, medium, small } = isVideo ? element.placeholderImage.cropped : element.image.cropped;
+      const { url } = isVideo ? element.placeholderImage.cropped.large : element.image.cropped.large;
       const { alt } = isVideo ? element.placeholderImage : element.image;
       const title = element.title ? element.title : '';
-      return <div className="img-container" onClick={isVideo ? this.openModal : false}>
-        <Image src={url} alt={alt} />
+      return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => { }}>
+        <Picture large={large} medium={medium} small={small} alt={alt} />
         <div className="title">{title}</div>
       </div>
     });
     return (
       <div className={className}>
-        <Slider {...settings}>
+        <Slider {...this.settings}>
           {viewArray}
         </Slider>
-        <Modal isOpen={this.state.openModal} closeModal={this.closeModal}>
-          <video controls
-            src="https://resources.citybreak.com/webapps/DN/video.mp4"
+        <Modal {...this.modalConfig} isOpen={this.state.openModal} closeModal={this.closeModal}>
+          <Video controls
+            src={this.state.videoUrl}
             width="100%"
             height="100%"
             autoplay="true">
             Sorry, your browser doesn't support embedded videos.
-          </video>
+          </Video>
         </Modal>
       </div>
     );
@@ -69,4 +72,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(styled(HeroCarousel)`${styles}`);
+
+export { HeroCarousel };
 

@@ -13,6 +13,7 @@ const Modal = ({
   handleRequestCloseFunc,
   setOverlayRef,
   setContentRef,
+  shouldCloseOnEsc
 }) => (
     <ReactModal
       isOpen={isOpen}
