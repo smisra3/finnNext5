@@ -7,15 +7,15 @@ import reducer from './StoryDescription.reducer';
 import initialActions from './StoryDescription.actions';
 import enhance from '../../../lib/dynamicStore';
 import HeroCarousel from '../../organisms/HeroCarousel/HeroCarousel';
+import { heroCarouselSettings } from './StoryDescription.constants';
 
 class StoryDescription extends React.Component {
 
   render() {
-    console.log(this.props);
     return (
       <Layout>
         <HeadTag description="Story Description" title={'Story Description'} />
-        <HeroCarousel />
+        <HeroCarousel settings={heroCarouselSettings}/>
         <div style={{ height: "500px" }} />
         <div
           dangerouslySetInnerHTML={(() => ({

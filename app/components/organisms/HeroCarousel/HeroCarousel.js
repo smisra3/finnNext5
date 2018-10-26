@@ -5,36 +5,58 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 
 import styles from './HeroCarousel.style';
-import Image from '../../atoms/Image';
+import Video from '../../atoms/Video';
+import Modal from '../../molecules/Modal';
+import Picture from '../../atoms/Picture';
+import { MODAL_CONFIG, CAROUSEL_VIDEO_SETTINGS } from './HeroCarousel.constants';
 
 class HeroCarousel extends React.Component {
 
+  /**
+   * Method used to change the value of state to open the modal.
+   */
+  openModal = () => this.setState({ openModal: true });
+
+  /**
+  * Method used to change the value of the state to close the modal.
+  */
+  closeModal = () => this.setState({ openModal: false });
+
+  state = { openModal: false, videoUrl: this.props.heroCarouselData[0].large };
+  modalConfig = {
+    ...MODAL_CONFIG,
+    closeModal: this.closeModal
+  };
+  settings = {
+    ...this.props.settings,
+    customPaging: () => <div className="pagination-links"></div>,
+    afterChange: index => this.setState({ videoUrl: this.props.heroCarouselData[index].large }),
+  };
+
   render() {
-    const { heroCarouselData, className, title } = this.props;
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      lazyLoad: true,
-      customPaging: () => <div className="pagination-links"></div>
-    };
-    let viewArray = heroCarouselData.map(element => {
+    const { heroCarouselData, className } = this.props;
+    const viewArray = heroCarouselData.map(element => {
       const { isVideo } = element;
-      const { url } = isVideo ? element.placeholderImage.original : element.image.original;
+      const { large, medium, small } = isVideo ? element.placeholderImage.cropped : element.image.cropped;
       const { alt } = isVideo ? element.placeholderImage : element.image;
       const title = element.title ? element.title : '';
-      return <div className="img-container">
-        <Image isVideo={isVideo} src={url} alt={alt} />
-        <div className="title">{title}</div>
+      return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => {}}>
+        <Picture large={large} medium={medium} small={small} alt={alt} />
+        <div className="title-container row"><p className="title">{title}</p></div>
       </div>
     });
     return (
       <div className={className}>
-        <Slider {...settings}>
+        <Slider {...this.settings}>
           {viewArray}
         </Slider>
+        <Modal config = {this.modalConfig} isOpen={this.state.openModal}>
+          <Video controls
+            src={this.state.videoUrl}
+            settings = {CAROUSEL_VIDEO_SETTINGS}>
+            Sorry, your browser doesn't support embedded videos.
+          </Video>
+        </Modal>
       </div>
     );
   }
@@ -46,4 +68,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(styled(HeroCarousel)`${styles}`);
+
+export { HeroCarousel };
 
