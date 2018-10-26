@@ -16,7 +16,7 @@ const commonStyles = css`
       outline: none;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 786px) {
       display: none;
       float: right;
     }
