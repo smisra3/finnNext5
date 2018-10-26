@@ -39,7 +39,6 @@ export default css`
       padding: 0.625rem;
       font-weight: 900;
       font-size: 1.5rem;
-
     }
   }
   .title {

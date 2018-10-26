@@ -4,31 +4,38 @@ import ReactModal from 'react-modal';
 import styled from 'styled-components';
 import styles from './Modal.style';
 
+type Props = {
+  children: Node,
+  config: object,
+  className: string,
+  isOpen: boolean,
+}
+
 const Modal = ({
   children,
   config,
   className,
-  isOpen
-}) => {
+  isOpen,
+  ...others
+} : Props): Node => {
   const { closeModal, shouldCloseOnOverlayClick, shouldCloseOnEsc, handleAfterOpenFunc } = config;
   return <ReactModal
+    {...others}
     isOpen={isOpen}
     onAfterOpen={handleAfterOpenFunc}
     onRequestClose={closeModal}
     className
-    closeTimeoutMS={0}
+    closeTimeoutMS={300}
     style={{ overlay: {}, content: {} }}
     contentLabel="Example Modal"
-    portalClassName="ReactModalPortal"
+    // portalClassName="ReactModalPortal"
     overlayClassName="Overlay"
     className={`${className}`}
     bodyOpenClassName="ReactModal__Body--open"
     htmlOpenClassName="ReactModal__Html--open"
     ariaHideApp
-    shouldFocusAfterRender
     shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
     shouldCloseOnEsc={shouldCloseOnEsc}
-    shouldReturnFocusAfterClose
     role="dialog"
     parentSelector={() => document.body}
     aria={{
@@ -40,14 +47,25 @@ const Modal = ({
   >
     {children ? <div>
       {children}
-      <button className="btn-modal-close" onClick={() => closeModal()} primary><h2>Close</h2></button>
+      <p className="btn-modal-close" onClick={() => closeModal()} primary><h2>Close</h2></p>
     </div> :
       <div className="modal-content">
-        <p>This is the modal Text</p>
-        <button className="btn-modal-close" onClick={() => closeModal()} primary><h2>Close</h2></button>
+        Nothing to show here...
+        <p className="btn-modal-close" onClick={() => closeModal()} primary><h2>Close</h2></p>
       </div>
     }
   </ReactModal>
 };
+
+Modal.defaultProps = {
+  config: {
+    closeModal: () => {},
+    shouldCloseOnOverlayClick: true,
+    shouldCloseOnEsc: true,
+    handleAfterOpenFunc: () => {},
+  },
+  className: '',
+  isOpen: false,
+}
 
 export default styled(Modal)`${styles}`;
