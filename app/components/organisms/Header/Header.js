@@ -104,21 +104,22 @@ class Header extends Component<Props, State> {
           <header className={`main-header ${isIntersectionObserver || sideMenu ? 'sticky' : ''}`} ref={this.mainHeader}>
             <div className="container-fluid">
               <div className="row middle-xs between-xs header-content">
+
+                {/* navigation links and hamburger */}
+                {NavigationText &&
+                  <div ref={node => { this.node = node; }}>
+                    <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} openSideNav={this.openNav} sideMenu={sideMenu} />
+                  </div>
+                }
+                {/* end navigation links and hamburger */}
+
                 {/* main logo */}
-                <div className="brand-logo first-lg">
+                <div className="brand-logo first-md">
                   <Anchor to="/" >
                     {brandLogoImage && <Image {...brandLogoImage} />}
                   </Anchor>
                 </div>
                 {/* end main logo */}
-
-                {/* navigation links and hamburger */}
-                {NavigationText &&
-                  <div className="first-xs" ref={node => { this.node = node; }}>
-                    <Nav NavigationText={this.props.header} brandLogoImage={brandLogoImage} openSideNav={this.openNav} sideMenu={sideMenu} />
-                  </div>
-                }
-                {/* end navigation links and hamburger */}
 
                 {/* cart script */}
                 <div>
