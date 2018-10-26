@@ -1,14 +1,22 @@
 import type, { Node } from 'react';
 import styled from 'styled-components';
+
 import styles from './Video.style';
-// import type, { Props } from './types';
+
+type Props = {
+  controls?: boolean,
+  src: string,
+  children: Node,
+  settings: object,
+};
 
 const Video = ({
   controls,
   src,
   children,
-  settings
-}) => {
+  settings,
+  ...others,
+}: Props): Node => {
   const { width, height, autoplay } = settings;
   return <video
     src={src}
@@ -16,6 +24,7 @@ const Video = ({
     width={width}
     height={height}
     autoplay={autoplay}
+    {...others}
   >
     {children}
   </video>;
@@ -23,10 +32,12 @@ const Video = ({
 
 Video.defaultProps = {
   src: '',
-  width: '',
-  height: '',
-  width: '',
-  children: `Your browser doesn't support HTML5 Video tag.`
+  children: `Your browser doesn't support HTML5 Video tag.`,
+  settings: {
+    width: '100%',
+    height: '100%',
+    autoplay: true,
+  }
 };
 
 export default styled(Video)`${styles}`;

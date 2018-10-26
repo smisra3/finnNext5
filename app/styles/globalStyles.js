@@ -11,8 +11,21 @@ export default `
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #0b0b0b;
 }
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
 
 body {
   font-family: ${Theme.fontFamilyDefault};

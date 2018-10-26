@@ -15,7 +15,7 @@ const Footer = ({ className, footer }: Props): Node => {
   <footer className={`row center-xs middle-xs ${className}`}>
     <Image {...brandLogoImage} />
     <ul>
-      {footer.map((item, idx) => (
+      {/* {footer.map((item, idx) => (
         <Anchor
           to="#content-wrapper"
         >
@@ -23,7 +23,7 @@ const Footer = ({ className, footer }: Props): Node => {
             {item.name}
           </li>
         </Anchor>
-        ))}
+        ))} */}
     </ul>
   </footer>
   )

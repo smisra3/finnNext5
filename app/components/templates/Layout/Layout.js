@@ -47,7 +47,7 @@ const Layout = ({ children, deviceType, hasRightGutter }: Props): Node => {
             <meta name="viewport" content={`width=${width}`} />
           )}
         </Head>
-        <Header />
+        {/* <Header /> */}
         {children}
         <Footer />
       </main>

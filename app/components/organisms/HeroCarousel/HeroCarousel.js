@@ -40,25 +40,23 @@ class HeroCarousel extends React.Component {
       const { large, medium, small } = isVideo ? element.placeholderImage.cropped : element.image.cropped;
       const { alt } = isVideo ? element.placeholderImage : element.image;
       const title = element.title ? element.title : '';
-      return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => {}}>
-        <Picture large={large} medium={medium} small={small} alt={alt} />
+      return <div className="img-container" key={element.dataKey} onClick={isVideo ? this.openModal : () => { }}>
+        <Picture large={large.url} medium={medium.url} alt={alt} />
         <div className="title-container row"><p className="title">{title}</p></div>
       </div>
     });
-    return (
-      <div className={className}>
-        <Slider {...this.settings}>
-          {viewArray}
-        </Slider>
-        <Modal config = {this.modalConfig} isOpen={this.state.openModal}>
-          <Video controls
-            src={this.state.videoUrl}
-            settings = {CAROUSEL_VIDEO_SETTINGS}>
-            Sorry, your browser doesn't support embedded videos.
+    return <div className={className}>
+      <Slider {...this.settings}>
+        {viewArray}
+      </Slider>
+      <Modal config={this.modalConfig} isOpen={this.state.openModal}>
+        <Video controls
+          src={this.state.videoUrl}
+          settings={CAROUSEL_VIDEO_SETTINGS}>
+          Sorry, your browser doesn't support embedded videos.
           </Video>
-        </Modal>
-      </div>
-    );
+      </Modal>
+    </div>
   }
 }
 

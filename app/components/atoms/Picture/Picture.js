@@ -1,23 +1,34 @@
 import type, { Node } from 'react';
 import styled from 'styled-components';
+
 import styles from './Picture.style';
-// import type, { Props } from './types';
+
+type Props = {
+  large: string,
+  medium: string,
+  alt: string,
+  className: string,
+}
 
 const Picture = ({
   large,
   medium,
-  small,
-  alt
-}) => {
-    return <picture>
-      <source srcset={large.url} media="(min-width: 768px)" />
-      <source srcset={medium.url} media="(min-width: 600px)" />
-      <source srcset={small.url} media="(max-width: 475px)" />
-      <img src={small.url} alt={alt}/>
-    </picture>
+  alt,
+  className,
+  ...others,
+}: Props): Node => {
+  return <picture className={className} {...others}>
+    <source srcSet={large} media="(min-width: 1024px)" />
+    <source srcSet={medium} media="(max-width: 1023px)" />
+    <img src={medium} alt={alt} />
+  </picture>
 };
 
 Picture.defaultProps = {
+  large: '',
+  medium: '',
+  alt: 'fallback image',
+  className: '',
 };
 
 export default styled(Picture)`${styles}`;
